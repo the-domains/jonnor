@@ -1,11 +1,9 @@
 ---
-author: []
-related: []
-publisher:
-  url: 'http://www.jonnor.com'
-  name: Jonnor
-  favicon: null
-  domain: www.jonnor.com
+inFeed: true
+hasPage: true
+inNav: false
+inLanguage: en
+starred: false
 keywords:
   - imgflo
   - gegl
@@ -18,22 +16,26 @@ keywords:
   - workflow
   - vilson
 description: 'Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.'
-inLanguage: en
-datePublished: '2015-11-25T23:45:17.084Z'
+datePublished: '2015-11-25T23:46:46.818Z'
+dateModified: '2015-11-25T23:46:36.929Z'
+author: []
+related: []
 app_links: []
-title: Jon Nordby
-dateModified: '2015-11-25T22:27:08.628Z'
+title: imgflo 0.3
 sourcePath: _posts/2015-01-04-jon-nordby.md
 published: true
-inFeed: true
-hasPage: true
-inNav: false
+authors: []
+publisher:
+  name: Jonnor
+  domain: www.jonnor.com
+  url: 'http://www.jonnor.com'
+  favicon: null
 url: jon-nordby/index.html
 _context: 'http://schema.org'
 _type: Article
 
 ---
-# Jon Nordby
+# imgflo 0.3
 
 Time for a new release of [imgflo][0], the image processing [server][1] and dataflow [runtime][2] based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing. Eventually this will also be an extension point for third parties on [our platform][3].
 
