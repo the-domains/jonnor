@@ -1,0 +1,28 @@
+name: jonnor
+favicon: null
+layout_spectrum: 0.9768113314639777
+typography_spectrum: 0.3291170278098434
+cta:
+  domain: null
+  bucket: null
+  version: null
+analytics:
+  google: null
+  facebook: null
+  twitter: null
+opengraph:
+  image: null
+  type: null
+  appId: null
+color:
+  brandColors:
+    - '#A690A4'
+    - '#B68F9D'
+    - '#C8ACAB'
+    - '#FBB9BF'
+    - '#E376B7'
+  brandStrength: 0.27702429331839085
+  lightness: 0.8432450841646641
+  saturation: 0.2727476267609745
+  rhythmicContrast: 0.33412462985143065
+purpose: []
