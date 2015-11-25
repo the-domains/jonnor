@@ -16,8 +16,8 @@ keywords:
   - workflow
   - vilson
 description: 'Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.'
-datePublished: '2015-11-25T23:54:52.923Z'
-dateModified: '2015-11-25T23:53:20.857Z'
+datePublished: '2015-11-25T23:59:29.990Z'
+dateModified: '2015-11-25T23:59:21.595Z'
 author: []
 related: []
 app_links: []
@@ -57,6 +57,8 @@ This makes Flowhub+imgflo a useful tool also outside the web-based processing wo
 
 Next iteration will be primarily about scaling out. Both allowing multiple "apps" (including individual access to graphs and usage monitoring/quotas) served from a single service, and scaling performance horizontally. The latter will be critical when the ~20k+ users who have [signed up][16] start coming onboard. If you have an interest in using our hosted imgflo service outside of The Grid, get in contact.
 [![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][17]
+
+Mobile is the future.
 
 [0]: http://imgflo.org/
 [1]: http://github.com/jonnor/imgflo-server
