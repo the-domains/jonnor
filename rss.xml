@@ -2,16 +2,16 @@
     <channel>
         <title><![CDATA[jonnor]]></title>
         <description><![CDATA[jonnor]]></description>
-        <link>http://github.com/dylang/node-rss</link>
+        <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Wed, 25 Nov 2015 23:55:11 GMT</lastBuildDate>
-        <atom:link href="undefinedrss.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Wed, 25 Nov 2015 23:59:40 GMT</lastBuildDate>
+        <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[imgflo 0.3]]></title>
             <description><![CDATA[<article><h1>imgflo 0.3</h1><p>Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.</p><img src="http://www.jonnor.com/wp/files/imgflo-instagram-filters-258x300.jpg"></article>]]></description>
-            <link>undefinedimgflo-03/index.html</link>
+            <link>https://thegrid.ai/jonnor/imgflo-03/index.html</link>
             <guid isPermaLink="false">e961a3d0-a605-4116-8d52-821b16fff569</guid>
-            <pubDate>Wed, 25 Nov 2015 23:54:52 GMT</pubDate>
+            <pubDate>Wed, 25 Nov 2015 23:59:29 GMT</pubDate>
         </item>
     </channel>
 </rss>
