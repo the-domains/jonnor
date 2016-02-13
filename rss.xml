@@ -4,15 +4,8 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:25 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:13:21 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">bfbd5d43-4507-4de5-bb63-d9d355f0b7a2</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
-        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:</p></article>]]></description>
@@ -75,6 +68,13 @@
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
             <guid isPermaLink="false">76a255b0-ddea-4299-ac41-4f9986a8e5ec</guid>
             <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>*if your favorite distro is Fedora, Ubuntu, Arch or Gentoo.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">df61cb4f-20d7-42eb-aab2-fc9397d88532</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
         </item>
     </channel>
 </rss>
