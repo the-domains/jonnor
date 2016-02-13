@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2009/06/moinmoin-mypaint-me/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/05/geglfilter-gstreamer-element-for-manipulating-video-using-gegl/'
 inLanguage: en
 starred: false
 keywords:
-  - wiki
-  - mypaint
-  - translator
-  - dont
-  - fixed
-  - cassens
-  - avaliable
-  - aur
-  - revay
-  - open-source
-description: "One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own MoinMoin wiki, where I can put all my silly ideas and thoughts."
-datePublished: '2016-02-13T20:28:49.911Z'
-dateModified: '2016-02-13T19:52:20.093Z'
+  - gegl
+  - gstreamer
+  - gimp
+  - element
+  - images
+  - screenshot
+  - framework
+  - manipulated
+  - video
+  - processing
+description: 'Gegl is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And GStreamer is the multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.'
+datePublished: '2016-02-13T20:28:55.755Z'
+dateModified: '2016-02-13T19:51:39.880Z'
 author: []
 related: []
 app_links: []
-title: 'MoinMoin, MyPaint & Me'
+title: 'geglfilter: GStreamer element for manipulating video using Gegl'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,28 +35,23 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# MoinMoin, MyPaint & Me
+# geglfilter: GStreamer element for manipulating video using Gegl
 
-One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own [MoinMoin][0] wiki, where I can put all my silly ideas and thoughts. Circumstances made it so that I fixed up the norwegian translation of the 1.8.3 version. Due to pure foolishness on my part I did not check if the translation for the upcoming 1.9, so now we have a lot of conflicting strings (circa 200). Yay... Hopefully it will turn out for the better as me and [Jørg Cassens][1], the translator focusing on 1.9, get them in sync again.
+[Gegl][0] is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And [GStreamer][1] is _the_ multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.
 
-Recently I've also become involved in [MyPaint][2] development. It's "a fast and easy open-source graphics application for digital painters". You can follow development over at [gitorious][3]. Things fixed untill now:
-[![](http://www.jonnor.com/wp/files/2009-06-16-205144_473x434_scrot-150x150.png)][4]
+After writing the [C][2][airo overlay GStreamer element][2], I implement a basic GStreamer element which allows you to apply a filter to video in a GStreamer pipeline using Gegl. Using this element, video editing/manipulation applications like [Pitivi][3] could allow users to apply effects provided by Gegl to videos. Gegl is a very powerful image processing framework, and already has [a significant number of image processing operations][4]. More operations is expected, especially from the port the tools, filters and plugins used in Gimp to Gegl.
 
-* Filenames in the title bar!
-* Improved file handling; Nice and consistent error messages when trying to open a file that doesnt exist or you dont have permissions to read.
+Here are some screenshots showing the standard GStreamer video test data being manipulated in different ways using Gegl. Note: the size of the images are only different because the output windows had different sizes when I took the screenshot.
 
-My artistic skills are severly limited, and I've never used a tablet before but here is the obligatory screenshot. Needless to say, I dont do this awesome program any justice at all. [Here][5] is someone who does (David Revay). But hey, I'm at least halfway there right?!
+[A bug has been filed for inclusion][5] of this element into gst-plugins-good. The patch attached there also contains an example application, showing how to use the element.
 
-If you are on Arch Linux, packages are avaliable from AUR, both stable version and -git. Somehow I'm also the maintainer of those now... If you are on anything else, you will have to go to the homepage and get it there. Hopefully packages will be in Debian and Ubuntu official repos shortly.  
-Do note that it currently does not build on Windows, or cygwin at the moment. So if you are the type of person that can make such magic happen, please step up for the task!
-
-I hope to do some more adventurous coding on some of my own project ideas soon, but for now I expect to continue contributing bits and pieces on MyPaint to gain some experience.
+In the patches you will find an example.
 [![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][6]
 
-[0]: http://www.moinmo.in/
-[1]: http://story.idi.ntnu.no/~cassens/blog/
-[2]: http://mypaint.intilinux.com/
-[3]: http://www.gitorious.org/mypaint
-[4]: http://www.jonnor.com/wp/files/2009-06-16-205144_473x434_scrot.png
-[5]: http://forum.intilinux.com/mypaint-finished-work/david-revoy-(-deevad-)-mypaint-sketchbook-gallery-brushes
-[6]: http://www.jonnor.com/wp/?flattrss_redirect&id=5&md5=b48bdc55508a9fcb6e13f300932fa125
+[0]: http://www.jonnor.com/2011/05/geglfilter-gstreamer-element-for-manipulating-video-using-gegl/www.gegl.org
+[1]: http://gstreamer.freedesktop.org/
+[2]: http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/
+[3]: http://www.pitivi.org/
+[4]: http://www.gegl.org/operations.html
+[5]: https://bugzilla.gnome.org/show_bug.cgi?id=650750
+[6]: http://www.jonnor.com/wp/?flattrss_redirect&id=381&md5=70db982ae462366ffab84c644c3e3a81
