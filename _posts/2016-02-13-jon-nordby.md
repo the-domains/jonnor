@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - mountain-biking
-  - bikeshop
-  - spring
-  - apt
-  - allergies
-  - close
-  - jacket
-  - schools
-  - exams
-  - greet
-description: "I know spring is here when: Exams are so close I go to school on Saturdays I can go mountain-biking without having to use long tights and jacket, and most of the snow is gone on the trails Work at the bikeshop is so busy that I don't have time to greet my colleagues until 5 minutes past closing time Allergies are starting to kick in Spring is great, mostly cause it means summer is close; soon schools out and the weather apt for swimming."
+  - maliit
+  - windows
+  - plugins
+  - input
+  - build
+  - method
+  - development
+  - enable
+  - todo-list
+  - application-hosted
+description: 'Enabling third-party developers of input methods is one of the primary goals in the Maliit project. In an attempt to improve this story I spent some time on getting Maliit to work on Windows. Since we use Qt there were few changes needed to the code, but since we use qmake, quite many to the build system.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:13:25.230Z'
-dateModified: '2016-02-13T18:05:33.020Z'
+datePublished: '2016-02-13T18:13:25.266Z'
+dateModified: '2016-02-13T18:05:32.821Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,14 +35,25 @@ _type: Article
 ---
 # Jon Nordby
 
-I know spring is here when:
+Enabling third-party developers of input methods is one of the primary goals in the Maliit project. In an attempt to improve this story I spent some time on getting Maliit to work on Windows.
 
-* Exams are so close I go to school on Saturdays
-* I can go mountain-biking without having to use long tights and jacket, and most of the snow is gone on the trails
-* Work at the bikeshop is so busy that I don't have time to greet my colleagues until 5 minutes _past_ closing time
-* Allergies are starting to kick in
+Since we use Qt there were few changes needed to the code, but since we use qmake, quite many to the build system. One of the bigger changes was making glib-dbus and qdbus optional, which is also useful for Maliit on embedded systems.
 
-Spring is great, mostly cause it means summer is close; soon schools out and the weather apt for swimming.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][0]
+With the Windows build fixes merge requests [for maliit-framework][0] and [for maliit-plugins][1], one can now [build Maliit on Windows][2] and run the provided example applications. This feature is currently being reviewed and should be in the next Maliit release.
+[![](http://www.jonnor.com/wp/files/2012-03-13-155530_2704x1050_scrot_crop-300x225.png)][3]
 
-[0]: http://www.jonnor.com/wp/?flattrss_redirect&id=155&md5=814798795747afd052f9b9f4a68050ef
+Thanks to the standalone viewer application for Maliit Keyboard this allows one to develop new features, theming and language layouts for it on Windows.
+
+Sadly loading an input method plugin in the maliit server crashes for an [unknown reason][4]. With my limited Windows software development experience I was not able to solve this within the couple of days I had available. This is necessary for application-hosted Maliit to work and to enable general development of Maliit input method plugins (not just maliit-keyboard). Help would be much appreciated, even just someone checking if it is reproducible on another Windows system.
+
+Also [left on the todo-list][5] due to lack of time is to set up a Windows build slave for [the Maliit buildbot][6], to test that the build continues to work on Windows and to produce executables.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
+
+[0]: https://gitorious.org/maliit/maliit-framework/merge_requests/165
+[1]: https://gitorious.org/maliit/maliit-plugins/merge_requests/50
+[2]: https://wiki.maliit.org/Documentation/Installing#From_source_code_.28Windows.29
+[3]: http://www.jonnor.com/wp/files/2012-03-13-155530_2704x1050_scrot_crop.png
+[4]: https://bugs.maliit.org/show_bug.cgi?id=111
+[5]: https://bugs.maliit.org/show_bug.cgi?id=112
+[6]: http://www.jonnor.com/2011/12/the-maliit-buildbot/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=538&md5=d85622fb2dd3b4c95db3480c57b19d0c
