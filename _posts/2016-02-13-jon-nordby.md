@@ -2,34 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/02/fosdem-2011/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/03/going-to-libre-graphics-meeting-2011-in-montreal/'
 inLanguage: en
 starred: false
 keywords:
-  - gnome
-  - bof
-  - libre
-  - desktop
-  - projects
-  - meeting
-  - welcome
-  - graphics
-  - devrooms
-  - non-kde
-description: 'Last weekend I was in Brussels for my first FOSDEM. Friday I attended a planning meeting for this years Desktop Summit. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month.'
-datePublished: '2016-02-13T20:35:01.540Z'
-dateModified: '2016-02-13T19:50:41.703Z'
+  - lgm
+  - graphical
+  - mypaint
+  - openraster
+  - freely
+  - licensed
+  - talk
+  - software
+  - submit
+  - donating
+description: "So, it is confirmed, I'm going to LGM 2011! I was at LGM last year, and I expect this year to be just as good. Hopefully I'll also be giving a talk this time, about MyPaint and/or OpenRaster. If you are interested in free and open source graphics software, or the production of freely licensed graphical works, you should go too!"
+datePublished: '2016-02-13T20:35:04.842Z'
+dateModified: '2016-02-13T19:49:21.054Z'
 author: []
-related:
-  - score: 0.5535652041
-    description: 'For most of us, and certainly for most of your team, meetings are the least productive part of our day. Yet too many brilliant people are stuck in too many meetings. Meeting cultures begat more meetings, and the downward cycle continues, crippling productivity and crushing psyches.'
-    title: "Meetings That Don't Suck"
-    url: 'http://techcrunch.com/2015/07/17/meetings-that-dont-suck/'
-    thumbnail_height: 400
-    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/shutterstock_232875841.jpg?w=764&h=400&crop=1'
-    thumbnail_width: 764
+related: []
 app_links: []
-title: FOSDEM 2011
+title: 'Going to Libre Graphics Meeting 2011 in Montreal!'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -42,19 +35,18 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# FOSDEM 2011
+## Going to Libre Graphics Meeting 2011 in Montreal!
 
-Last weekend I was in Brussels for my first [FOSDEM][0].
+So, it is confirmed, I'm going to [LGM 2011][0]! I was at LGM [last year][1], and I expect this year to be just as good. Hopefully I'll also be giving a talk this time, about MyPaint and/or OpenRaster.
 
-Friday I attended a planning meeting for this years [Desktop Summit][1]. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month. I was tasked with organizing the call for BoF/meetings/devrooms. In a broader scope, I see my role as making sure _relevant_ non-KDE and GNOME projects know they are welcome. People involved in such projects are welcomed to submit talk proposals, or apply for space for a BoF/meeting just like a KDE/GNOME project, but for anything to come out of it we need to communicate this properly.
+If you are interested in free and open source graphics software, or the production of freely licensed graphical works, you should go too! See the [press release][2] for more information, or go straight to [submit a talk proposal][3]. If you cannot be there but still want to show your support, please consider [donating][4].
 
-Didn't go to a lot of talks, but I had plenty of good discussions in the "hallway track" and in the evening events. Especially good was meeting up with [Claudio Saavedra][2] to discuss Meego Input Methods and the Gtk+ integration he is working on. I hope I was able to help him a bit in getting started.
+I guess this means I should order the tickets soon...
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
 
-Attended the [Libre Graphics Meeting][3] planning dinner sunday evening. I don't know if I'm able to make it to the conference yet, so I did not have that much to contribute, but I let them that Libre Graphics projects are welcome to the Desktop Summit. And that I might try to organize a MyPaint workshop at LGM.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
-
-[0]: http://fosdem.org/2011/
-[1]: http://desktopsummit.org/
-[2]: http://people.gnome.org/~csaavedra/
-[3]: http://www.libregraphicsmeeting.org/2011/
-[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=375&md5=110d2cb968b7601db81d723d8f56ff61
+[0]: http://www.libregraphicsmeeting.org/2011/
+[1]: http://www.jonnor.com/2010/06/lgm2010-writeup/
+[2]: http://create.freedesktop.org/wiki/Conference_2011_Press_Release_1
+[3]: http://create.freedesktop.org/wiki/Conference_2011/Submit_Talk
+[4]: http://pledgie.com/campaigns/14610
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=389&md5=53c70fd4a473d1eb7071beea01b10fd8
