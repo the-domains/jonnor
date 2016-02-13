@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2009/10/blodbad-at-rockin/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/12/gitorious-merge-request-monitor/'
 inLanguage: en
 starred: false
 keywords:
-  - bands
-  - oslo
-  - concrete
-  - niku
-  - karmic
-  - ubuntu
-  - serepa
-  - nsberg
-  - framferd
-  - blodbad
-description: 'As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine.'
-datePublished: '2016-02-13T20:29:56.859Z'
-dateModified: '2016-02-13T20:02:24.860Z'
+  - mrqbot-7aceb
+  - maliit
+  - maliit-framework
+  - gitorious
+  - maliit-plugins
+  - merged
+  - qml
+  - irc
+  - mrqbot-affa1
+  - desertconsulting
+description: 'In Maliit, all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is hosted on Gitorious, we use their merge requests feature for that purpose.'
+datePublished: '2016-02-13T20:30:03.602Z'
+dateModified: '2016-02-13T20:03:08.334Z'
 author: []
 related: []
 app_links: []
-title: 'Blodbad at Rock In, Oslo'
+title: Gitorious Merge Request Monitor
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,14 +35,25 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Blodbad at Rock In, Oslo
+# Gitorious Merge Request Monitor
 
-As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine. So I got to combine two of my passions; music (metal) and free software in one evening.
+In [Maliit][0], all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is [hosted on Gitorious][1], we use their merge requests feature for that purpose. Up until now we have periodically checked the website for changes (potentially going through each and every one of the repositories), and manually mentioned updates in the IRC channel. This is both tedious and inefficient, so I wrote a simple tool to help the issue: [Gitorious Merge Request Monitor][2]
 
-The bands playing where Niku, Concrete, Framferd and Serepa Deformed. The event was part of a two day mini festival called Blodbad (bloodbath) and the venue was Rock In.
+It provides an IRC Bot which gives status updates on merge requests in an IRC channel:
 
-There was a decent crowd for being a Thursday, but I'm sure both the bands and hosts had hope for more. In any case the sound was pretty good and my friends in Concrete ( [myspace][0]) delivered a great performance so it was very enjoyable.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
+One can also query the current status from it:
 
-[0]: http://www.myspace.com/concretenor
-[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=71&md5=c63ff93a27063f19ee501d67542dc679
+Status changes are retrieved by periodically checking the Gitorious project activity feed (Atom)\*, and the status itself is scraped from the website. There is no other API right now, unfortunately. Implemented in Python with Twisted, feedparser and BeautifulSoup doing all of the heavy lifting.
+
+Get it from PyPi, using easy\_install or pip:  
+`pip install gitorious-mrq-monitor  
+gitorious-mrq-monitor --help # For usage information`
+
+For now this solves the immediate need for the development work-flow we have in the Maliit project. Several ideas for extending the tool are mentioned in the [TODO][3]. Contributions welcomed!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
+
+[0]: http://www.maliit.org/
+[1]: https://gitorious.org/maliit
+[2]: https://github.com/jonnor/gitorious-mrq-monitor
+[3]: https://github.com/jonnor/gitorious-mrq-monitor/blob/master/README
+[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=520&md5=f88fdda952e1f7eee352d3b58c6bea87
