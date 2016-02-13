@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2010/10/qt-developer-days-2010-and-more/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/11/meego-conference-2010/'
 inLanguage: en
 starred: false
 keywords:
-  - conference
   - meego
-  - gnome
-  - business-y
-  - guadec
-  - co-workers
-  - enterprise-y
+  - netbook
+  - conference
   - openismus
-  - 6th-12th
-  - humboldt
-description: "Next week I'm going to Qt Developer Days in Munich where I will be attending Qt training and technical talks. And almost just as importantly, meet and talk to people who do related things to what we do at Openismus."
-datePublished: '2016-02-13T20:34:44.273Z'
-dateModified: '2016-02-13T20:22:53.066Z'
+  - devices
+  - platform
+  - handset
+  - attractive
+  - dublin
+  - nokia
+description: "Like most of my colleagues at Openismus I was present at the first Meego conference in Dublin. As usual, I'm probably the last to blog about it. See for instance Friedrich's post, Andre's post or Chris' very detailed post. The conference was held at the Aviva stadium, a huge sports stadium just outside Dublin center."
+datePublished: '2016-02-13T20:34:50.567Z'
+dateModified: '2016-02-13T20:23:24.771Z'
 author: []
 related: []
 app_links: []
-title: Qt Developer Days 2010 and more
+title: Meego Conference 2010
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,22 +35,42 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Qt Developer Days 2010 and more
+# Meego Conference 2010
 
-Next week I'm going to [Qt Developer Days][0] in Munich where I will be attending [Qt training][1] and [technical talks][2]. And almost just as importantly, meet and talk to people who do related things to what we do at [Openismus][3]. I suspect the overall style and feel of this conference will be quite different from past free and open source software events I've been to (like GUADEC and Libre Graphics Meeting). More business-y, perhaps even enterprise-y? None the less, looking forward to it.
+Like most of my colleagues at [Openismus][0] I was present at the first [Meego conference][1] in Dublin. As usual, I'm probably the last to blog about it. See for instance [Friedrich's post][2], [Andre's post][3] or [Chris' very detailed post][4].
 
-In related news, I'm also involved as part of the local team for [Desktop Summit 2011][4], along with several of my co-workers. The initial announcements have just been made public; the conference will be held in Berlin August 6th-12th, at Humboldt University. Mark your calendars See for instance the [story by the GNOME Foundation][5], the [official website][4] or the [original announcement][6] for more information.
-![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_wink.gif)
+The conference was held at the [Aviva stadium][5], a huge sports stadium just outside Dublin center. Untraditional venue choice, but it was quite nice and the organization was very good.
 
-Hopefully I will also be going to the [Meego conference][7] in Dublin in November. Fingers crossed!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+The [conference schedule][6] was packed; 2 days with 5 parallel tracks and the third day done unconference style with some 7 parallel sessions (btw, all the talks are [available online][7]). Many of the technical talks I went to were a bit on the light side in my opinion, which is forgivable considering how new the whole Meego thing is (or maybe I just chose badly). However, the keynotes and some less-technical talks (and some discussions in the "hallway track") gave me much better understanding of what Meego actually is and aims to be. Which is arguably just as important.
 
-[0]: http://qt.nokia.com/qtdevdays2010
-[1]: http://qt.nokia.com/qtdevdays2010/training
-[2]: http://qt.nokia.com/qtdevdays2010/techtrack
-[3]: http://openismus.com/
-[4]: http://www.desktopsummit.org/
-[5]: http://blogs.gnome.org/foundation/2010/10/06/kde-and-gnome-desktop-summit-2011-from-6-to-12-august/
-[6]: http://www.gnome.org/press/releases/2010-10-desktop-summit-2011-berlin.html
-[7]: http://conference2010.meego.com/
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=279&md5=1933bd280646b304a7c4a9705672a57d
+The schedule was fairly packed in the evenings as well, with opening reception and "Openismus conference dinner" at the closest pub the first day, party at the [Guinness Storehouse][8] the second and a Ireland-Norway friendly in football (which Norway won!) the third. In addition, the official conference hotel had a "hacking area" available 24-7, which was pretty popular.
+
+To give Meego a little boost, all the participants were given a [Lenovo Ideapad S10-t3][9] tablet netbook/laptop. In exchange we had to install Meego Netbook Edition 1.1 on and promise to develop cool applications for. Lucky me also got a Nokia N900 so I can do development for that form-factor as well. ![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_biggrin.gif)
+
+### What is Meego? (my interpretation and some musing)
+
+At least Intel seems to have a very clear vision of Meego as an open operating system and software platform that will make it easy for people to deliver new and innovative products in the embedded/mobile/space.
+
+Meego explicitly targets a [broad range of device classes][10], from set-top boxes to in-vehicle-infotainment to handsets to netbooks, a very bold move. Personally, I think the key to succeeding in that aspect is to attract the vendors with expertise in each device class and have them drive development. The project has done a decent job at that so far with Intel, Linpus, et.c. for netbook, Nokia for handset, the GENIVI consortium for IVI and so on.
+
+Another thing the Meego project explicitly supports is for vendors shipping devices to do customization. This is basically a prerequisite to be able to attract them at all (as they naturally want to differentiate their products), but brings additional challenges in delivering a consistent platform and brand. The compliance specification work [presented at the conference][11] leads me to believe that the project is on the right path here though.
+
+As an application platform Meego is based around [Qt][12] (with Qt Quick). This is a decent platform, but what is most lacking in order to attract application developers is probably shiny, attractive devices, and people using them. Hopefully they will be here soon...
+
+All in all, I like what I see. Time will show how well the project succeeds, there are certainly exciting times ahead!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][13]
+
+[0]: http://www.openismus.com/
+[1]: http://conference2010.meego.com/
+[2]: http://frinring.wordpress.com/2010/11/25/okteta-and-kasten-on-meego/
+[3]: http://blogs.gnome.org/aklapper/2010/11/21/meego-conference-2010/
+[4]: http://blixtra.org/blog/2010/11/22/meego-conference-2010-dublin/
+[5]: http://www.avivastadium.ie/
+[6]: http://conference2010.meego.com/program/schedule
+[7]: http://conference2010.meego.com/program/session-videos
+[8]: http://www.guinness-storehouse.com/
+[9]: http://shop.lenovo.com/us/notebooks/ideapad/s-series/s10-3t
+[10]: http://meego.com/devices
+[11]: http://conference2010.meego.com/session/app-compatibility-and-meego-compliance-program
+[12]: http://qt.nokia.com/
+[13]: http://www.jonnor.com/wp/?flattrss_redirect&id=318&md5=e6f6401599f8492dc96835f934fb7c8b
