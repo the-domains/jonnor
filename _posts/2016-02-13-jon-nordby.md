@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/05/geglfilter-gstreamer-element-for-manipulating-video-using-gegl/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/01/want-to-integrate-with-the-meego-netbook-ux-panel/'
 inLanguage: en
 starred: false
 keywords:
-  - gegl
-  - gstreamer
-  - gimp
-  - element
-  - images
-  - screenshot
-  - framework
-  - manipulated
-  - video
-  - processing
-description: 'Gegl is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And GStreamer is the multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.'
-datePublished: '2016-02-13T20:28:55.755Z'
-dateModified: '2016-02-13T19:51:39.880Z'
+  - meego
+  - api
+  - bugreport
+  - dbus
+  - gtk
+  - mutter-meego
+  - libmeego-panel
+  - netbook
+  - readme
+  - gitorious
+description: 'It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*. As stated by the libmeego-panel/docs/README in the source tree of mutter-meego there are convenience APIs for GTK+ and Clutter based implementations.'
+datePublished: '2016-02-13T20:29:15.428Z'
+dateModified: '2016-02-13T19:56:05.679Z'
 author: []
 related: []
 app_links: []
-title: 'geglfilter: GStreamer element for manipulating video using Gegl'
+title: Meego Netbook UX
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,23 +35,16 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# geglfilter: GStreamer element for manipulating video using Gegl
+# Meego Netbook UX
 
-[Gegl][0] is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And [GStreamer][1] is _the_ multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.
+It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit\*.
 
-After writing the [C][2][airo overlay GStreamer element][2], I implement a basic GStreamer element which allows you to apply a filter to video in a GStreamer pipeline using Gegl. Using this element, video editing/manipulation applications like [Pitivi][3] could allow users to apply effects provided by Gegl to videos. Gegl is a very powerful image processing framework, and already has [a significant number of image processing operations][4]. More operations is expected, especially from the port the tools, filters and plugins used in Gimp to Gegl.
+As stated by the [libmeego-panel/docs/README][0] in the [source tree of mutter-meego][1] there are convenience APIs for GTK+ and Clutter based implementations. But it seems you can also just use the DBUS API, in case you prefer Qt or something else. I found this out by searching though meego.gitorious.org after someone asked on \#meego
 
-Here are some screenshots showing the standard GStreamer video test data being manipulated in different ways using Gegl. Note: the size of the images are only different because the output windows had different sizes when I took the screenshot.
+\*Since this should be documented in the platform API, I've of course filed a [bugreport][2].
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][3]
 
-[A bug has been filed for inclusion][5] of this element into gst-plugins-good. The patch attached there also contains an example application, showing how to use the element.
-
-In the patches you will find an example.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][6]
-
-[0]: http://www.jonnor.com/2011/05/geglfilter-gstreamer-element-for-manipulating-video-using-gegl/www.gegl.org
-[1]: http://gstreamer.freedesktop.org/
-[2]: http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/
-[3]: http://www.pitivi.org/
-[4]: http://www.gegl.org/operations.html
-[5]: https://bugzilla.gnome.org/show_bug.cgi?id=650750
-[6]: http://www.jonnor.com/wp/?flattrss_redirect&id=381&md5=70db982ae462366ffab84c644c3e3a81
+[0]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego/blobs/master/libmeego-panel/docs/README
+[1]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego
+[2]: http://bugs.meego.com/show_bug.cgi?id=12748
+[3]: http://www.jonnor.com/wp/?flattrss_redirect&id=368&md5=28173de74aaacdd352c6f0953aaebac1
