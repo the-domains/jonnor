@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - gstreamer
-  - drawing
-  - gst-plugins-good
-  - cairo
-  - signal
-  - stream
-  - caps-updated
-  - video
-  - bugreports
-  - vala
-description: 'I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!'
+  - wiki
+  - mypaint
+  - translator
+  - dont
+  - fixed
+  - cassens
+  - avaliable
+  - aur
+  - revay
+  - open-source
+description: "One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own MoinMoin wiki, where I can put all my silly ideas and thoughts."
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:51.657Z'
-dateModified: '2016-02-13T18:05:41.762Z'
+datePublished: '2016-02-13T18:11:51.705Z'
+dateModified: '2016-02-13T18:05:40.995Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,23 +35,26 @@ _type: Article
 ---
 # Jon Nordby
 
-I wrote the initial version of this in late January, and after some interations it was [merged yesterday][0] to gst-plugins-good, and will be in gst-plugins-good 0.10.33\. This solves the [feature request][1] I filed in 2009, one of my oldest bugreports in bugs.gnome.org!
+One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own [MoinMoin][0] wiki, where I can put all my silly ideas and thoughts. Circumstances made it so that I fixed up the norwegian translation of the 1.8.3 version. Due to pure foolishness on my part I did not check if the translation for the upcoming 1.9, so now we have a lot of conflicting strings (circa 200). Yay... Hopefully it will turn out for the better as me and [Jørg Cassens][1], the translator focusing on 1.9, get them in sync again.
 
-### What does it do?
+Recently I've also become involved in [MyPaint][2] development. It's "a fast and easy open-source graphics application for digital painters". You can follow development over at [gitorious][3]. Things fixed untill now:
+[![](http://www.jonnor.com/wp/files/2009-06-16-205144_473x434_scrot-150x150.png)][4]
 
-cairooverlay allows you to draw arbitrary things on top of a video stream in GStreamer using Cairo. Previously you had to create a custom GStreamer element for that (in C/Vala), but now you can just hook up to some signals, using any programming language with GStreamer/Cairo bindings.
+* Filenames in the title bar!
+* Improved file handling; Nice and consistent error messages when trying to open a file that doesnt exist or you dont have permissions to read.
 
-To draw an overlay using this element, you use the "caps-updated" signal to get information about the video stream (like width and height) and the "draw" signal to do the actual drawing. In addition to the Cairo context, the draw signal passes you the timestamp and duration of the buffer, so you can also do animations.
+My artistic skills are severly limited, and I've never used a tablet before but here is the obligatory screenshot. Needless to say, I dont do this awesome program any justice at all. [Here][5] is someone who does (David Revay). But hey, I'm at least halfway there right?!
 
-For more info see the included [example application][2] or the [documentation][3] (should be updated soon). Here is the obligatory screenshot showing the example application drawing a heart onto a test videostream:
-[![](http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped-300x295.png)][4]
+If you are on Arch Linux, packages are avaliable from AUR, both stable version and -git. Somehow I'm also the maintainer of those now... If you are on anything else, you will have to go to the homepage and get it there. Hopefully packages will be in Debian and Ubuntu official repos shortly.  
+Do note that it currently does not build on Windows, or cygwin at the moment. So if you are the type of person that can make such magic happen, please step up for the task!
 
-The heart is actually animated, so I guess I should have had a video. But you'll just have to trust me that it is very cute, or grab the code yourself!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+I hope to do some more adventurous coding on some of my own project ideas soon, but for now I expect to continue contributing bits and pieces on MyPaint to gain some experience.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][6]
 
-[0]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/commit/?id=32dff9df75942c51b3ecbd7ffa394ef755881d50
-[1]: https://bugzilla.gnome.org/show_bug.cgi?id=595520
-[2]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/tree/tests/examples/cairo/cairo_overlay.c
-[3]: http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-good-plugins/html/
-[4]: http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped.png
-[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=371&md5=0a98aab4c045419184024eab3c5d18c3
+[0]: http://www.moinmo.in/
+[1]: http://story.idi.ntnu.no/~cassens/blog/
+[2]: http://mypaint.intilinux.com/
+[3]: http://www.gitorious.org/mypaint
+[4]: http://www.jonnor.com/wp/files/2009-06-16-205144_473x434_scrot.png
+[5]: http://forum.intilinux.com/mypaint-finished-work/david-revoy-(-deevad-)-mypaint-sketchbook-gallery-brushes
+[6]: http://www.jonnor.com/wp/?flattrss_redirect&id=5&md5=b48bdc55508a9fcb6e13f300932fa125
