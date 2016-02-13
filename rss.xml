@@ -4,8 +4,15 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:51 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:13:53 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>In Maliit, all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is hosted on Gitorious, we use their merge requests feature for that purpose. Up until now we have periodically checked the website for changes (potentially going through each and every one of the repositories), and manually mentioned updates in the IRC channel. This is both tedious and inefficient, so I wrote a simple tool to help the issue: Gitorious Merge Request Monitor</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">f8005f94-5379-453b-ac5b-0dc3ef1b224c</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Current status</h2><p>MassifG is an application for visualizing the output of valgrinds massif tool. I am writing it as part of my trainee program here at Openismus. MassifG is free software, available under GPLv3. You will find the git repository at gitorious, and the tarball release for 0.1 here. Packages for Arch are available in AUR.</p></article>]]></description>
@@ -67,13 +74,6 @@
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
             <guid isPermaLink="false">9efa4647-bbc3-4d6e-b6c2-0ce0949b7bf7</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Glom is an application that lets you design database systems, including user interface. It can be run as an ordinary application, and will set up and run a the database server for you automatically. But if you want to set up a shared instance, where several users connect with Glom to the same database, you typically want your database server on a dedicated server. And this can be a bit tricky to set up. So, glom-postgresql-setup was born; A dead-simple utility application to set up a PostgreSQL server for use with Glom. Like Glom, it is written in C++ using Gtkmm.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">3b682ba0-b5a5-4fba-928f-a91a3e56f901</guid>
             <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
         </item>
     </channel>
