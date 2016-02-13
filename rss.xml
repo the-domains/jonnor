@@ -4,8 +4,43 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:11:55 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:12:13 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">9efa4647-bbc3-4d6e-b6c2-0ce0949b7bf7</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Glom is an application that lets you design database systems, including user interface. It can be run as an ordinary application, and will set up and run a the database server for you automatically. But if you want to set up a shared instance, where several users connect with Glom to the same database, you typically want your database server on a dedicated server. And this can be a bit tricky to set up. So, glom-postgresql-setup was born; A dead-simple utility application to set up a PostgreSQL server for use with Glom. Like Glom, it is written in C++ using Gtkmm.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">3b682ba0-b5a5-4fba-928f-a91a3e56f901</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>In Maliit input methods are implemented as plugins. This flexibility is important because it allows the same framework to provide very different text input methods, without us having to implement them all. Different virtual keyboards, hardware keyboard input, handwriting, speech-to-text, input methods for accessibility, et.c. are all possible with the Maliit framework. This makes the input method plugin API the most important extension point.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">b4d9408d-dd5f-4cc8-9729-c12a84263e5e</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Another day, another release. This release fixes:</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">76a255b0-ddea-4299-ac41-4f9986a8e5ec</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>*if your favorite distro is Fedora, Ubuntu, Arch or Gentoo.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">df61cb4f-20d7-42eb-aab2-fc9397d88532</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own MoinMoin wiki, where I can put all my silly ideas and thoughts. Circumstances made it so that I fixed up the norwegian translation of the 1.8.3 version. Due to pure foolishness on my part I did not check if the translation for the upcoming 1.9, so now we have a lot of conflicting strings (circa 200). Yay... Hopefully it will turn out for the better as me and Jørg Cassens, the translator focusing on 1.9, get them in sync again.</p></article>]]></description>
