@@ -2,34 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2009/11/senior-project-screenshot-and-x11ssh-tip/'
+isBasedOnUrl: 'http://www.jonnor.com/2009/09/senior-project-confirmed/'
 inLanguage: en
 starred: false
 keywords:
-  - x11
-  - server
-  - ssh
-  - xauth
-  - nolisten
-  - tcp
-  - xserverrc
-  - forwarding
-  - config
-  - localhost
-description: 'So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least: To get this nice image I had to do some X11 forwarding over SSH through an intermediate server.'
-datePublished: '2016-02-13T20:31:23.865Z'
-dateModified: '2016-02-13T20:16:07.707Z'
+  - cuda
+  - cern
+  - bergen
+  - alice
+  - project
+  - sensor
+  - particle
+  - billionth
+  - nvidia
+  - quark-gluon
+description: 'I will be implementing algorithms on nVidia graphic cards using CUDA for use at CERN. Its a collaboration project between my school, the university of Bergen and a university in Germany (presumably Heidelberg). While a lot of the specifics are still up in the air, it will most likely be for the High Level Trigger system for the ALICE sensor.'
+datePublished: '2016-02-13T20:31:35.333Z'
+dateModified: '2016-02-13T20:17:01.606Z'
 author: []
-related:
-  - score: 0.607191205
-    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
-    title: Servers.com Brings Its Bare-Metal Servers To The US
-    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
-    thumbnail_height: 400
-    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
-    thumbnail_width: 764
+related: []
 app_links: []
-title: Senior project screenshot and X11+SSH tip
+title: Senior project confirmed
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -42,16 +35,15 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Senior project screenshot and X11+SSH tip
+# Senior project confirmed
 
-So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least:
-![](http://www.jonnor.com/wp/files/2009-11-08-003736_1280x800_scrot-300x187.png)
+I will be implementing algorithms on nVidia graphic cards using CUDA for use at CERN. Its a collaboration project between my school, the university of Bergen and a university in Germany (presumably Heidelberg). While a lot of the specifics are still up in the air, it will most likely be for the High Level Trigger system for the ALICE sensor.
 
-To get this nice image I had to do some X11 forwarding over SSH through an intermediate server. And since I'm probably not the only one with such needs and I'm bound to forget how I did it I will post it here.
+ALICE is the sensor system which will be used for studying the biggest particle collisions at CERN when their new particle accelerator gets up and running again this fall and throughout next year. They will be colliding lead nucleus in order to recreate the conditions that existed under 1 billionth of a second after the Big Bang. In these experiments one hopes to find out more about quark-gluon plasma.
 
-Basically I used [this excellent reference][0]. But if you need trusted X11 forwarding (like with ssh -Y instead of -X) you need to generate an xauth file as an extra step when you're on the remote server. That can be done with "xauth generate $DISPLAY ." And the "nolisten tcp" config option that you need to disable locally is usually found in /etc/X11/xinit/xserverrc  
-Additional heads up: if you try and connect with -X in addition to this manual forwarding you are setting up, you might get strange errors like "X connection to localhost:10.0 broken (explicit kill or server shutdown)." So don't do that.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
+Needless to say this is a really exiting project for me. Not a lot of people are so lucky and get to work on such a grand thing for their senior project. I expect plenty of good technical challenges. And who knows, maybe there is even an opportunity for more than a senior project here?
 
-[0]: http://factorial.hu/articles/20080302/more-robust-remote-x-tunneling
-[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=76&md5=4c0bf076f1bac376e2cf9ccf6dddfc4b
+First up is an introductory course in Bergen on the 5th-7th of October to get up to speed and a concrete assignment. I also hope to get some exploratory coding with CUDA before that time.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][0]
+
+[0]: http://www.jonnor.com/wp/?flattrss_redirect&id=26&md5=c78a0de22211b68ff567345bbae25904
