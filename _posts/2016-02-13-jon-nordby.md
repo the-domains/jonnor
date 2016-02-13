@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2014/12/sndflo-0-1-visual-supercollider-sound-programming/'
+isBasedOnUrl: 'http://www.jonnor.com/2015/01/imgflo-0-3/'
 inLanguage: en
 starred: false
 keywords:
-  - supercollider
-  - runtime
-  - sndflo
-  - audio
-  - fbp
-  - graph
-  - websocket
+  - imgflo
+  - gegl
   - flowhub
-  - json
-  - osc
-description: 'SuperCollider is an open source project for real-time audio synthesis and algorithmic composition. It is split into two parts; an interpreter (sclang) implementing the SuperCollider language and the audio synthesis server (scsynth). The server has an directed acyclic graph of nodes which it executes to produce the audio output ( paper| book on internals).'
-datePublished: '2016-02-13T20:35:54.186Z'
-dateModified: '2016-02-13T20:20:19.173Z'
+  - runtimes
+  - gimp
+  - operations
+  - load
+  - image
+  - workflow
+  - vilson
+description: 'Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.'
+datePublished: '2016-02-13T20:36:00.586Z'
+dateModified: '2016-02-13T19:44:28.538Z'
 author: []
 related: []
 app_links: []
-title: 'sndflo 0.1: Visual sound programming in SuperCollider'
+title: 'imgflo 0.3: GEGL metaoperations++'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,47 +35,47 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# sndflo 0.1: Visual sound programming in SuperCollider
+# imgflo 0.3: GEGL metaoperations++
 
-[SuperCollider][0] is an open source project for real-time audio synthesis and algorithmic composition.  
-It is split into two parts; an interpreter (sclang) implementing the SuperCollider _language _and the _audio synthesis server_ (scsynth).  
-The server has an directed acyclic graph of nodes which it executes to produce the audio output ( [paper][1]| [book][2] on internals). It is essentially a dataflow runtime, specialized for the problem domain of real-time audio processing. The client controls the server through OSC messages which manipulates this graph. Typically the client is some SuperCollider code in the sclang interpreter, but one can also use [Clojure,][3][Python][4] or [other clients][5]. It is in many ways quite similar to the [Flowhub][6] visual IDE (a FBP protocol client) and runtimes like [NoFlo][7], [imgflo][8] and [MicroFlo][9].  
-So we decided to make SuperCollider a runtime too: [sndflo][10].
+Time for a new release of [imgflo][0], the image processing [server][1] and dataflow [runtime][2] based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing. Eventually this will also be an extension point for third parties on [our platform][3].
 
-We used SuperCollider for [Piksels & Lines Orchestra][11], a audio performance system which hooked into graphics applications like GIMP, Inkscape, MyPaint, Scribus - and sonified the users actions in the application. A lot of time was spent wrestling with SuperCollider, due to the number of new concepts and myriad of ways to do things, and  
-lack of (well documented) best practices.  
-There is also a tendency to favor very short, expressive constructs (often opaque). An extreme example, here is an album of SuperCollider pieces composed with[][12] (+ [an analysis][13] of some of them).
+By porting the png and jpeg loading operations in GEGL to [GIO][4], we've added support for loading images into imgflo over HTTP or dataURLs. The latter enables opening local file through a file selector in Flowhub. Eventually we'd like to also support [picking from web services][5].
 
-On the contrary sndflo is very focused and opinionated. It exposes Synths as components, which are be wired together using Busses (edges in the graph), allowing to build audio effect pipelines. There are several [known issues and limitations][14], but it has now reached a minimally useful state. Creating Synths components (the individual effects) as a visual graph of UGen (primitives like Sin,Cos,Min,Max,LowPass) components is also within scope and planned for next release.
+Another big feature is allowing to live-code new GEGL operations (in C) and load them. This works by sending the code over to the runtime, which then compiles it into a new .so file and loads it. Newly instatiated operations then uses that revision of code. We currently do not change the active operation of currently running instances, though [we could][6].  
+Operations are never unloaded, due both to a glib limitation and the general trickyness of guaranteeing this to be safe for native code. This is not a big deal as this is a development-only feature, and the memory growth is slow.
 
-The sndflo runtime is itself written [in SuperCollider][15], as an extension. This is to make it easier for those familiar with SuperCollider to understand the code, and to facilitate integration with existing SuperCollider code and tools. For instance setting up a audio pipeline visually using Flowhub+sndflo, then using the Event/Pattern/Stream system in SuperCollider to create an algorithmic composition that drives this pipeline.  
-Because a web browser cannot talk OSC (UDP/TCP) and SuperCollider does not talk WebSocket a [node.js wrapper ][16]converts messages on the [FBP protocol][17] between JSON over WebSocket to JSON over OSC.
+imgflo now supports showing the data going through edges, which is very useful to understand how a particular graph works.
 
-sndflo also implements the remote runtime part of the FBP protocol, which allows seamless interconnection between runtimes. One can _export ports in one runtime_, and then use it as _a component in another runtime_, communicating over one of the supported transports (typically JSON over WebSocket).
-YouTube demo video
+Using Heroku one can [get started][7] without installing anything locally. Eventually we might have installers for common OS'es as well.
 
-<iframe src="http://www.youtube.com/embed/5Rx_WBJD2Mw" frameborder="0" width="420" height="315" style=""></iframe>
+[Vilson Viera][8] added a set of new image filters to the server, inspired by Instagram. Vilson is also working on our image analytics pipeline, the other piece required for intelligent automatic- and semi-automatic image processing.
+[![](http://www.jonnor.com/wp/files/imgflo-instagram-filters-258x300.jpg)][9]
 
-In above example sndflo runs on a Raspberry Pi, and is then used as a component in a NoFlo browser runtime to providing a web interface, both programmed with Flowhub. We could in the same way wire up another FBP runtime, for instance use MicroFlo on Arduino to integrate some physical sensors into the system.  
-Pretty handy for embedded systems, interactive art installations, internet-of-things or other heterogenous systems.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][18]
+GEGL has for a long time supported meta-operations: operations which are built as a sub-graph of other operations. However, they had to be built programatically using the C API which limited tooling support and the platform-specific nature made them hard to distribute.  
+Now GEGL can load such operations from the [JSON format][10] also used by imgflo (and [several][11][other][12][runtimes][13]). This lets one use operations built with Flowhub+imgflo in GIMP:
+[![](http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif)][14]
 
-[0]: http://supercollider.sourceforge.net/
-[1]: http://tim.klingt.org/publications/lac2010_supernova.pdf
-[2]: http://supercolliderbook.net/rossbencinach26.pdf
-[3]: http://overtone.github.io/
-[4]: https://pypi.python.org/pypi/SC/0.2
-[5]: http://supercollider.sourceforge.net/wiki/index.php/Systems_interfacing_with_SC
-[6]: http://flowhub.io/
-[7]: http://noflojs.org/
-[8]: http://imgflo.org/
-[9]: http://microflo.org/
-[10]: http://github.com/jonnor/sndflo
-[11]: http://github.com/piksels-and-lines-orchestra
-[12]: http://supercollider.sourceforge.net/sc140/
-[13]: https://ccrma.stanford.edu/wiki/SuperCollider_Tweets
-[14]: http://github.com/jonnor/sndflo/issues
-[15]: https://github.com/jonnor/sndflo/tree/master/classes
-[16]: https://github.com/jonnor/sndflo/blob/master/sndflo.coffee
-[17]: http://noflojs.org/documentation/protocol
-[18]: http://www.jonnor.com/wp/?flattrss_redirect&id=786&md5=c55240972332c18b06c6d7162ed0155b
+This makes Flowhub+imgflo a useful tool also outside the web-based processing workflow it is primarily built for. Feature is available in GEGL and GIMP master as of [last week][15], and will be released in GIMP 2.10 / GEGL 0.3\.
+
+Next iteration will be primarily about scaling out. Both allowing multiple "apps" (including individual access to graphs and usage monitoring/quotas) served from a single service, and scaling performance horizontally. The latter will be critical when the ~20k+ users who have [signed up][16] start coming onboard.  
+If you have an interest in using our hosted imgflo service outside of The Grid, get in contact.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][17]
+
+[0]: http://imgflo.org/
+[1]: http://github.com/jonnor/imgflo-server
+[2]: http://github.com/jonnor/imgflo
+[3]: https://thegrid.io/
+[4]: https://developer.gnome.org/gio/stable/
+[5]: https://github.com/jonnor/imgflo/issues/28
+[6]: https://github.com/jonnor/imgflo/issues/82
+[7]: http://docs.flowhub.io/getting-started-imgflo/
+[8]: http://automata.cc/
+[9]: http://www.jonnor.com/wp/files/imgflo-instagram-filters.jpg
+[10]: http://noflojs.org/documentation/json/
+[11]: http://noflojs.org/
+[12]: https://github.com/jonnor/javafbp-runtime
+[13]: http://microflo.org/
+[14]: http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif
+[15]: https://git.gnome.org/browse/gegl/commit/?id=564f45bad76eb0f888e628ea70345912dd68cbbb
+[16]: http://thegrid.io/
+[17]: http://www.jonnor.com/wp/?flattrss_redirect&id=798&md5=9145cdc5f635e57c69ccbd8f2096ed61
