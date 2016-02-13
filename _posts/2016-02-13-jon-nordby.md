@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2009/12/on-the-road-to-mypaint-0-8/'
+isBasedOnUrl: 'http://www.jonnor.com/2009/10/ubuntu-9-10-release-party-oslo/'
 inLanguage: en
 starred: false
 keywords:
-  - mypaint
-  - openraster
-  - osx
-  - gimp-integration
-  - gnu
-  - ofc
-  - linux
-  - x11
-  - durian
   - distros
-description: "MyPaint popularity is continuing to grow, much thanks to publicity from the Durian Open Movie project. We're now working on the v0.8 release, which hopefully will be out this year. I wrote a small post on the official site about that here."
-datePublished: '2016-02-13T20:29:35.740Z'
-dateModified: '2016-02-13T19:58:02.807Z'
+  - linux
+  - ubuntu
+  - easypeasy
+  - init
+  - datalagringsdirektivet
+  - shell
+  - upstart
+  - compatible
+  - decent
+description: 'Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community.'
+datePublished: '2016-02-13T20:29:52.027Z'
+dateModified: '2016-02-13T20:00:35.463Z'
 author: []
 related: []
 app_links: []
-title: On the road to MyPaint 0.8
+title: 'Ubuntu 9.10 Release Party, Oslo'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,13 +35,35 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# On the road to MyPaint 0.8
+# Ubuntu 9.10 Release Party, Oslo
 
-MyPaint popularity is continuing to grow, much thanks to publicity from the Durian Open Movie project. We're now working on the v0.8 release, which hopefully will be out this year. I wrote a small post on the official site about that [here][0]. I'm responsible for the translations, and so far we have 11 of them, with a couple more in the works that I know of. Packaging is also picking up, soon most of the major GNU/Linux distros will have MyPaint in the official repos! Even some talk about a Mac OSX version (using X11.app tho).
+Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community. It is one of the most popular distros, and this makes it easy for people to find help when they need it. So, being the curious geek that I am, I had to check out nearest release party for Ubuntu 9.10 (Karmic Koala).
 
-I also plan to do some OpenRaster / GIMP-integration improvements and perhaps a small statusbar. I'm even considering writing a C library (with Python wrappers ofc) for OpenRaster, mostly to sped up saving and loading. A reference implementation would of course be nice to have.  
-But that is somewhat unknown territory for me and I'm not sure if I'm able to set aside the time necessary for such a task... We'll see!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
+The release party in Oslo was hosted by [Redpill-Linpro][0] with food being sponsored by [Freecode][1]. Despite this, I kinda feared that it would be a tiny and unprofessional event. But I'm glad to say that fear was unjustified, as there was both a decent amount of people (50++) and many good presentations. The talks given where:
 
-[0]: http://mypaint.intilinux.com/?p=215
-[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=93&md5=7f693b5e8909d325d7c04045ea79e556
+* What's wrong with the Bourne shell and what can be done about it? - Axel Liljencrantz
+* easypeasy! Norsk Ubuntu-basert distro for Netbooks - Jon Ramvi og Tor Grønsund
+* Bli kjent med Upstart - Stig Sandbeck Mathisen
+* Stopp Datalagringsdirektivet - [Fribit][2]
+
+The first talk was about [fish][3] (friendly interactive shell), why and how it has improved the command line shell both for beginners and experts. I found the authors reasoning to be good, and it did have a lot of nifty features, but I don't think I'll switch away from bash. Mostly because fish breaks compatibility with it, and I think I'd find that tiresome pretty fast.
+
+The thing that amazed me about the [easypeasy][4] guys was how ambitious and serious they were about their distro. They didn't just wanna package something in a slightly different way, but instead do customization and even application development and try to get deals with companies doing web-content. The core ideas centered around simplifications of UI, tailor the OS to the hardware platform and getting the "web"/"cloud" down to the desktop. Not really my cup of tea, but I'm curious as to how they will do.
+
+[Upstart][5] is the program that has replaced the nearly 25 year old init-system (which is responsible for the programs ran in early userspace) in Ubuntu 9.10\. It is asynchronous and has a lot more features, and can be used in a init compatible way. So it might well end up replacing init in other distros as well. Time will tell.
+
+At last there was a short plea to register against "Datalagringsdirektivet", a EU directive that Norway might pass if not vetoed. This directive obliges all ISPs to store information about which users had a given IP for at least 6 months. This means that even if you are not under suspicion your activities are being logged just in case you might be doing something illegally. This is in stark contrast to the principle that one is "innocent until proven otherwise". As such I have signed as being against it [here][6]. And so should you.
+
+Here are some (not very good) pictures I took during the event. Have to link them because WordPress refuses to generate thumbnails for the images. Licensed CC-by-sa.
+
+All in all it was a great event, and I might very well end up going to the next one as well. Which will hopefully be even bigger and better!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
+
+[0]: http://www.jonnor.com/2009/10/ubuntu-9-10-release-party-oslo/www.redpill-linpro.no/
+[1]: http://www.freecode.no/
+[2]: http://fribit.no/
+[3]: http://en.wikipedia.org/wiki/Friendly_interactive_shell
+[4]: http://www.geteasypeasy.com/
+[5]: http://upstart.ubuntu.com/
+[6]: http://datalagringsdirektivet.no/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=55&md5=cd3fa803e09a620a2b93434200c33612
