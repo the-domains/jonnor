@@ -4,77 +4,77 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:30:58 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 22:20:55 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>What is Meego? (my interpretation and some musing)</h2><p>Like most of my colleagues at Openismus I was present at the first Meego conference in Dublin. As usual, I'm probably the last to blog about it. See for instance Friedrich's post, Andre's post or Chris' very detailed post.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">669b1707-73b0-44f0-a159-1219f4d2be40</guid>
-            <pubDate>Sat, 13 Feb 2016 18:15:13 GMT</pubDate>
+            <title><![CDATA[GTK+ application support integrated into Maliit mainline]]></title>
+            <description><![CDATA[<article><h1>GTK+ application support integrated into Maliit mainline</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
+            <link>http://www.jonnor.com/2011/11/gtk-application-support-integrated-into-maliit-mainline/</link>
+            <guid isPermaLink="false">9efa4647-bbc3-4d6e-b6c2-0ce0949b7bf7</guid>
+            <pubDate>Sat, 13 Feb 2016 22:20:32 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[MyPaint developer meetup]]></title>
-            <description><![CDATA[<article><h1>MyPaint developer meetup</h1><p>Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise.</p></article>]]></description>
-            <link>http://www.jonnor.com/2010/05/grapikslabor-mypaint-meetup-attending-lgm2010/</link>
-            <guid isPermaLink="false">edf29f5f-5aff-4c8e-8da3-0978c4528c4b</guid>
-            <pubDate>Sat, 13 Feb 2016 18:29:59 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Qt projects you said?</h2><p>I've actually been back close to a week now, but never mind that...</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">faf9e50f-f1b1-43d7-805c-1d5e38021686</guid>
-            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Roadmap</h2><p>MassifG is an application for visualizing the output of valgrinds massif tool. See the first release announcement for more info. Here is the high level list of changes since version 0.1:</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">ae24978b-ea1c-4050-a918-98c3c9f6d0f2</guid>
-            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Better late than never (links go to the announcements):</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <title><![CDATA[First stable releases of misc. OpenRaster stuff]]></title>
+            <description><![CDATA[<article><h1>First stable releases of misc. OpenRaster stuff</h1><p>Better late than never (links go to the announcements):</p></article>]]></description>
+            <link>http://www.jonnor.com/2010/10/first-stable-releases-of-misc-openraster-stuff/</link>
             <guid isPermaLink="false">a8350bb0-8e6a-4225-8d71-55684345c89c</guid>
-            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
+            <pubDate>Sat, 13 Feb 2016 20:29:41 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>OpenRaster</h2><p>I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from here.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">7c269275-18d4-4aa4-8eb1-f702416d0d09</guid>
-            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
+            <title><![CDATA[imgflo 0.3: GEGL metaoperations++]]></title>
+            <description><![CDATA[<article><h1>imgflo 0.3: GEGL metaoperations++</h1><p>Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing. Eventually this will also be an extension point for third parties on our platform.</p></article>]]></description>
+            <link>http://www.jonnor.com/2015/01/imgflo-0-3/</link>
+            <guid isPermaLink="false">5037bc42-39b8-47f1-952c-2360e493756e</guid>
+            <pubDate>Sat, 13 Feb 2016 20:36:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Enter MsgFlo</h2><p>At The Grid we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( GSS to CSS compilation) and image processing.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">f817deae-7082-4f14-b9e4-223ae3a8452a</guid>
-            <pubDate>Sat, 13 Feb 2016 18:13:26 GMT</pubDate>
+            <title><![CDATA[sndflo 0.1: Visual sound programming in SuperCollider]]></title>
+            <description><![CDATA[<article><h1>sndflo 0.1: Visual sound programming in SuperCollider</h1><p>SuperCollider is an open source project for real-time audio synthesis and algorithmic composition. It is split into two parts; an interpreter (sclang) implementing the SuperCollider language and the audio synthesis server (scsynth). The server has an directed acyclic graph of nodes which it executes to produce the audio output ( paper| book on internals). It is essentially a dataflow runtime, specialized for the problem domain of real-time audio processing. The client controls the server through OSC messages which manipulates this graph. Typically the client is some SuperCollider code in the sclang interpreter, but one can also use Clojure,Python or other clients. It is in many ways quite similar to the Flowhub visual IDE (a FBP protocol client) and runtimes like NoFlo, imgflo and MicroFlo. So we decided to make SuperCollider a runtime too: sndflo.</p></article>]]></description>
+            <link>http://www.jonnor.com/2014/12/sndflo-0-1-visual-supercollider-sound-programming/</link>
+            <guid isPermaLink="false">8d9858c6-1967-4510-a5d3-0884022c6fd1</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:54 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>I will be implementing algorithms on nVidia graphic cards using CUDA for use at CERN. Its a collaboration project between my school, the university of Bergen and a university in Germany (presumably Heidelberg). While a lot of the specifics are still up in the air, it will most likely be for the High Level Trigger system for the ALICE sensor.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">dd999680-806a-4f91-98ab-4d1776942d2d</guid>
-            <pubDate>Sat, 13 Feb 2016 18:13:26 GMT</pubDate>
+            <title><![CDATA[Going to Libre Graphics Meeting 2014]]></title>
+            <description><![CDATA[<article><h1>Going to Libre Graphics Meeting 2014</h1><p>LGM2014 will happen April 2-5th in Leipzig, Germany and this will be my fifth year attending. In fact LGM 2010 in Brussels was my first international conference ever, and convinced me that I wanted to make open source professionally.</p></article>]]></description>
+            <link>http://www.jonnor.com/2014/02/going-to-libre-graphics-meeting-2014/</link>
+            <guid isPermaLink="false">6c26ddec-7c73-445f-8c62-00a9012e87ae</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:48 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Talks/topics</h2><p>I've attended a small workshop/seminar in Bergen (at IFT) about nVidia CUDA and its use in the ALICE project at CERN. The goal for me and the other students from Vestfold University College was to get a concrete task for our senior project and to get up to speed on some of the things we need to get started.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">3e41c7df-9bdc-448f-917d-c9b067f9aeab</guid>
-            <pubDate>Sat, 13 Feb 2016 18:13:25 GMT</pubDate>
+            <title><![CDATA[Participating in Libre Graphics Research Unit residency]]></title>
+            <description><![CDATA[<article><h1>Participating in Libre Graphics Research Unit residency</h1><p>Following the Piksels & Lines research meeting in June and being accepted in the call for proposals I am now taking part in the Piksel & Lines Orchestra residency, hosted by Piksel and LGRU, together with media artist and engineer Brendan Howell. Together we will further develop the Piksels & Lines Orchestra, a system that turns the traditional libre graphics tools (like MyPaint, GIMP, Inkscape, Scribus) into instruments for use in an performance setting.</p></article>]]></description>
+            <link>http://www.jonnor.com/2012/11/participating-in-libre-graphics-research-unit-residency/</link>
+            <guid isPermaLink="false">cbfdf398-6b11-41f3-a72e-8013fa3f8b41</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:41 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Seminar</h2><p>Last week I was so lucky as to attend the 3rd Libre Graphics Research Unit ( LGRU) meeting in beautiful Bergen, Norway.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">72e77c9d-cf4a-41a2-ba2d-d371187e31c8</guid>
-            <pubDate>Sat, 13 Feb 2016 18:13:25 GMT</pubDate>
+            <title><![CDATA[Hello Oslo, Hello Squarehead Technology]]></title>
+            <description><![CDATA[<article><h1>Hello Oslo, Hello Squarehead Technology</h1><p>Two years after moving to Berlin and joining Openismus, it is time for another big change. I learned a lot while at Openismus, and had a lot of fun both in and outside of working hours. Those of you who have been to the barbecue parties know what a great bunch of people they are. I'm very glad to see that they are now going strong again.</p></article>]]></description>
+            <link>http://www.jonnor.com/2012/10/hello-oslo-hello-squarehead-technology/</link>
+            <guid isPermaLink="false">f4331e90-b7de-4234-9d09-869fe48c9be5</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:38 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Libre Graphics Meeting 2013: We want you]]></title>
+            <description><![CDATA[<article><h1>Libre Graphics Meeting 2013: We want you</h1><p>Are you interested in the overlap between technology, art and design; and free, open, libre tools that join these domain? Do you use Libre Graphics software like GIMP, Blender, Krita, Inkscape, Scribus, MyPaint (and similar), and want to meet the people behind them? Are you a developer of free and open source software in the areas of photography, graphics, page layout, design, publishing, typography, animation or video?</p></article>]]></description>
+            <link>http://www.jonnor.com/2013/02/libre-graphics-meeting-2013-we-want-you/</link>
+            <guid isPermaLink="false">069a72b8-6021-472b-b09e-770365a3acec</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:29 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Combining PySide and PyGObject introspection bindings]]></title>
+            <description><![CDATA[<article><h1>Combining PySide and PyGObject introspection bindings</h1><p>Some while back I added basic GObject Introspection support to GEGL and GEGL-GTK master a while back. This will* allow application developers to write their Gegl + Gtk based applications in any language supported by GObject Introspection, like Python, Vala and Javascript. For GeglQt, the Qt integration library for using Gegl in Qt based applications, it was natural to use PySide to provide Python bindings for it. The initial setup was quick and easy, thanks to the binding tutorial, but there was one challenge.</p></article>]]></description>
+            <link>http://www.jonnor.com/2011/08/combining-pyside-and-pygobject-introspection-bindings/</link>
+            <guid isPermaLink="false">02117141-4a4f-46cc-ba25-fd7716b94323</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:24 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Workshop & BoF schedule at Desktop Summit 2011 published]]></title>
+            <description><![CDATA[<article><h1>Workshop & BoF schedule at Desktop Summit 2011 published</h1><p>We in the the organizing team have now published the schedule for pre-registered Workshop & BoF sessions at the Desktop Summit 2011 in Berlin.</p></article>]]></description>
+            <link>http://www.jonnor.com/2011/07/workshop-bof-schedule-at-desktop-summit-2011-published/</link>
+            <guid isPermaLink="false">f57a5da3-1ed0-48ef-b2dd-4bd194ed7ebc</guid>
+            <pubDate>Sat, 13 Feb 2016 20:35:17 GMT</pubDate>
         </item>
     </channel>
 </rss>
