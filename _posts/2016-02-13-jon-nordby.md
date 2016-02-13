@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - maliit
-  - keyboard
-  - gnome
-  - fedora
-  - theming
-  - layouts
-  - meego
-  - gnu
-  - enchanced
-  - input
-description: 'Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms". This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it.'
+  - distros
+  - linux
+  - ubuntu
+  - easypeasy
+  - init
+  - datalagringsdirektivet
+  - shell
+  - upstart
+  - compatible
+  - decent
+description: 'Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:52.981Z'
-dateModified: '2016-02-13T18:05:38.465Z'
+datePublished: '2016-02-13T18:11:53.318Z'
+dateModified: '2016-02-13T18:05:34.507Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,34 +35,33 @@ _type: Article
 ---
 # Jon Nordby
 
-Maliit (also known as Meego Input Methods) has the following [overall goal][0]: "to be _the_ input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".
+Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community. It is one of the most popular distros, and this makes it easy for people to find help when they need it. So, being the curious geek that I am, I had to check out nearest release party for Ubuntu 9.10 (Karmic Koala).
 
-This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it. The demo is done on a WeTab tablet running a standard Fedora 15 Beta, with the latest Maliit software installed. Jan Arne Petersen is working a bit on Fedora packages, so hopefully it will soon be easy to install for those who are interested.
+The release party in Oslo was hosted by [Redpill-Linpro][0] with food being sponsored by [Freecode][1]. Despite this, I kinda feared that it would be a tiny and unprofessional event. But I'm glad to say that fear was unjustified, as there was both a decent amount of people (50++) and many good presentations. The talks given where:
 
-Some more info about the features shown in above video:
+* What's wrong with the Bourne shell and what can be done about it? - Axel Liljencrantz
+* easypeasy! Norsk Ubuntu-basert distro for Netbooks - Jon Ramvi og Tor Grønsund
+* Bli kjent med Upstart - Stig Sandbeck Mathisen
+* Stopp Datalagringsdirektivet - [Fribit][2]
 
-**0\. Theming.** Using the theming support in the standard Maliit keyboard, it is easy to go from a mockup to ready implemented theming. This theme was based on the [mockup from live.gnome.org][1] (by Jakub Steiner I believe?) and done by Michael Hasselmann in a couple of hours. He also has a blogpost on [how the theming system works][2].
+The first talk was about [fish][3] (friendly interactive shell), why and how it has improved the command line shell both for beginners and experts. I found the authors reasoning to be good, and it did have a lot of nifty features, but I don't think I'll switch away from bash. Mostly because fish breaks compatibility with it, and I think I'd find that tiresome pretty fast.
 
-**1\. Typing text**.This is of course the number one feature of an on-screen keyboard. There are some essential best-practice and some tricks used in Maliit to be able to get really good reponse time and typing speeds. I hope we will have some blogposts about that soon.
+The thing that amazed me about the [easypeasy][4] guys was how ambitious and serious they were about their distro. They didn't just wanna package something in a slightly different way, but instead do customization and even application development and try to get deals with companies doing web-content. The core ideas centered around simplifications of UI, tailor the OS to the hardware platform and getting the "web"/"cloud" down to the desktop. Not really my cup of tea, but I'm curious as to how they will do.
 
-Typing speed can be further enchanced by enabling multitouch support (not working out-of-the-box in Fedora due to missing support further down the stack), or by installing a prediction/correction engine. User feedback can be enchanced with audatory and tactile feedback (requires hardware and driver support obviously).
+[Upstart][5] is the program that has replaced the nearly 25 year old init-system (which is responsible for the programs ran in early userspace) in Ubuntu 9.10\. It is asynchronous and has a lot more features, and can be used in a init compatible way. So it might well end up replacing init in other distros as well. Time will tell.
 
-**2\. Different languages/layouts**, and switching between them. Maliit comes with layouts for over 20 languages, tested and tweaked by usability experts. Latin, Cyrillic, Arabic and Chinese based scripts are covered. The layouts are defined by XML files, so one can easily change them if wanted.
-[![](http://www.jonnor.com/wp/files/chinese_zhuyin-150x150.png)][3]
-[![](http://www.jonnor.com/wp/files/arabic_crop-150x150.png)][4]
-[![](http://www.jonnor.com/wp/files/russian_crop-150x150.png)][5]
+At last there was a short plea to register against "Datalagringsdirektivet", a EU directive that Norway might pass if not vetoed. This directive obliges all ISPs to store information about which users had a given IP for at least 6 months. This means that even if you are not under suspicion your activities are being logged just in case you might be doing something illegally. This is in stark contrast to the principle that one is "innocent until proven otherwise". As such I have signed as being against it [here][6]. And so should you.
 
-For more of the features offered by Maliit framework and standard keyboard, see the [wiki page][6]. If you are interested in improving Maliit, or its integration in Gnome 3 or other GNU/Linux environment, join the [irc channel or mailing list][7].
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+Here are some (not very good) pictures I took during the event. Have to link them because WordPress refuses to generate thumbnails for the images. Licensed CC-by-sa.
 
-Next up; the importance and difficulties of input method integration on touch enabled devices.
+All in all it was a great event, and I might very well end up going to the next one as well. Which will hopefully be even bigger and better!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
 
-[0]: http://wiki.meego.com/Maliit#Goals
-[1]: https://live.gnome.org/GnomeShell/Design/Whiteboards/ScreenKeyboard
-[2]: http://taschenorakel.de/michael/2011/04/10/customizing-meego-keyboard/
-[3]: http://www.jonnor.com/wp/files/chinese_zhuyin.png
-[4]: http://www.jonnor.com/wp/files/arabic_crop.png
-[5]: http://www.jonnor.com/wp/files/russian_crop.png
-[6]: http://wiki.meego.com/Maliit#Features
-[7]: http://wiki.meego.com/Maliit#Communication_channels
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=394&md5=3c8794eadd2099c06b751189e7973bcb
+[0]: http://www.jonnor.com/2009/10/ubuntu-9-10-release-party-oslo/www.redpill-linpro.no/
+[1]: http://www.freecode.no/
+[2]: http://fribit.no/
+[3]: http://en.wikipedia.org/wiki/Friendly_interactive_shell
+[4]: http://www.geteasypeasy.com/
+[5]: http://upstart.ubuntu.com/
+[6]: http://datalagringsdirektivet.no/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=55&md5=cd3fa803e09a620a2b93434200c33612
