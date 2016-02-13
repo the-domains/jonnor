@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2010/11/mypaint-on-meego/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/10/qt-developer-days-2010-and-more/'
 inLanguage: en
 starred: false
 keywords:
-  - pygtk
-  - mypaint
+  - conference
   - meego
-  - netbook
-  - ideapad
-  - pixbufs
-  - numeric
-  - buut
-  - numpy
-  - obs
-description: 'When I got back from the Meego conference, I tried building MyPaint on the Ideapad I got (which runs Meego Netbook 1.1). I was pleasantly surprised to find pygtk in the core repositories. numpy on the other hand was missing but that was easy to build from source.'
-datePublished: '2016-02-13T20:32:00.578Z'
-dateModified: '2016-02-13T20:19:09.528Z'
+  - gnome
+  - business-y
+  - guadec
+  - co-workers
+  - enterprise-y
+  - openismus
+  - 6th-12th
+  - humboldt
+description: "Next week I'm going to Qt Developer Days in Munich where I will be attending Qt training and technical talks. And almost just as importantly, meet and talk to people who do related things to what we do at Openismus."
+datePublished: '2016-02-13T20:34:44.273Z'
+dateModified: '2016-02-13T20:22:53.066Z'
 author: []
 related: []
 app_links: []
-title: MyPaint on Meego?
+title: Qt Developer Days 2010 and more
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,16 +35,22 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# MyPaint on Meego?
+# Qt Developer Days 2010 and more
 
-When I got back from the Meego conference, I tried building [MyPaint][0] on the Ideapad I got (which runs Meego Netbook 1.1).
+Next week I'm going to [Qt Developer Days][0] in Munich where I will be attending [Qt training][1] and [technical talks][2]. And almost just as importantly, meet and talk to people who do related things to what we do at [Openismus][3]. I suspect the overall style and feel of this conference will be quite different from past free and open source software events I've been to (like GUADEC and Libre Graphics Meeting). More business-y, perhaps even enterprise-y? None the less, looking forward to it.
 
-I was pleasantly surprised to find pygtk in the core repositories. numpy on the other hand was missing but that was easy to build from source. Buut, it seems that pygtk is built without numeric support, making MyPaint unusable; numeric support is used to get access to the pixels in pygtk pixbufs, which we need for several central things.  
-I have of course [filed a bug][1] for this so hopefully it will be resolved soon. If not I will have to provide alternative pygtk packages using the community OBS. In any case, expect it to be working soon.
+In related news, I'm also involved as part of the local team for [Desktop Summit 2011][4], along with several of my co-workers. The initial announcements have just been made public; the conference will be held in Berlin August 6th-12th, at Humboldt University. Mark your calendars See for instance the [story by the GNOME Foundation][5], the [official website][4] or the [original announcement][6] for more information.
+![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_wink.gif)
 
-I also hope to adapt MyPaint's UI to the handset and netbook/tablet form factor, but this is only talk so far.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][2]
+Hopefully I will also be going to the [Meego conference][7] in Dublin in November. Fingers crossed!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
 
-[0]: http://www.mypaint.info/
-[1]: http://bugs.meego.com/show_bug.cgi?id=10195
-[2]: http://www.jonnor.com/wp/?flattrss_redirect&id=325&md5=7ba79cb8c9f62180b864ebf4412d9b5d
+[0]: http://qt.nokia.com/qtdevdays2010
+[1]: http://qt.nokia.com/qtdevdays2010/training
+[2]: http://qt.nokia.com/qtdevdays2010/techtrack
+[3]: http://openismus.com/
+[4]: http://www.desktopsummit.org/
+[5]: http://blogs.gnome.org/foundation/2010/10/06/kde-and-gnome-desktop-summit-2011-from-6-to-12-august/
+[6]: http://www.gnome.org/press/releases/2010-10-desktop-summit-2011-berlin.html
+[7]: http://conference2010.meego.com/
+[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=279&md5=1933bd280646b304a7c4a9705672a57d
