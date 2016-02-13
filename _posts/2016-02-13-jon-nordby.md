@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/12/the-maliit-buildbot/'
+isBasedOnUrl: 'http://www.jonnor.com/2012/03/maliit-on-windows-basic-build-working/'
 inLanguage: en
 starred: false
 keywords:
   - maliit
-  - build-bot
-  - automating
-  - variations
-  - testing
-  - instance
+  - windows
+  - plugins
+  - input
   - build
-  - etc
-  - meta-builds
-  - components
-description: 'After having set up the typical things open source projects needs like a website/wiki, mailing-list and bug-tracker, Maliit now also has something not so common: a build-bot. As Maliit consists of several components that can be built in several different ways (and for several different platforms), we wanted to automate the build and tests of the different variations to ensure that we do not break any of them.'
-datePublished: '2016-02-13T20:30:19.228Z'
-dateModified: '2016-02-13T20:13:09.019Z'
+  - method
+  - development
+  - enable
+  - todo-list
+  - application-hosted
+description: 'Enabling third-party developers of input methods is one of the primary goals in the Maliit project. In an attempt to improve this story I spent some time on getting Maliit to work on Windows. Since we use Qt there were few changes needed to the code, but since we use qmake, quite many to the build system.'
+datePublished: '2016-02-13T20:30:23.439Z'
+dateModified: '2016-02-13T20:11:41.336Z'
 author: []
 related: []
 app_links: []
-title: The Maliit buildbot
+title: 'Maliit on Windows: Basic build working'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,30 +35,27 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-### The Maliit buildbot
+# Maliit on Windows: Basic build working
 
-After having set up the typical things open source projects needs like a website/wiki, mailing-list and bug-tracker, [Maliit][0] now also has something not so common: [a build-bot][1].
+Enabling third-party developers of input methods is one of the primary goals in the Maliit project. In an attempt to improve this story I spent some time on getting Maliit to work on Windows.
 
-As Maliit consists of several components that can be built in several different ways (and for several different platforms), we wanted to automate the build and tests of the different variations to ensure that we do not break any of them. This is especially important for variations which are not easy to test for the individual developers, like for instance [Maliit on Qt 5][2].
+Since we use Qt there were few changes needed to the code, but since we use qmake, quite many to the build system. One of the bigger changes was making glib-dbus and qdbus optional, which is also useful for Maliit on embedded systems.
 
-The software chosen to help with this task was [Buildbot][3]. Getting an initial instance it up and running was very quick and pain-free, especially thanks to packages being easily available and the [excellent documentation][4]. The current setup now builds, tests and installs the two major components we have: Maliit Framework and Maliit (Reference) Plugins, in the most important build/config variations we have. A total of 12 individual build jobs, plus 2 meta-builds. The configuration for the instance can be found in the [maliit-buildbot-configuration][5] repository.
+With the Windows build fixes merge requests [for maliit-framework][0] and [for maliit-plugins][1], one can now [build Maliit on Windows][2] and run the provided example applications. This feature is currently being reviewed and should be in the next Maliit release.
+[![](http://www.jonnor.com/wp/files/2012-03-13-155530_2704x1050_scrot_crop-300x225.png)][3]
 
-For security reasons the build-bot is not directly exposed to the Internet. Instead a script runs every 5 minutes to generate a static HTML website and publish on the public web-server: [Maliit build-bot][1]
+Thanks to the standalone viewer application for Maliit Keyboard this allows one to develop new features, theming and language layouts for it on Windows.
 
-This gives us a minimal continuous integration system for Maliit, which for now will hopefully helps us avoid breakage. In the future, the usage of the build-bot might extend to include:
+Sadly loading an input method plugin in the maliit server crashes for an [unknown reason][4]. With my limited Windows software development experience I was not able to solve this within the couple of days I had available. This is necessary for application-hosted Maliit to work and to enable general development of Maliit input method plugins (not just maliit-keyboard). Help would be much appreciated, even just someone checking if it is reproducible on another Windows system.
 
-* Automating [the release process][6]
-* Testing of merge-requests/patches before merging to master
-* Automated integration/system testing, complementing the unit-tests
-* Triggering external builders for packaging. OpenSUSE OBS, Maemo 5 Garage, etc.
-* Automating certain aspects of bug-lifetime. Resolving when fix is committed, closing on release if pre-verified, etc
+Also [left on the todo-list][5] due to lack of time is to set up a Windows build slave for [the Maliit buildbot][6], to test that the build continues to work on Windows and to produce executables.
 [![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
 
-[0]: http://www.maliit.org/
-[1]: http://maliit.jonnor.com/buildbot
-[2]: http://blog.jpetersen.org/2011/12/07/maliit-and-qt5/
-[3]: http://trac.buildbot.net/
-[4]: http://buildbot.net/buildbot/docs/current/full.html
-[5]: https://gitorious.org/maliit/maliit-buildbot-configuration
-[6]: https://wiki.maliit.org/Development/Making_Releases
-[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=518&md5=61c2d50ad1e71f7e3d5128ee1c338cde
+[0]: https://gitorious.org/maliit/maliit-framework/merge_requests/165
+[1]: https://gitorious.org/maliit/maliit-plugins/merge_requests/50
+[2]: https://wiki.maliit.org/Documentation/Installing#From_source_code_.28Windows.29
+[3]: http://www.jonnor.com/wp/files/2012-03-13-155530_2704x1050_scrot_crop.png
+[4]: https://bugs.maliit.org/show_bug.cgi?id=111
+[5]: https://bugs.maliit.org/show_bug.cgi?id=112
+[6]: http://www.jonnor.com/2011/12/the-maliit-buildbot/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=538&md5=d85622fb2dd3b4c95db3480c57b19d0c
