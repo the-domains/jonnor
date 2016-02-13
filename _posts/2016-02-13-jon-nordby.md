@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - geglnode
   - gegl
-  - pyobj
-  - geglnodeptr
-  - pygobject
-  - pyobject
-  - gobject
-  - inline
-  - python
-  - static
-description: ''
+  - mypaint
+  - piksel
+  - applications
+  - libre
+  - graphics
+  - lgru
+  - vector
+  - workshop
+  - interoperability
+description: 'Last week I was so lucky as to attend the 3rd Libre Graphics Research Unit ( LGRU) meeting in beautiful Bergen, Norway. The meeting was titled Piksels and Lines and had "a particular focus on improvements, interoperability between and fringe use of F/LOSS graphic bitmap and vector software, as well as generative software used in performative contexts."'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:57.764Z'
-dateModified: '2016-02-13T18:04:59.126Z'
+datePublished: '2016-02-13T18:11:57.804Z'
+dateModified: '2016-02-13T18:04:55.783Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,38 +35,86 @@ _type: Article
 ---
 # Jon Nordby
 
-Some while back I added basic GObject Introspection support to [GEGL][0] and GEGL-GTK master a while back. This will\* allow application developers to write their Gegl + Gtk based applications in any language supported by [GObject Introspection][1], like Python, Vala and Javascript. For GeglQt, the [Qt][2] integration library for using Gegl in Qt based applications, it was natural to use [PySide][3] to provide Python bindings for it. The initial setup was quick and easy, thanks to the [binding tutorial][4], but there was one challenge.
+Last week I was so lucky as to attend the 3rd Libre Graphics Research Unit ( [LGRU][0]) meeting in [beautiful Bergen][1], Norway.
 
-The current widgets provided by GeglQt are for displaying the output of a node in the GEGL graph. Therefore they have methods with the following signature to hook up it up:
+The meeting was titled [_Piksels and Lines_][2] and had "a particular focus on improvements, interoperability between and fringe use of F/LOSS graphic bitmap and vector software, as well as generative software used in performative contexts."
 
-    [From gegl-qt/nodeviewwidget.h][5] GeglNode *inputNode() const; void setInputNode(GeglNode *node);
+The meeting was structured into three different areas: Seminar, Workshop and Performance.
 
-_GeglNode_ is a _GObject_ (from the C based [glib][6]) subclass, and without help the bindings generator (Shiboken) does not know what to do with it so the method cannot be bound. PySide could have been used to also generate bindings for Gegl itself, but what we actually want to do is to make use of the existing PyGObject based bindings.
+### Seminar
 
-[Marcelo Lira][7] on \#pyside let me know that this should be possible by adding some annotations to the typesystem.xml file, and implementing a Shiboken::Converter<T\>. It is indeed possible, and for the above type looks something like this:
+The attendants that were invited for the meeting each did a presentation of their choosing. They were recorded and are available in the [online archive][3] of the seminar. The video quality leaves something to be desired, but the audio is generally good.
 
-    [From typesystem_gegl-qt.xml][8] <primitive-type name="GeglNodePtr"> <conversion-rule file="geglnode_conversions.h"/> <include file-name="pygobject.h" location="global"/> </primitive-type> 
+The presentations I found particularly interesting were:
 
-    [From geglnode_conversions.h][9] namespace Shiboken { template<> struct Converter<GeglNodePtr> { static inline bool checkType(PyObject* pyObj) { return GEGL_IS_NODE(((PyGObject *)pyObj)->obj); } static inline bool isConvertible(PyObject* pyObj) { return GEGL_IS_NODE(((PyGObject *)pyObj)->obj); } static inline PyObject* toPython(void* cppObj) { return pygobject_new(G_OBJECT((cppObj))); } static inline PyObject* toPython(const GeglNodePtr geglNode) { return pygobject_new(G_OBJECT(geglNode)); } static inline GeglNodePtr toCpp(PyObject* pyObj) { return GEGL_NODE(((PyGObject *)pyObj)->obj); } }; }
+I gave a presentation titled _MyPaint and cross-application workflows_. It was an introduction to MyPaint as a creative tool, how it combines raster and vector (piksels and lines) concepts, and my perspective on interoperability between libre graphics applications.
+[![](http://www.jonnor.com/wp/files/2012-06-11-142050_1280x1600_scrot_crop.png)][4]
 
-The PyGObject C API and the GObject type system is here being used to implement what Shiboken needs. The attentive reader will note that _GeglNodePtr_ is used and not _GeglNode\*_. This is a simple " _typedef GeglNode \* GeglNodePtr_ ", which looks to be neccesary with current PySide (1.0.6) to avoid it being confused by the pointer. Hopefully that is fixable and won't be necessary in the future.
+### Workshop
+[![](http://www.jonnor.com/wp/files/P1050978_medium-300x225.jpg)][5]
 
-With this solved, I committed the [initial Python support][10] to GeglQt master yesterday. It contains a [trivial Python example][11] showing the usage. Some build cleanups, binding generator tweaks and testing remains to be done, but expect Python support to be a prominent feature for GeglQt 0.1.0
+I had hoped to hack some code for one of my existing ideas during the workshops. That did not happen. Instead I ended up hacking specifications. Maybe that is just as good. Hacking one can always do later, hashing out and documenting ideas has to be done while it is fresh.
 
-\* There are still a lot of GObject Introspection annotations missing in Gegl. See the [tracking bug][12]. Help wanted!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][13]
+First the results of some discussions with Øyvind Kolås, the [GEGL][6] maintainer:
 
-[0]: http://www.gegl.org/
-[1]: https://live.gnome.org/GObjectIntrospection
-[2]: http://qt.nokia.com/
-[3]: http://www.pyside.org/
-[4]: http://developer.qt.nokia.com/wiki/PySide_Binding_Generation_Tutorial
-[5]: http://git.gnome.org/browse/gegl-qt/tree/gegl-qt/nodeviewwidget.h
-[6]: http://developer.gnome.org/glib/
-[7]: http://setanta.wordpress.com/
-[8]: http://git.gnome.org/browse/gegl-qt/tree/pygegl-qt/typesystem_gegl-qt.xml
-[9]: http://git.gnome.org/browse/gegl-qt/tree/pygegl-qt/geglnode_conversions.h
-[10]: http://git.gnome.org/browse/gegl-qt/commit/?id=1a444f65ff80bb15bd43ea1a0206345b83c665e6
-[11]: http://git.gnome.org/browse/gegl-qt/tree/examples/pyside-basic.py
-[12]: https://bugzilla.gnome.org/show_bug.cgi?id=645822
-[13]: http://www.jonnor.com/wp/?flattrss_redirect&id=453&md5=e9ce019de8f99aa917a8af716dfc8639
+**A journal for GEGL**: transaction log over changes made to a GEGL graph. [Specification][7]. [Discussion][8]. This feature would allow for applications based on GEGL to:
+
+* Implement non-linear histories (undo/redo), and a timeline of the changes
+* Store the history in a document like OpenRaster
+* Share the history between different applications
+* Let multiple applications to work on the same document at the same time
+
+**A strategy for improved file format support in GEGL**, and using this to improve file support and interoperability in libre graphics applications. [Proposed plan][9].
+
+Executing this plan would move a lot of the existing file format support from GIMP (PSD, XCF, OpenRaster) down into GEGL so that it can be reused across applications. And would then let GEGL provide image support plugins for GdkPixbuf and QImage - so that at the very least - previews will work _everywhere_.
+
+Chatting with Egil Möller, creator of Sketchspace, also resulted in:
+
+**A web based system supporting a continuous work-flow from free-hand**  
+**sketch to finished product**. [Concept and mockups][10]
+
+"Imagine starting from a freehand drawing or imported raster image and _gradually_ refining this into a technical document with illustrations, UML-diagrams or even running code or a 3d model."
+
+Refining here means that the user guides the tool to transform freehand sketch into vector paths, then into vector shapes, then into something domain-specific and formal like UML - by adding additional data like annotations, strengthening of lines to "disambiguating" the transformation.
+
+Needless to say, this is more a visionary thing. Realizing this would involve finding good solutions to a fair amount of computer vision problems.
+
+**Making GEGL available for use in web-based applications**. [Proposal][11].
+
+More on the concrete side: allow GEGL to be used in interactive or batch-oriented web applications, or in native applications based on web technologies (Javascript, HTML5 user interfaces).
+
+Some of the discussions also resulted in me writing down the [strategy for GEGL integration in MyPaint][12] and the related ideas/plans for how to [improve the performance][13] of the MyPaint brush engine.
+
+Now we just need to implement all the stuff... Contributions welcomed!
+
+### Performance
+
+Since [Piksel][14], with a long history in generative performance arts, was the hosting organization it was not surprising a project in that area materialized.
+
+A workshop session hosted by media artist [Brendan Howell][15] called _Demonstrating the Unexpected _came up with the idea of the _Piksels & Lines Orchestra (PLO)_: think of the collaborative use of our traditional libre graphics software as an orchestra. The applications, from MyPaint to Scribus, are instruments; the people using them players; a performance the use of these instruments. Can we create an experience for an audience based on this framework? How would it sound? How would it look?
+
+Having plenty of code-crafting people available, the next afternoon it was decided to spend a couple of hours realizing a prototype. The [LGRU blog has the details][16]. We recorded video of our initial performances with this prototype as well, but that has sadly not made it online yet...
+
+### Thanks!
+
+Thanks a lot to Piksel and LGRU for sponsoring my attendance, and the EU Culture Programme and Bergen municipality for funding activities that support libre graphics and free culture!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][17]
+
+[0]: http://lgru.net/
+[1]: http://www.flickr.com/search/?q=bergen&f=hp
+[2]: http://www.piksel.no/pulse/lgru
+[3]: http://piksel.no/dmmdb/index.php?channel=PikselLines
+[4]: http://piksel.no/dmmdb//contents/piksellines420120706-102121-b-dl.ogg
+[5]: http://www.jonnor.com/wp/files/P1050978_medium.jpeg
+[6]: http://gegl.org/
+[7]: http://git.gnome.org/browse/gegl/tree/docs/journal.txt
+[8]: https://mail.gnome.org/archives/gegl-developer-list/2012-June/msg00004.html
+[9]: https://mail.gnome.org/archives/gegl-developer-list/2012-June/msg00003.html
+[10]: http://beta.primarypad.com/p/sketchspaced
+[11]: https://mail.gnome.org/archives/gegl-developer-list/2012-June/msg00010.html
+[12]: https://gitorious.org/mypaint/mypaint/blobs/HEAD/README.gegl#line45
+[13]: https://gitorious.org/mypaint/mypaint/blobs/HEAD/brushlib/PERFORMANCE
+[14]: http://www.jonnor.com/2012/06/piksels-and-lines-libre-graphics-research-unit-seminar-in-bergen/www.piksel.no
+[15]: http://www.wintermute.org/brendan/
+[16]: http://blogs.lgru.net/ft/theme/piksels-and-lines/turning-tools-into-instruments
+[17]: http://www.jonnor.com/wp/?flattrss_redirect&id=565&md5=cc7cd2464e8fda6acaf0406d61b740d0
