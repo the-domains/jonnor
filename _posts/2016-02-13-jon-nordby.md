@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - qml
-  - application
-  - imago
-  - desktop
-  - property
-  - images
-  - qdeclarativeview
-  - qobject
-  - drop-down
-  - folder
-description: "In learning Qt, I of course needed to get some experience with the newest and shiniest bits of Qt: Qt Quick. One of the things I've done with that is to make a simple application, an image viewer called Imago. The code can be found at Gitorious."
+  - maliit
+  - keyboard
+  - gnome
+  - fedora
+  - theming
+  - layouts
+  - meego
+  - gnu
+  - enchanced
+  - input
+description: 'Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms". This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:52.979Z'
-dateModified: '2016-02-13T18:05:37.128Z'
+datePublished: '2016-02-13T18:11:52.981Z'
+dateModified: '2016-02-13T18:05:38.465Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,27 +35,34 @@ _type: Article
 ---
 # Jon Nordby
 
-In learning Qt, I of course needed to get some experience with the newest and shiniest bits of Qt: Qt Quick.
+Maliit (also known as Meego Input Methods) has the following [overall goal][0]: "to be _the_ input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".
 
-One of the things I've done with that is to make a simple application, an image viewer called Imago. The code can be found [at Gitorious][0]. It is a bit different from typical Qt Quick applications as it is not a mobile application but rather targets the desktop. Thus I'm using standard desktop UI concepts like drop-down menues, and ordinary file-chosers.
+This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it. The demo is done on a WeTab tablet running a standard Fedora 15 Beta, with the latest Maliit software installed. Jan Arne Petersen is working a bit on Fedora packages, so hopefully it will soon be easy to install for those who are interested.
 
-The lists can be "flicked" through using the pointer, or using the scroll wheel. Moving between the views that show multiple images and the single-image view has a small animation.
+Some more info about the features shown in above video:
 
-### Implementation
+**0\. Theming.** Using the theming support in the standard Maliit keyboard, it is easy to go from a mockup to ready implemented theming. This theme was based on the [mockup from live.gnome.org][1] (by Jakub Steiner I believe?) and done by Michael Hasselmann in a couple of hours. He also has a blogpost on [how the theming system works][2].
 
-In a Qt Quick application two languages and runtimes are involved; C++ and the declarative language that forms the basis of Qt Quick, QML. Qt supports bi-directional communication between the two using a number of metods.  
-In my case I chose to make a QObject class that maintains all of the central state in the application. This includes things like what folder is currenty open, the images in that folder, which image is currently focused/selected. All these attributes are implemented as QObject properties, and are notifyiable (meaning they have an attached signal that you guarantee to emit each time the value changes). Exporting this object to QML then allows these properties to be used in property bindings, or for one to connect to the notification signals.  
-So in Imago QML is basically used as a "stupid" UI layer for the image view. Other things, like window title and drop-down menues are handed by the C++ side, but by using the signals and properties of the same object.
+**1\. Typing text**.This is of course the number one feature of an on-screen keyboard. There are some essential best-practice and some tricks used in Maliit to be able to get really good reponse time and typing speeds. I hope we will have some blogposts about that soon.
 
-Writing a desktop application means that one cannot assume a fixed window size like people tend to do for mobile device applications. With setting the resize property of the QDeclarativeView (the widget that displays the QML stuff) to QDeclarativeView::SizeRootObjectToView and using anchor layouts throughout this is possible, but it took me a good while to get working properly. Mostly because the concepts are new, and most (all?) the examples in the documentation seem to neglect this aspect.
+Typing speed can be further enchanced by enabling multitouch support (not working out-of-the-box in Fedora due to missing support further down the stack), or by installing a prediction/correction engine. User feedback can be enchanced with audatory and tactile feedback (requires hardware and driver support obviously).
 
-The grid and traditional view are actually implemented in different QML files (though the delegate for the images in the list is shared). I did this to test how having several UIs would be like, and for a simple application like this it works out just fine.
+**2\. Different languages/layouts**, and switching between them. Maliit comes with layouts for over 20 languages, tested and tweaked by usability experts. Latin, Cyrillic, Arabic and Chinese based scripts are covered. The layouts are defined by XML files, so one can easily change them if wanted.
+[![](http://www.jonnor.com/wp/files/chinese_zhuyin-150x150.png)][3]
+[![](http://www.jonnor.com/wp/files/arabic_crop-150x150.png)][4]
+[![](http://www.jonnor.com/wp/files/russian_crop-150x150.png)][5]
 
-### Where to now?
+For more of the features offered by Maliit framework and standard keyboard, see the [wiki page][6]. If you are interested in improving Maliit, or its integration in Gnome 3 or other GNU/Linux environment, join the [irc channel or mailing list][7].
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
 
-Imago right now is very simple, and could benefit from some added features and some designer love. I also just found a bug in the traditional view that needs to be fixed. I have documented these things in the [README][1] file in case someone is interested. As I have moved my focus over to other projects, I probably wont be taking this application much further, at least not at this time.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][2]
+Next up; the importance and difficulties of input method integration on touch enabled devices.
 
-[0]: http://gitorious.org/openismus-playground/imago
-[1]: http://gitorious.org/openismus-playground/imago/blobs/master/README.txt
-[2]: http://www.jonnor.com/wp/?flattrss_redirect&id=324&md5=39b93d0ff7dc7c79e1e1dccec65db2e9
+[0]: http://wiki.meego.com/Maliit#Goals
+[1]: https://live.gnome.org/GnomeShell/Design/Whiteboards/ScreenKeyboard
+[2]: http://taschenorakel.de/michael/2011/04/10/customizing-meego-keyboard/
+[3]: http://www.jonnor.com/wp/files/chinese_zhuyin.png
+[4]: http://www.jonnor.com/wp/files/arabic_crop.png
+[5]: http://www.jonnor.com/wp/files/russian_crop.png
+[6]: http://wiki.meego.com/Maliit#Features
+[7]: http://wiki.meego.com/Maliit#Communication_channels
+[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=394&md5=3c8794eadd2099c06b751189e7973bcb
