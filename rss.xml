@@ -4,8 +4,22 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:16 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:13:25 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">bfbd5d43-4507-4de5-bb63-d9d355f0b7a2</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">beed308e-fa83-491c-828b-26697ba7be95</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community. It is one of the most popular distros, and this makes it easy for people to find help when they need it. So, being the curious geek that I am, I had to check out nearest release party for Ubuntu 9.10 (Karmic Koala).</p></article>]]></description>
@@ -61,20 +75,6 @@
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
             <guid isPermaLink="false">76a255b0-ddea-4299-ac41-4f9986a8e5ec</guid>
             <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>*if your favorite distro is Fedora, Ubuntu, Arch or Gentoo.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">df61cb4f-20d7-42eb-aab2-fc9397d88532</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own MoinMoin wiki, where I can put all my silly ideas and thoughts. Circumstances made it so that I fixed up the norwegian translation of the 1.8.3 version. Due to pure foolishness on my part I did not check if the translation for the upcoming 1.9, so now we have a lot of conflicting strings (circa 200). Yay... Hopefully it will turn out for the better as me and Jørg Cassens, the translator focusing on 1.9, get them in sync again.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">aee41d5b-20ef-4468-ae03-e9148dd1a361</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
         </item>
     </channel>
 </rss>
