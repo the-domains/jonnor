@@ -1,35 +1,28 @@
 ---
 author: []
-related:
-  - score: 0.6592485905000001
-    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
-    title: Servers.com Brings Its Bare-Metal Servers To The US
-    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
-    thumbnail_height: 400
-    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
-    thumbnail_width: 764
+related: []
 publisher:
   url: 'http://www.jonnor.com'
   name: Jonnor
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - maliit
-  - server
-  - applications
-  - plugin
-  - api
-  - input
-  - dbus
-  - application-hosted
-  - method
-  - configuration
-description: 'The standard way of deploying Maliit is to have a single maliit-server instance (per user session), hosting the actual input method (virtual keyboard, handwriting). Applications then communicate with the server (and by extension, the IM) through an IPC. This allows for a single instance of Maliit to serve all applications, which is memory efficient and robust.'
+  - microflo
+  - noflo
+  - project
+  - arduino
+  - programs
+  - visual
+  - ide
+  - milestone
+  - experimental
+  - osx
+description: ''
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:58.924Z'
-dateModified: '2016-02-13T18:04:50.187Z'
+datePublished: '2016-02-13T18:11:59.464Z'
+dateModified: '2016-02-13T18:04:40.495Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -42,39 +35,38 @@ _type: Article
 ---
 # Jon Nordby
 
-The standard way of deploying [Maliit][0] is to have a single maliit-server instance (per user session), hosting the actual input method (virtual keyboard, handwriting). Applications then communicate with the server (and by extension, the IM) through an IPC.
+Two months after [MicroFlo 0.1.0][0], another important milestone has been reached. This release brings a basic visual programming environment and initial support for all major desktop platforms (Win/OSX/Linux). The project is still very much experimental, but it is now starting to demonstrate potential advantages over traditional Arduino programming.
 
-This allows for a single instance of Maliit to serve all applications, which is memory efficient and robust. A crash in a Maliit IM plugin cannot take down the application and risk loss of significant user data. The disadvantage is the increased system complexity (a separate server process needs to be running at all times\*) and requiring compositing of the application and input method windows. The latter can be quite challenging to do in a well-performing way on low-powered mobile/embedded devices. See [Jans blogpost][1] for how we handled that on the Nokia N9\.
+Official release notes and announcement [here][1].
 
-\* By default we make use of DBus autostarting, of course.
+### The start of something visual
 
-### Application-hosted Maliit
+The IDE shown is NoFlo UI, a visual programming environment which can also be used to program JavaScript for the browser and Node.js using the NoFlo runtime. This project is developed by [Henri Bergius][2] and rest of the [NoFlo][3] team. For more details about the NoFlo IDE project, check their [latest update][4] and follow their [Kickstarter project][5].
 
-To make Maliit more suitable for systems where only a single application runs (embedded) or compositing performance is not good enough, we now also allow Maliit to be "application-hosted": the Maliit server and input method plugins lives in the application process, not a separate server process. Enabling this feature has been a long running task of mine: All the code in input-context and server was made transport independent, a direct transport (no IPC) was introduced, and setting up the server for a given configuration (X11, QPA, app-hosted) was simplified. Other motivations for this work include being able to run the server and IM plugin easily for automated end-to-end system or acceptance testing, or just to easily start the server with a given IM plugin loaded for quick manual testing during development (see Michaels [merge request][2]).
+### Talk
 
-An example application exists as part of the Maliit SDK that demonstrates the feature: [maliit-exampleapp-embedded][3]
+At [Piksel 2013][6] in Bergen, I also presented MicroFlo for the first time, to an audience of mostly new media and experimental sound artists. The talk goes into detail about the motivations behind the project, from the quite practical to the more philosophical considerations. Not my most coherent talk, but it gives some insight.
 
-This works by having a special input-context "MaliitDirect" which instead of connecting to the server over DBus, creates the server and a direct connection. As when running standalone the server will instantiate and manage the necessary input method plug-ins.
+<iframe src="http://www.youtube.com/embed/mizj6eoepC0" frameborder="0" width="420" height="315" style=""></iframe>
 
-Because the IM does not have its own window in this configuration, the application is responsible for retrieving the IM widget from the server, and re-parenting it into the appropriate place in the widget hierarchy. For all other purposes the application uses the same interface as if the IM was hosted remotely, making sure the abstraction is not broken and that one can easily use the application with Maliit deployed in different configuration.
+### Next
 
-This feature currently works with Qt4 applications, and is in Maliit since the latest release (0.90.0). One issue is that with the current input method API, the plugin assumes a fullscreen window; overlays extending the base area of the IM will be clipped and size needs to be overridden. This is something we [are fixing][4] in the new [improved API][5].
+For the next milestone, MicroFlo 0.3, several things are already [planned][7]. Focus is mostly on practical improvements to the system, but I also hope to complete prototype support for "heterogeneous FBP": Allowing to program systems consisting of both host computer and microcontroller programs in a unified manner using NoFlo+MicroFlo.
 
-### Compositor-hosted Maliit
+I am also planning a MicroFlo workshop at [Bitraf][8] some time in December and to demo the project at [Maker Faire Oslo][9].
 
-Another approach to make rendering perform better is to host the input method in the process responsible for the compositing. This also reduces the number or processes involved in rendering/compositing, and the associated overhead. This could be a X11 compositing window manager (like KWin or mcompositor), but a more realistic use-case is a Wayland compositor (for instance based on [QtCompositor][6]).
+In the meantime, you can get started with MicroFlo for Arduino by following [this tutorial][10]. Feedback and contributions welcomed!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][11]
 
-The API allows the consumer to inject an class instance for the configuration dependent logic, allowing to integrate the Maliit server with the logic in the rest of the compositor. Applications will use the normal "Maliit" inputcontext and communicate to the server through an IPC like DBus.
-
-After the work with application-hosted Maliit, this feature was completed by making the server and connection libraries available as public API. The API is available in the latest Maliit release (0.90.0), but is considered unstable until Maliit hits the [1.0][7] mark.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
-
-[0]: http://www.maliit.org/
-[1]: http://blog.jpetersen.org/2012/01/25/compositing-in-maliit/
-[2]: https://gitorious.org/maliit/maliit-framework/merge_requests/163
-[3]: https://gitorious.org/maliit/maliit-framework/trees/master/examples/apps/embedded
-[4]: https://gitorious.org/maliit/maliit-framework/merge_requests/145
-[5]: https://wiki.maliit.org/Ideas/New_Plugin_Interface
-[6]: http://devqt.blogspot.com/2011/03/qt-compositor.html
-[7]: https://wiki.maliit.org/Roadmap
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=541&md5=e1d3e93f5cf5f9709a1699f490e75b2f
+[0]: http://www.jonnor.com/2013/09/microflo-0-1-0-and-an-arduino-powered-fridge/
+[1]: https://groups.google.com/forum/#!topic/flow-based-programming/RHFjSyRnG_8
+[2]: http://bergie.iki.fi/
+[3]: http://noflojs.org/
+[4]: http://bergie.iki.fi/blog/noflo-update/
+[5]: http://www.kickstarter.com/projects/noflo/noflo-development-environment
+[6]: http://13.piksel.no/
+[7]: https://github.com/jonnor/microflo/issues?milestone=3
+[8]: https://bitraf.no/
+[9]: http://makerfaireoslo.no/
+[10]: https://github.com/jonnor/microflo/blob/master/doc/arduino-getstarted.md
+[11]: http://www.jonnor.com/wp/?flattrss_redirect&id=666&md5=368c882a26b2d27896e225309726a0b6
