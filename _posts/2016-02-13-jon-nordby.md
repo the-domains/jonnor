@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/12/gitorious-merge-request-monitor/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/09/massifg-0-2/'
 inLanguage: en
 starred: false
 keywords:
-  - mrqbot-7aceb
-  - maliit
-  - maliit-framework
-  - gitorious
-  - maliit-plugins
-  - merged
-  - qml
-  - irc
-  - mrqbot-affa1
-  - desertconsulting
-description: 'In Maliit, all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is hosted on Gitorious, we use their merge requests feature for that purpose.'
-datePublished: '2016-02-13T20:30:03.602Z'
-dateModified: '2016-02-13T20:03:08.334Z'
+  - massif
+  - graph
+  - api
+  - massifg
+  - goffice
+  - visualizing
+  - usability
+  - heap
+  - detailed
+  - view
+description: MassifG is an application for visualizing the output of valgrinds massif tool. See the first release announcement for more info.
+datePublished: '2016-02-13T20:30:07.957Z'
+dateModified: '2016-02-13T20:10:48.906Z'
 author: []
 related: []
 app_links: []
-title: Gitorious Merge Request Monitor
+title: MassifG 0.2
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,25 +35,46 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Gitorious Merge Request Monitor
+# MassifG 0.2
 
-In [Maliit][0], all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is [hosted on Gitorious][1], we use their merge requests feature for that purpose. Up until now we have periodically checked the website for changes (potentially going through each and every one of the repositories), and manually mentioned updates in the IRC channel. This is both tedious and inefficient, so I wrote a simple tool to help the issue: [Gitorious Merge Request Monitor][2]
+MassifG is an application for visualizing the output of [valgrinds][0] massif tool. See the [first release announcement][1] for more info. Here is the high level list of changes since version 0.1:
 
-It provides an IRC Bot which gives status updates on merge requests in an IRC channel:
+* Graphing component ported to use GOffice - graphs are much nicer now
+* A detailed view has been implemented
+* Parses the heap trees found in massif snapshots
+* Menu entry for directly exporting graph to a PNG file
+* gtk-doc based API documentation
 
-One can also query the current status from it:
+Of course there were also many minor changes, fixes and improvements. Here is how it looks now (simple and detailed view, respectively):
+[![](http://www.jonnor.com/wp/files/massifg-0.2-simple-300x248.png)][2]
+[![](http://www.jonnor.com/wp/files/massifg-0.2-detailed-300x247.png)][3]
 
-Status changes are retrieved by periodically checking the Gitorious project activity feed (Atom)\*, and the status itself is scraped from the website. There is no other API right now, unfortunately. Implemented in Python with Twisted, feedparser and BeautifulSoup doing all of the heavy lifting.
+The tarball can be found [here][4]. Packages for Arch are [i][5][n A][5][UR][5]. I'm also hoping to make packages for Ubuntu and Fedora in the next couple of days.
 
-Get it from PyPi, using easy\_install or pip:  
-`pip install gitorious-mrq-monitor  
-gitorious-mrq-monitor --help # For usage information`
+### Roadmap
 
-For now this solves the immediate need for the development work-flow we have in the Maliit project. Several ideas for extending the tool are mentioned in the [TODO][3]. Contributions welcomed!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
+I will probably move my focus over to C++ and other tasks now, so MassifG progress will be slower, but here is what I'd like to see going forward.
 
-[0]: http://www.maliit.org/
-[1]: https://gitorious.org/maliit
-[2]: https://github.com/jonnor/gitorious-mrq-monitor
-[3]: https://github.com/jonnor/gitorious-mrq-monitor/blob/master/README
-[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=520&md5=f88fdda952e1f7eee352d3b58c6bea87
+* Show name of the function when hovering over the graph.  
+Minor thing, but it will increase usability a lot as it can be very hard to see which legend entry the data corresponds to in the detailed view. Requires[support in GOffice][6]
+* Add axis labels and title with information from the massif file.
+* Improve usability on small screen/window size.
+* The detailed view currently needs a lot of space, and does not work nicely when this is not available. Need to ask the GOffice people for some hints and tips here.
+* Make an API and UI for running massif.  
+This so that users don't have to invoke massif manually, and then open the file in MassifG to visualize the results. Would additionally be nice if the graph was updated interactively while massif runs, but that is secondary.
+* Make a UI widget for visualizing the heap tree.  
+Possibly a GtkTreeView. I'm open for suggestions here.
+* Expose a public library with the relevant parts of the API.  
+This way, others applications can use it - if anyone is interested I'd love to have some feedback on the API. I am of course open to changing it if necessary. Support for GObject introspection would be nice too.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
+
+If anyone would like to work on any of this, give me a hint so we don't duplicate effort. Let me know if you have any other good ideas too.
+
+[0]: http://valgrind.org/
+[1]: http://www.jonnor.com/2010/08/introducing-massifg-0-1/
+[2]: http://www.jonnor.com/wp/files/massifg-0.2-simple.png
+[3]: http://www.jonnor.com/wp/files/massifg-0.2-detailed.png
+[4]: http://www.jonnor.com/files/massifg-0.2.tar.gz
+[5]: http://aur.archlinux.org/packages.php?O=0&K=massifg&do_Search=Go
+[6]: https://bugzilla.gnome.org/show_bug.cgi?id=627277
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=241&md5=2e6103bbf424fc51ae08cd3adca37033
