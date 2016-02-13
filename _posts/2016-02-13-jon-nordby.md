@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - guv
-  - workers
-  - queue
-  - heroku
-  - metrics
-  - scaling
-  - rabbitmq
-  - number
-  - jobs
-  - configuration
-description: 'At The Grid we do a lot of computationally heavy work server-side, in order to produce websites from user-provided content. This includes image analytics (for understanding the content), constraint solving (for page layout) and image processing (optimization and filtering to achieve a particular look).'
+  - imgflo
+  - gegl
+  - flowhub
+  - runtimes
+  - gimp
+  - operations
+  - load
+  - image
+  - workflow
+  - vilson
+description: 'Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:12:00.905Z'
-dateModified: '2016-02-13T18:04:25.229Z'
+datePublished: '2016-02-13T18:12:00.927Z'
+dateModified: '2016-02-13T18:04:30.507Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,46 +35,45 @@ _type: Article
 ---
 # Jon Nordby
 
-At [The Grid][0] we do a lot of computationally heavy work server-side, in order to produce websites from user-provided content. This includes image analytics (for understanding the content), constraint solving (for page layout) and image processing (optimization and filtering to achieve a particular look). Currently we serve some thousand sites, with some hundred thousands sites expected by the time we've completed beta - so scalability is a core concern.
+Time for a new release of [imgflo][0], the image processing [server][1] and dataflow [runtime][2] based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing. Eventually this will also be an extension point for third parties on [our platform][3].
 
-All computationally intensive work is put as jobs in a AMQP/ [RabbitMQ][1] message queue, which are consumed by [Heroku][2] workers. To make it easy to manage many queues and worker roles we also use [MsgFlo][3].  
-This provides us with the required flexibility to scale: the queues buffer the in-progress work, broker distributes evenly between available workers, and with Heroku we can change number of workers with one command. But, it still leaves us with the decision on how much compute capacity to provision. And when load is dynamic, it is tedious & inefficient to do it manually - especially as Heroku bills workers used by the second.
+By porting the png and jpeg loading operations in GEGL to [GIO][4], we've added support for loading images into imgflo over HTTP or dataURLs. The latter enables opening local file through a file selector in Flowhub. Eventually we'd like to also support [picking from web services][5].
 
-If we would instead regulate this every 1-5 minute based on demand, we would reduce costs. Or alternatively, with a fixed budget, provide a better quality-of-service. And most importantly, let developers worry about other things.
+Another big feature is allowing to live-code new GEGL operations (in C) and load them. This works by sending the code over to the runtime, which then compiles it into a new .so file and loads it. Newly instatiated operations then uses that revision of code. We currently do not change the active operation of currently running instances, though [we could][6].  
+Operations are never unloaded, due both to a glib limitation and the general trickyness of guaranteeing this to be safe for native code. This is not a big deal as this is a development-only feature, and the memory growth is slow.
 
-Of course, there already exists [a number of solutions][4] for this[.][4] However, some used particular metrics providers which we were not using, some used metrics with unclear relationship to required workers (like number of users), or had unacceptable limitations (only one worker per service, only run as a service with pay-by-number-of-workers).
+imgflo now supports showing the data going through edges, which is very useful to understand how a particular graph works.
 
-### guv
+Using Heroku one can [get started][7] without installing anything locally. Eventually we might have installers for common OS'es as well.
 
-[guv][5] 0.1 implements a simple proportional scaling model. Based the current _number of jobs_ in the queue, and an estimate of _job processing time_ - it calculates the number of workers required for all work to be completed within a configured [![](http://www.jonnor.com/wp/files/system-model-whitebg-1024x389.png)][6]
+[Vilson Viera][8] added a set of new image filters to the server, inspired by Instagram. Vilson is also working on our image analytics pipeline, the other piece required for intelligent automatic- and semi-automatic image processing.
+[![](http://www.jonnor.com/wp/files/imgflo-instagram-filters-258x300.jpg)][9]
 
-The deadline is the maximum time you allow for your users to wait for a completed job. The job processing time \[average, deviation\] can be calculated [from metrics][7] of previous jobs. And the number of jobs in queue is read directly from RabbitMQ.
+GEGL has for a long time supported meta-operations: operations which are built as a sub-graph of other operations. However, they had to be built programatically using the C API which limited tooling support and the platform-specific nature made them hard to distribute.  
+Now GEGL can load such operations from the [JSON format][10] also used by imgflo (and [several][11][other][12][runtimes][13]). This lets one use operations built with Flowhub+imgflo in GIMP:
+[![](http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif)][14]
 
-    # A simple guv config for one worker role. # One guv instance typically manages many worker roles '*':   app: my-heroku-app analyze:   queue: 'analyze.IN' # RabbitMQ queue name worker: analyzeworker # Heroku dyno role name   process: 20   deadline: 120.0 min: 1 # keep something always running max: 15 # budget limits 
+This makes Flowhub+imgflo a useful tool also outside the web-based processing workflow it is primarily built for. Feature is available in GEGL and GIMP master as of [last week][15], and will be released in GIMP 2.10 / GEGL 0.3\.
 
-Now there are a couple limitations of this model. Primarily, it is completely reactive; we do not attempt to predict how traffic will develop in the future. Prediction is after all terribly tricky business - better not go there if it can be avoided.  
-And since it takes a non-zero amount of time to spin up a new worker (about 45-60 seconds), on a sudden spike in demand may cause some jobs to miss a tight deadline, as the workers can't spin up fast enough. To compensate for this, there is some simple hysteresis: scale up more aggressively, and scale down a bit reluctanctly - we might need the workers next couple of minutes.
+Next iteration will be primarily about scaling out. Both allowing multiple "apps" (including individual access to graphs and usage monitoring/quotas) served from a single service, and scaling performance horizontally. The latter will be critical when the ~20k+ users who have [signed up][16] start coming onboard.  
+If you have an interest in using our hosted imgflo service outside of The Grid, get in contact.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][17]
 
-As a bonus, guv includes some integration with common metrics services: The [statuspage.io][8] metrics about 'jobs-in-flight' on [status.thegrid.io][9], come directly from guv. And using [New Relic Insights][10], we can analyze how the scaling is performing.
-
-If we had a manual scaling with a constant number over 48 hours period, workers=35 ( _Max_), then we would have paid at least 3-4 times more than we did with autoscaling (difference in size of area under Max versus area under the 10 minute line). Alternatively we could have provisioned a lower number of workers, but then with spikes above that number - our users would have suffered because things would be taking longer than normal.
-
-We've been running this in production since early June. Back then we had 25 users, where as now we have several thousand. Apart from updating the configuration to reflect service changes we do not deal with scaling - the minute to minute decisions are all done by guv. Not much is planned in terms of new features for guv, apart from [some][11][more][12][tools][13] to analyze configuration. For more info on using guv, see the [README][14].
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][15]
-
-[0]: http://thegrid.io/
-[1]: https://www.rabbitmq.com/
-[2]: http://heroku.com/
-[3]: http://www.jonnor.com/2015/06/announcing-msgflo-a-distributed-fbp-runtime
-[4]: https://github.com/the-grid/guv/blob/master/doc/braindump.md#prior-art
-[5]: https://github.com/the-grid/guv
-[6]: http://www.jonnor.com/wp/files/system-model-whitebg.png
-[7]: https://github.com/msgflo/msgflo/blob/master/src/utils/newrelic.coffee
-[8]: https://www.statuspage.io/
-[9]: http://status.thegrid.io/
-[10]: http://newrelic.com/insights
-[11]: https://github.com/the-grid/guv/issues/43
-[12]: https://github.com/the-grid/guv/issues/45
-[13]: https://github.com/the-grid/guv/issues/46
-[14]: https://github.com/the-grid/guv#best-practices
-[15]: http://www.jonnor.com/wp/?flattrss_redirect&id=840&md5=3bbcad7a02e6fc242904ef0c96172fe8
+[0]: http://imgflo.org/
+[1]: http://github.com/jonnor/imgflo-server
+[2]: http://github.com/jonnor/imgflo
+[3]: https://thegrid.io/
+[4]: https://developer.gnome.org/gio/stable/
+[5]: https://github.com/jonnor/imgflo/issues/28
+[6]: https://github.com/jonnor/imgflo/issues/82
+[7]: http://docs.flowhub.io/getting-started-imgflo/
+[8]: http://automata.cc/
+[9]: http://www.jonnor.com/wp/files/imgflo-instagram-filters.jpg
+[10]: http://noflojs.org/documentation/json/
+[11]: http://noflojs.org/
+[12]: https://github.com/jonnor/javafbp-runtime
+[13]: http://microflo.org/
+[14]: http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif
+[15]: https://git.gnome.org/browse/gegl/commit/?id=564f45bad76eb0f888e628ea70345912dd68cbbb
+[16]: http://thegrid.io/
+[17]: http://www.jonnor.com/wp/?flattrss_redirect&id=798&md5=9145cdc5f635e57c69ccbd8f2096ed61
