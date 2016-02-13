@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - imgflo
+  - graphics
+  - libre
+  - lgm
   - gegl
-  - flowhub
-  - runtimes
+  - lgm2014
   - gimp
-  - operations
-  - load
-  - image
-  - workflow
-  - vilson
-description: 'Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.'
+  - open
+  - visual
+  - hanika
+  - source
+description: 'LGM2014 will happen April 2-5th in Leipzig, Germany and this will be my fifth year attending. In fact LGM 2010 in Brussels was my first international conference ever, and convinced me that I wanted to make open source professionally.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:12:00.927Z'
-dateModified: '2016-02-13T18:04:30.507Z'
+datePublished: '2016-02-13T18:12:01.077Z'
+dateModified: '2016-02-13T18:04:42.094Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,45 +35,33 @@ _type: Article
 ---
 # Jon Nordby
 
-Time for a new release of [imgflo][0], the image processing [server][1] and dataflow [runtime][2] based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing. Eventually this will also be an extension point for third parties on [our platform][3].
+[LGM2014][0] will happen April 2-5th in Leipzig, Germany and this will be my fifth year attending. In fact [LGM 2010][1] in Brussels was my first international conference ever, and convinced me that I wanted to make open source professionally.
 
-By porting the png and jpeg loading operations in GEGL to [GIO][4], we've added support for loading images into imgflo over HTTP or dataURLs. The latter enables opening local file through a file selector in Flowhub. Eventually we'd like to also support [picking from web services][5].
+I'm very excited about [this years program][2], because once again we have managed to combine bleeding edge developments in open source software for graphics and visuals, with a wide range of connecting fields: open hardware, design, art activism, free cultural works, research and education.
 
-Another big feature is allowing to live-code new GEGL operations (in C) and load them. This works by sending the code over to the runtime, which then compiles it into a new .so file and loads it. Newly instatiated operations then uses that revision of code. We currently do not change the active operation of currently running instances, though [we could][6].  
-Operations are never unloaded, due both to a glib limitation and the general trickyness of guaranteeing this to be safe for native code. This is not a big deal as this is a development-only feature, and the memory growth is slow.
+Personally, I especially look forward to:
 
-imgflo now supports showing the data going through edges, which is very useful to understand how a particular graph works.
+* Richard Hughes: Building an OpenHardware Spectrograph for Color Profiling in Linux
+* Johannes Hanika: Wavelets for image processing
+* Manuel Quiñones: GEGL is not GIMP - creating graphic applications with GEGL (workshop)
+* Libre Graphics Magazine: Beating the drums, Why we made gender an issue
 
-Using Heroku one can [get started][7] without installing anything locally. Eventually we might have installers for common OS'es as well.
+I am also hosting a [BoF][3] session on visual programming of libre graphics tools. Curious to see what comes out of that.
 
-[Vilson Viera][8] added a set of new image filters to the server, inspired by Instagram. Vilson is also working on our image analytics pipeline, the other piece required for intelligent automatic- and semi-automatic image processing.
-[![](http://www.jonnor.com/wp/files/imgflo-instagram-filters-258x300.jpg)][9]
+If you are interested in open source and graphics, don't miss Libre Graphics Meeting.  
+[Register now][4] (it's free and open for all)!
+[![](http://libregraphicsmeeting.org/2014/wp/wp-content/uploads/2014/02/LGM-2014-logo.png)][4]
 
-GEGL has for a long time supported meta-operations: operations which are built as a sub-graph of other operations. However, they had to be built programatically using the C API which limited tooling support and the platform-specific nature made them hard to distribute.  
-Now GEGL can load such operations from the [JSON format][10] also used by imgflo (and [several][11][other][12][runtimes][13]). This lets one use operations built with Flowhub+imgflo in GIMP:
-[![](http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif)][14]
+Can't go to LGM, but would still like to contribute? Please consider [donating to our travel fund][5].
 
-This makes Flowhub+imgflo a useful tool also outside the web-based processing workflow it is primarily built for. Feature is available in GEGL and GIMP master as of [last week][15], and will be released in GIMP 2.10 / GEGL 0.3\.
+I would like to thank the [GIMP project][6] for sponsoring my trip to LGM2014\.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
 
-Next iteration will be primarily about scaling out. Both allowing multiple "apps" (including individual access to graphs and usage monitoring/quotas) served from a single service, and scaling performance horizontally. The latter will be critical when the ~20k+ users who have [signed up][16] start coming onboard.  
-If you have an interest in using our hosted imgflo service outside of The Grid, get in contact.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][17]
-
-[0]: http://imgflo.org/
-[1]: http://github.com/jonnor/imgflo-server
-[2]: http://github.com/jonnor/imgflo
-[3]: https://thegrid.io/
-[4]: https://developer.gnome.org/gio/stable/
-[5]: https://github.com/jonnor/imgflo/issues/28
-[6]: https://github.com/jonnor/imgflo/issues/82
-[7]: http://docs.flowhub.io/getting-started-imgflo/
-[8]: http://automata.cc/
-[9]: http://www.jonnor.com/wp/files/imgflo-instagram-filters.jpg
-[10]: http://noflojs.org/documentation/json/
-[11]: http://noflojs.org/
-[12]: https://github.com/jonnor/javafbp-runtime
-[13]: http://microflo.org/
-[14]: http://www.jonnor.com/wp/files/imgflo-gimp-anim-640.gif
-[15]: https://git.gnome.org/browse/gegl/commit/?id=564f45bad76eb0f888e628ea70345912dd68cbbb
-[16]: http://thegrid.io/
-[17]: http://www.jonnor.com/wp/?flattrss_redirect&id=798&md5=9145cdc5f635e57c69ccbd8f2096ed61
+[0]: http://libregraphicsmeeting.org/2014
+[1]: http://www.libregraphicsmeeting.org/2010/index.php?p=en/review
+[2]: http://libregraphicsmeeting.org/2014/program/
+[3]: http://en.wikipedia.org/wiki/Birds_of_a_Feather_%28computing%29
+[4]: http://libregraphicsmeeting.org/2014/register/
+[5]: https://pledgie.com/campaigns/22927
+[6]: http://gimp.org/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=680&md5=c3f5f6a823af4709dc62777136a239e8
