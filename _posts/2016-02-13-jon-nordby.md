@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - massif
-  - graph
-  - api
-  - massifg
-  - goffice
-  - visualizing
-  - usability
-  - heap
-  - detailed
-  - view
-description: MassifG is an application for visualizing the output of valgrinds massif tool. See the first release announcement for more info.
+  - openraster
+  - gtk
+  - libora
+  - qml
+  - application
+  - especially
+  - interfaces
+  - project
+  - useful
+  - development
+description: "I've actually been back close to a week now, but never mind that... In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it."
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:14:45.748Z'
-dateModified: '2016-02-13T18:05:34.146Z'
+datePublished: '2016-02-13T18:14:45.791Z'
+dateModified: '2016-02-13T18:05:36.890Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,44 +35,27 @@ _type: Article
 ---
 # Jon Nordby
 
-MassifG is an application for visualizing the output of [valgrinds][0] massif tool. See the [first release announcement][1] for more info. Here is the high level list of changes since version 0.1:
+I've actually been back close to a week now, but never mind that...
 
-* Graphing component ported to use GOffice - graphs are much nicer now
-* A detailed view has been implemented
-* Parses the heap trees found in massif snapshots
-* Menu entry for directly exporting graph to a PNG file
-* gtk-doc based API documentation
+In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it.  
+The keynotes I attended on the second day were not particularly exciting: no major announcements nor insights were given. The technical talks on the other hand were filled with goodies. The talks by Jens Bache-Wiig and Roberto Raggi on [Qt Quick][0] were especially good.\*
 
-Of course there were also many minor changes, fixes and improvements. Here is how it looks now (simple and detailed view, respectively):
-[![](http://www.jonnor.com/wp/files/massifg-0.2-simple-300x248.png)][2]
-[![](http://www.jonnor.com/wp/files/massifg-0.2-detailed-300x247.png)][3]
+The talks definitely made me want to try Qt Quick for doing user interfaces for small-form factor devices, especially because it allows for very rapid prototyping and iterations when developing. The current lack of widgets and traditional layouts probably limits its usefulness for typical desktop application with more complex user interfaces though. There is nothing that helps you achieve a native look and feel either, but the [Qt Components][1] project is aiming to bridge those gaps.  
+I also suspect that the declarative and dynamic nature of QML poses several new challenges for developers, especially for those that are mostly used to traditional Qt programming with C++. I'm especially concerned that there was no way to visualize or do static checking on the property-bindings that are so central in QML. Very curious as to how that plays out in practice.
 
-The tarball can be found [here][4]. Packages for Arch are [i][5][n A][5][UR][5]. I'm also hoping to make packages for Ubuntu and Fedora in the next couple of days.
+\*I'm told the talks will be online after the Qt Developer Days event in San Fransisco is over.
 
-### Roadmap
+### Qt projects you said?
 
-I will probably move my focus over to C++ and other tasks now, so MassifG progress will be slower, but here is what I'd like to see going forward.
+Going forward I'll be doing some projects with Qt, in the same way I [have done][2] with GTK. My first project has already started: implementing viewer-class OpenRaster support for Qt. This means that applications using Qt and QImage will soon be able to display fully-rendered OpenRaster images!  
+Development of the Qt integration happens in the [repository on gitorious][3], and the libora modifications currently lives in [my personal clone][4]. It will be pushed to mainline as soon as I have more-or-less settled on the API, and done a basic implementation. Using libora for all the OpenRaster specific stuff is being a bit more painful than expected, but it is the right thing to do as it means that other consumers benefits as well. Like a potential GdkPixbuf plugin or applications not using Qt or GTK. I'll write more once it reaches a useful state.
 
-* Show name of the function when hovering over the graph.  
-Minor thing, but it will increase usability a lot as it can be very hard to see which legend entry the data corresponds to in the detailed view. Requires[support in GOffice][6]
-* Add axis labels and title with information from the massif file.
-* Improve usability on small screen/window size.
-* The detailed view currently needs a lot of space, and does not work nicely when this is not available. Need to ask the GOffice people for some hints and tips here.
-* Make an API and UI for running massif.  
-This so that users don't have to invoke massif manually, and then open the file in MassifG to visualize the results. Would additionally be nice if the graph was updated interactively while massif runs, but that is secondary.
-* Make a UI widget for visualizing the heap tree.  
-Possibly a GtkTreeView. I'm open for suggestions here.
-* Expose a public library with the relevant parts of the API.  
-This way, others applications can use it - if anyone is interested I'd love to have some feedback on the API. I am of course open to changing it if necessary. Support for GObject introspection would be nice too.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
+After that is done I will probably do something with more UI, like a proper application. Hopefully I will get to toss Qt Quick into the mix as well. I've got an idea that I think would be a nice fit, so we'll see.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
 
-If anyone would like to work on any of this, give me a hint so we don't duplicate effort. Let me know if you have any other good ideas too.
-
-[0]: http://valgrind.org/
-[1]: http://www.jonnor.com/2010/08/introducing-massifg-0-1/
-[2]: http://www.jonnor.com/wp/files/massifg-0.2-simple.png
-[3]: http://www.jonnor.com/wp/files/massifg-0.2-detailed.png
-[4]: http://www.jonnor.com/files/massifg-0.2.tar.gz
-[5]: http://aur.archlinux.org/packages.php?O=0&K=massifg&do_Search=Go
-[6]: https://bugzilla.gnome.org/show_bug.cgi?id=627277
-[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=241&md5=2e6103bbf424fc51ae08cd3adca37033
+[0]: http://doc.qt.nokia.com/4.7/qtquick.html
+[1]: http://qt.gitorious.org/qt-components
+[2]: http://www.jonnor.com/tag/massifg/
+[3]: http://gitorious.org/openraster/qt-viewer-support
+[4]: http://gitorious.org/~jonnor/openraster/jonnors-libora
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=298&md5=861daec9a362120d9b8c63a3010dafd7
