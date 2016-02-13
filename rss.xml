@@ -4,8 +4,29 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:21 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:13:51 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Current status</h2><p>MassifG is an application for visualizing the output of valgrinds massif tool. I am writing it as part of my trainee program here at Openismus. MassifG is free software, available under GPLv3. You will find the git repository at gitorious, and the tarball release for 0.1 here. Packages for Arch are available in AUR.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">dbccf4e4-21dd-4330-8df0-20187778c400</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine. So I got to combine two of my passions; music (metal) and free software in one evening.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">ff7af24e-d60c-43e6-b916-47fcf02ff1c6</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">bfbd5d43-4507-4de5-bb63-d9d355f0b7a2</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:</p></article>]]></description>
@@ -54,27 +75,6 @@
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
             <guid isPermaLink="false">3b682ba0-b5a5-4fba-928f-a91a3e56f901</guid>
             <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>In Maliit input methods are implemented as plugins. This flexibility is important because it allows the same framework to provide very different text input methods, without us having to implement them all. Different virtual keyboards, hardware keyboard input, handwriting, speech-to-text, input methods for accessibility, et.c. are all possible with the Maliit framework. This makes the input method plugin API the most important extension point.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">b4d9408d-dd5f-4cc8-9729-c12a84263e5e</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Another day, another release. This release fixes:</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">76a255b0-ddea-4299-ac41-4f9986a8e5ec</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>*if your favorite distro is Fedora, Ubuntu, Arch or Gentoo.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">df61cb4f-20d7-42eb-aab2-fc9397d88532</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
         </item>
     </channel>
 </rss>
