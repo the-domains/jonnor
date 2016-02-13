@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - meego
-  - api
-  - bugreport
-  - dbus
-  - gtk
-  - mutter-meego
-  - libmeego-panel
-  - netbook
-  - readme
-  - gitorious
-description: 'It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*. As stated by the libmeego-panel/docs/README in the source tree of mutter-meego there are convenience APIs for GTK+ and Clutter based implementations.'
+  - bands
+  - oslo
+  - concrete
+  - niku
+  - karmic
+  - ubuntu
+  - serepa
+  - nsberg
+  - framferd
+  - blodbad
+description: 'As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:53.623Z'
-dateModified: '2016-02-13T18:05:38.022Z'
+datePublished: '2016-02-13T18:11:53.704Z'
+dateModified: '2016-02-13T18:05:34.475Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,14 +35,12 @@ _type: Article
 ---
 # Jon Nordby
 
-It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit\*.
+As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine. So I got to combine two of my passions; music (metal) and free software in one evening.
 
-As stated by the [libmeego-panel/docs/README][0] in the [source tree of mutter-meego][1] there are convenience APIs for GTK+ and Clutter based implementations. But it seems you can also just use the DBUS API, in case you prefer Qt or something else. I found this out by searching though meego.gitorious.org after someone asked on \#meego
+The bands playing where Niku, Concrete, Framferd and Serepa Deformed. The event was part of a two day mini festival called Blodbad (bloodbath) and the venue was Rock In.
 
-\*Since this should be documented in the platform API, I've of course filed a [bugreport][2].
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][3]
+There was a decent crowd for being a Thursday, but I'm sure both the bands and hosts had hope for more. In any case the sound was pretty good and my friends in Concrete ( [myspace][0]) delivered a great performance so it was very enjoyable.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
 
-[0]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego/blobs/master/libmeego-panel/docs/README
-[1]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego
-[2]: http://bugs.meego.com/show_bug.cgi?id=12748
-[3]: http://www.jonnor.com/wp/?flattrss_redirect&id=368&md5=28173de74aaacdd352c6f0953aaebac1
+[0]: http://www.myspace.com/concretenor
+[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=71&md5=c63ff93a27063f19ee501d67542dc679
