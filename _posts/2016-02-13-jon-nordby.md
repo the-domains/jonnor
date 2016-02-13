@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - gegl
   - gstreamer
-  - gimp
-  - element
-  - images
-  - screenshot
-  - framework
-  - manipulated
+  - drawing
+  - gst-plugins-good
+  - cairo
+  - signal
+  - stream
+  - caps-updated
   - video
-  - processing
-description: 'Gegl is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And GStreamer is the multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.'
+  - bugreports
+  - vala
+description: 'I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:51.643Z'
-dateModified: '2016-02-13T18:05:41.486Z'
+datePublished: '2016-02-13T18:11:51.657Z'
+dateModified: '2016-02-13T18:05:41.762Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,21 +35,23 @@ _type: Article
 ---
 # Jon Nordby
 
-[Gegl][0] is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And [GStreamer][1] is _the_ multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.
+I wrote the initial version of this in late January, and after some interations it was [merged yesterday][0] to gst-plugins-good, and will be in gst-plugins-good 0.10.33\. This solves the [feature request][1] I filed in 2009, one of my oldest bugreports in bugs.gnome.org!
 
-After writing the [C][2][airo overlay GStreamer element][2], I implement a basic GStreamer element which allows you to apply a filter to video in a GStreamer pipeline using Gegl. Using this element, video editing/manipulation applications like [Pitivi][3] could allow users to apply effects provided by Gegl to videos. Gegl is a very powerful image processing framework, and already has [a significant number of image processing operations][4]. More operations is expected, especially from the port the tools, filters and plugins used in Gimp to Gegl.
+### What does it do?
 
-Here are some screenshots showing the standard GStreamer video test data being manipulated in different ways using Gegl. Note: the size of the images are only different because the output windows had different sizes when I took the screenshot.
+cairooverlay allows you to draw arbitrary things on top of a video stream in GStreamer using Cairo. Previously you had to create a custom GStreamer element for that (in C/Vala), but now you can just hook up to some signals, using any programming language with GStreamer/Cairo bindings.
 
-[A bug has been filed for inclusion][5] of this element into gst-plugins-good. The patch attached there also contains an example application, showing how to use the element.
+To draw an overlay using this element, you use the "caps-updated" signal to get information about the video stream (like width and height) and the "draw" signal to do the actual drawing. In addition to the Cairo context, the draw signal passes you the timestamp and duration of the buffer, so you can also do animations.
 
-In the patches you will find an example.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][6]
+For more info see the included [example application][2] or the [documentation][3] (should be updated soon). Here is the obligatory screenshot showing the example application drawing a heart onto a test videostream:
+[![](http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped-300x295.png)][4]
 
-[0]: http://www.jonnor.com/2011/05/geglfilter-gstreamer-element-for-manipulating-video-using-gegl/www.gegl.org
-[1]: http://gstreamer.freedesktop.org/
-[2]: http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/
-[3]: http://www.pitivi.org/
-[4]: http://www.gegl.org/operations.html
-[5]: https://bugzilla.gnome.org/show_bug.cgi?id=650750
-[6]: http://www.jonnor.com/wp/?flattrss_redirect&id=381&md5=70db982ae462366ffab84c644c3e3a81
+The heart is actually animated, so I guess I should have had a video. But you'll just have to trust me that it is very cute, or grab the code yourself!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+
+[0]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/commit/?id=32dff9df75942c51b3ecbd7ffa394ef755881d50
+[1]: https://bugzilla.gnome.org/show_bug.cgi?id=595520
+[2]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/tree/tests/examples/cairo/cairo_overlay.c
+[3]: http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-good-plugins/html/
+[4]: http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped.png
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=371&md5=0a98aab4c045419184024eab3c5d18c3
