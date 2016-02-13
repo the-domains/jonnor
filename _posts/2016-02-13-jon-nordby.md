@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - supercollider
-  - runtime
-  - sndflo
-  - audio
-  - fbp
+  - msgflo
+  - participants
+  - noflo
+  - node
+  - dynos
+  - inport
+  - msg
+  - messages
+  - process
   - graph
-  - websocket
-  - flowhub
-  - json
-  - osc
-description: 'SuperCollider is an open source project for real-time audio synthesis and algorithmic composition. It is split into two parts; an interpreter (sclang) implementing the SuperCollider language and the audio synthesis server (scsynth). The server has an directed acyclic graph of nodes which it executes to produce the audio output ( paper| book on internals).'
+description: 'At The Grid we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( GSS to CSS compilation) and image processing.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:12:02.133Z'
-dateModified: '2016-02-13T18:04:32.493Z'
+datePublished: '2016-02-13T18:12:02.267Z'
+dateModified: '2016-02-13T18:04:26.657Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,46 +35,83 @@ _type: Article
 ---
 # Jon Nordby
 
-[SuperCollider][0] is an open source project for real-time audio synthesis and algorithmic composition.  
-It is split into two parts; an interpreter (sclang) implementing the SuperCollider _language _and the _audio synthesis server_ (scsynth).  
-The server has an directed acyclic graph of nodes which it executes to produce the audio output ( [paper][1]| [book][2] on internals). It is essentially a dataflow runtime, specialized for the problem domain of real-time audio processing. The client controls the server through OSC messages which manipulates this graph. Typically the client is some SuperCollider code in the sclang interpreter, but one can also use [Clojure,][3][Python][4] or [other clients][5]. It is in many ways quite similar to the [Flowhub][6] visual IDE (a FBP protocol client) and runtimes like [NoFlo][7], [imgflo][8] and [MicroFlo][9].  
-So we decided to make SuperCollider a runtime too: [sndflo][10].
+At [The Grid][0] we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( [GSS][1] to CSS compilation) and [image processing][2].
 
-We used SuperCollider for [Piksels & Lines Orchestra][11], a audio performance system which hooked into graphics applications like GIMP, Inkscape, MyPaint, Scribus - and sonified the users actions in the application. A lot of time was spent wrestling with SuperCollider, due to the number of new concepts and myriad of ways to do things, and  
-lack of (well documented) best practices.  
-There is also a tendency to favor very short, expressive constructs (often opaque). An extreme example, here is an album of SuperCollider pieces composed with[<140 characters][12] (+ [an analysis][13] of some of them).
+The system runs on Heroku, and spreads over some 10 different dyno roles, communicating between each other using AMQP message queues. Some of the dyno separation also deals with external APIs, allowing us to handle service failures and API rate limiting in a robust manner.
 
-On the contrary sndflo is very focused and opinionated. It exposes Synths as components, which are be wired together using Busses (edges in the graph), allowing to build audio effect pipelines. There are several [known issues and limitations][14], but it has now reached a minimally useful state. Creating Synths components (the individual effects) as a visual graph of UGen (primitives like Sin,Cos,Min,Max,LowPass) components is also within scope and planned for next release.
+Majority of the workers are implemented using [NoFlo][3], a flow-based-programming for Node.js (and browser), using [Flowhub][4] as our IDE. This gives us a strictly encapsulated, visual, introspectable view of the worker; making for a testable and easy-to-understand architecture.
 
-The sndflo runtime is itself written [in SuperCollider][15], as an extension. This is to make it easier for those familiar with SuperCollider to understand the code, and to facilitate integration with existing SuperCollider code and tools. For instance setting up a audio pipeline visually using Flowhub+sndflo, then using the Event/Pattern/Stream system in SuperCollider to create an algorithmic composition that drives this pipeline.  
-Because a web browser cannot talk OSC (UDP/TCP) and SuperCollider does not talk WebSocket a [node.js wrapper ][16]converts messages on the [FBP protocol][17] between JSON over WebSocket to JSON over OSC.
+However NoFlo is only concerned about an individual worker process: it does not comprehend that it is a part of a bigger system.
 
-sndflo also implements the remote runtime part of the FBP protocol, which allows seamless interconnection between runtimes. One can _export ports in one runtime_, and then use it as _a component in another runtime_, communicating over one of the supported transports (typically JSON over WebSocket).
-[YouTube demo video][18]
+### Enter MsgFlo
 
-<iframe src="http://www.youtube.com/embed/5Rx_WBJD2Mw" frameborder="0" width="420" height="315" style=""></iframe>
+[MsgFlo][5] is a new FBP runtime designed for distributed systems. Each node represents a separate process, and the connections (edges) between nodes are message queues in a broker process.  
+To make this distinction clearer, we've adopted the term _participant_ for a node which participates in a MsgFlo network.  
+Because MsgFlo implements the same [FBP runtime protocol][6] and [JSON graph format][7] as NoFlo, imgflo, [MicroFlo][8] - we can use the same tools, including the [.FBP DSL][9] and Flowhub IDE.
 
-In above example sndflo runs on a Raspberry Pi, and is then used as a component in a NoFlo browser runtime to providing a web interface, both programmed with Flowhub. We could in the same way wire up another FBP runtime, for instance use MicroFlo on Arduino to integrate some physical sensors into the system.  
-Pretty handy for embedded systems, interactive art installations, internet-of-things or other heterogenous systems.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][19]
+The graph above represents how different _roles_ are wired together. There may be 1-N participants in the same role, for instance 10 dynos of the same dyno type on Heroku.  
+There can also be multiple participants in a single process. This can be useful to make different independent facets show up as independent nodes in a graph, even if they happen to be executing in the same process. One could use the same mechanism to implement a shared-nothing message-passing multithreading model, with the limitation that every message will pass through a broker.
 
-[0]: http://supercollider.sourceforge.net/
-[1]: http://tim.klingt.org/publications/lac2010_supernova.pdf
-[2]: http://supercolliderbook.net/rossbencinach26.pdf
-[3]: http://overtone.github.io/
-[4]: https://pypi.python.org/pypi/SC/0.2
-[5]: http://supercollider.sourceforge.net/wiki/index.php/Systems_interfacing_with_SC
-[6]: http://flowhub.io/
-[7]: http://noflojs.org/
-[8]: http://imgflo.org/
-[9]: http://microflo.org/
-[10]: http://github.com/jonnor/sndflo
-[11]: http://github.com/piksels-and-lines-orchestra
-[12]: http://supercollider.sourceforge.net/sc140/
-[13]: https://ccrma.stanford.edu/wiki/SuperCollider_Tweets
-[14]: http://github.com/jonnor/sndflo/issues
-[15]: https://github.com/jonnor/sndflo/tree/master/classes
-[16]: https://github.com/jonnor/sndflo/blob/master/sndflo.coffee
-[17]: http://noflojs.org/documentation/protocol
-[18]: https://www.youtube.com/watch?v=5Rx_WBJD2Mw
-[19]: http://www.jonnor.com/wp/?flattrss_redirect&id=786&md5=c55240972332c18b06c6d7162ed0155b
+Connections have pub-sub semantics, so generally each of the individual dynos will receive messages sent on the connection.  
+The special component _msgflo/RoundRobin_ specifies that messages should be delivered in a round-robin fashion: new message goes only to the next process in that role with available capacity. The RoundRobin component also supports dead-lettering, so failed jobs can be routed to another queue. For instance to be re-processed at a later point automatically, or manually after developers have located and fixed the issue. This way one never loose pending work.  
+On AMQP roundrobin delivery and deadlettering can be fulfilled by the broker (e.g. RabbitMQ), so there is no dedicated process for that node.
+
+### Messaging systems
+
+People use different messaging systems. We've tried to make sure that MsgFlo architecture and tools can be used with many different. The format and delivery of [discovery messages is specified][10], and the tools have a transport abstraction layer. Currently there is production-level support for AMQP 0-9-1 (tested with RabbitMQ). Basic support exists for [MQTT][11], a simple protocol popular in distributed "Internet-of-Things" type systems. Support for more transports can be added by [implementing two classes][12].
+
+### Polyglot participation
+
+MsgFlo itself only handles the discovery of participants and setup of the connections between them, as well as providing debug capabilities like Flowhub endpoint support. Having participants in a particular language requires implementing . We do provide a set of libraries that makes this easy for popular languages:
+
+Using [noflo-runtime-msgflo][13] makes it super simple to use NoFlo as MsgFlo participants. The exported ports of the NoFlo graph or component (for instance 'in', 'out', and 'error') will be automatically made available as queues in MsgFlo, and one can connect this into a bigger system.
+
+    noflo-runtime-msgflo --name compute_foo --graph project/MyGraph
+
+If you have some plain Node.js you can use [msgflo-nodejs][14], like this real-life [example from imgflo-server][15].
+
+    msgflo = require 'msgflo' ProcessImageParticipant = (client, role) -> definition = component: 'imgflo-server/ProcessImage' icon: 'file-image-o' label: 'Executes image processing jobs' inports: [ id: 'job' type: 'object' ] outports: [ id: 'jobresult' type: 'object' ] func = (inport, job, send) -> throw new Error 'Unsupported port: ' + inport if inport != 'job' # XXX: use an error queue? @executor.doJob job, (result) -> send 'jobresult', null, result return new msgflo.participant.Participant client, definition, func, role 
+
+In addition to node.js and NoFlo, there is basic participant support provided for Python and for C++ (with AMQP). It took about about half a day and 2-300 lines of code, so adding support for more languages should be pretty simple. There are even [tests][16] you [can reuse][17].
+
+[Example][18] in Python using [msgflo-python][19]:
+
+    import msgflo class Repeat(msgflo.Participant): def __init__(self, role): d = { 'component': 'PythonRepeat', 'label': 'Repeat input data without change', } msgflo.Participant.__init__(self, d, role) def process(self, inport, msg): self.send('out', msg.data) self.ack(msg) 
+
+[Example][20] becomes a bit more verbose in C++11, using [msgflo-cpp][21].
+
+     class Repeat : public msgflo::Participant { struct Def : public msgflo::Definition { Def(void) : msgflo::Definition() { component = "C++Repeat"; label = "Repeats input on outport unchanged"; outports = { { "out", "any", "" } }; } }; public: Repeat(std::string role) : msgflo::Participant(role, Def()) { } private: virtual void process(std::string port, msgflo::Message msg) { std::cout << "Repeat.process()" << std::endl; msgflo::Message out; out.json = msg.json; send("out", out); ack(msg); } }; 
+
+### Next
+
+Since MsgFlo 0.3, we are using MsgFlo in production for _all_ workers across The Grid backends. After migrating we've also moved more things into dedicated participants, because we now have the tooling that makes managing that complexity easy. Our short term focus now is more tools around MsgFlo, like deadline-based autoscaling and integration of data-driven testing using [fbp-spec][22]. Features planned for MsgFlo itself includes live [introspection of messages][23] in Flowhub.
+
+Looking further ahead, we would like to make more use of the polyglot capabilities, for instance by move some of our image analytics out from NoFlo/node.js participants (with C/C++ libs) to pure C++ 11 participants.  
+I also hope to do some fun projects with MQTT and MicroFlo - and validate MsgFlo for Embedded/Internet-of-Things-type.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][24]
+
+[0]: http://thegrid.io/
+[1]: http://gridstylesheets.org/
+[2]: http://imgflo.org/
+[3]: http://noflojs.org/
+[4]: https://flowhub.io/
+[5]: https://github.com/the-grid/msgflo
+[6]: http://noflojs.org/documentation/protocol/
+[7]: http://noflojs.org/documentation/json
+[8]: http://microflo.org/
+[9]: http://noflojs.org/documentation/fbp/
+[10]: https://github.com/msgflo/msgflo#communications
+[11]: http://en.wikipedia.org/wiki/MQTT
+[12]: https://github.com/msgflo/msgflo-nodejs/blob/master/src/direct.coffee
+[13]: https://github.com/noflo/noflo-runtime-msgflo
+[14]: https://github.com/jonnor/imgflo-server
+[15]: https://github.com/jonnor/imgflo-server/blob/master/src/worker.coffee
+[16]: https://github.com/msgflo/msgflo/blob/master/spec/heterogenous.coffee
+[17]: https://github.com/msgflo/msgflo-cpp/blob/master/spec/participant.coffee
+[18]: https://github.com/msgflo/msgflo-python/blob/master/examples/repeat.py
+[19]: https://github.com/msgflo/msgflo-python
+[20]: https://github.com/msgflo/msgflo-cpp/blob/master/examples/repeat.cpp
+[21]: https://github.com/the-grid/msgflo-cpp
+[22]: https://github.com/flowbased/fbp-spec
+[23]: https://github.com/msgflo/msgflo/issues/3
+[24]: http://www.jonnor.com/wp/?flattrss_redirect&id=815&md5=a0c98e44d07e5a56286937e5ad4c76be
