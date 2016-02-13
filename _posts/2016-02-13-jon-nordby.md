@@ -1,28 +1,35 @@
 ---
 author: []
-related: []
+related:
+  - score: 0.607191205
+    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
+    title: Servers.com Brings Its Bare-Metal Servers To The US
+    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
+    thumbnail_height: 400
+    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
+    thumbnail_width: 764
 publisher:
   url: 'http://www.jonnor.com'
   name: Jonnor
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - maliit
-  - build-bot
-  - automating
-  - variations
-  - testing
-  - instance
-  - build
-  - etc
-  - meta-builds
-  - components
-description: 'After having set up the typical things open source projects needs like a website/wiki, mailing-list and bug-tracker, Maliit now also has something not so common: a build-bot. As Maliit consists of several components that can be built in several different ways (and for several different platforms), we wanted to automate the build and tests of the different variations to ensure that we do not break any of them.'
+  - x11
+  - server
+  - ssh
+  - xauth
+  - nolisten
+  - tcp
+  - xserverrc
+  - forwarding
+  - config
+  - localhost
+description: 'So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least: To get this nice image I had to do some X11 forwarding over SSH through an intermediate server.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:13:25.202Z'
-dateModified: '2016-02-13T18:05:32.810Z'
+datePublished: '2016-02-13T18:13:25.227Z'
+dateModified: '2016-02-13T18:05:24.963Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,28 +42,14 @@ _type: Article
 ---
 # Jon Nordby
 
-After having set up the typical things open source projects needs like a website/wiki, mailing-list and bug-tracker, [Maliit][0] now also has something not so common: [a build-bot][1].
+So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least:
+![](http://www.jonnor.com/wp/files/2009-11-08-003736_1280x800_scrot-300x187.png)
 
-As Maliit consists of several components that can be built in several different ways (and for several different platforms), we wanted to automate the build and tests of the different variations to ensure that we do not break any of them. This is especially important for variations which are not easy to test for the individual developers, like for instance [Maliit on Qt 5][2].
+To get this nice image I had to do some X11 forwarding over SSH through an intermediate server. And since I'm probably not the only one with such needs and I'm bound to forget how I did it I will post it here.
 
-The software chosen to help with this task was [Buildbot][3]. Getting an initial instance it up and running was very quick and pain-free, especially thanks to packages being easily available and the [excellent documentation][4]. The current setup now builds, tests and installs the two major components we have: Maliit Framework and Maliit (Reference) Plugins, in the most important build/config variations we have. A total of 12 individual build jobs, plus 2 meta-builds. The configuration for the instance can be found in the [maliit-buildbot-configuration][5] repository.
+Basically I used [this excellent reference][0]. But if you need trusted X11 forwarding (like with ssh -Y instead of -X) you need to generate an xauth file as an extra step when you're on the remote server. That can be done with "xauth generate $DISPLAY ." And the "nolisten tcp" config option that you need to disable locally is usually found in /etc/X11/xinit/xserverrc  
+Additional heads up: if you try and connect with -X in addition to this manual forwarding you are setting up, you might get strange errors like "X connection to localhost:10.0 broken (explicit kill or server shutdown)." So don't do that.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
 
-For security reasons the build-bot is not directly exposed to the Internet. Instead a script runs every 5 minutes to generate a static HTML website and publish on the public web-server: [Maliit build-bot][1]
-
-This gives us a minimal continuous integration system for Maliit, which for now will hopefully helps us avoid breakage. In the future, the usage of the build-bot might extend to include:
-
-* Automating [the release process][6]
-* Testing of merge-requests/patches before merging to master
-* Automated integration/system testing, complementing the unit-tests
-* Triggering external builders for packaging. OpenSUSE OBS, Maemo 5 Garage, etc.
-* Automating certain aspects of bug-lifetime. Resolving when fix is committed, closing on release if pre-verified, etc
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
-
-[0]: http://www.maliit.org/
-[1]: http://maliit.jonnor.com/buildbot
-[2]: http://blog.jpetersen.org/2011/12/07/maliit-and-qt5/
-[3]: http://trac.buildbot.net/
-[4]: http://buildbot.net/buildbot/docs/current/full.html
-[5]: https://gitorious.org/maliit/maliit-buildbot-configuration
-[6]: https://wiki.maliit.org/Development/Making_Releases
-[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=518&md5=61c2d50ad1e71f7e3d5128ee1c338cde
+[0]: http://factorial.hu/articles/20080302/more-robust-remote-x-tunneling
+[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=76&md5=4c0bf076f1bac376e2cf9ccf6dddfc4b
