@@ -4,8 +4,15 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:07 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:13:16 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community. It is one of the most popular distros, and this makes it easy for people to find help when they need it. So, being the curious geek that I am, I had to check out nearest release party for Ubuntu 9.10 (Karmic Koala).</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">988ce81a-5170-447f-9008-dd23d8a0d3c3</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".</p></article>]]></description>
@@ -67,13 +74,6 @@
             <description><![CDATA[<article><h1>Jon Nordby</h1><p>One of my latest addictions are wikis. So much that writing a blogpost like this, without being able to use wiki markup syntax, is quite annoying. I might have to fix that some day. Specifically I've set up my own MoinMoin wiki, where I can put all my silly ideas and thoughts. Circumstances made it so that I fixed up the norwegian translation of the 1.8.3 version. Due to pure foolishness on my part I did not check if the translation for the upcoming 1.9, so now we have a lot of conflicting strings (circa 200). Yay... Hopefully it will turn out for the better as me and Jørg Cassens, the translator focusing on 1.9, get them in sync again.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
             <guid isPermaLink="false">aee41d5b-20ef-4468-ae03-e9148dd1a361</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>What does it do?</h2><p>I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">a8e11bd4-b876-4233-9d3a-602ee9f5fad7</guid>
             <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
         </item>
     </channel>
