@@ -4,77 +4,77 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 18:13:53 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:30:58 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>In Maliit, all changes have to be reviewed by two people in order to be merged to mainline. This helps us catch issues early and keep code quality high. Since the code is hosted on Gitorious, we use their merge requests feature for that purpose. Up until now we have periodically checked the website for changes (potentially going through each and every one of the repositories), and manually mentioned updates in the IRC channel. This is both tedious and inefficient, so I wrote a simple tool to help the issue: Gitorious Merge Request Monitor</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>What is Meego? (my interpretation and some musing)</h2><p>Like most of my colleagues at Openismus I was present at the first Meego conference in Dublin. As usual, I'm probably the last to blog about it. See for instance Friedrich's post, Andre's post or Chris' very detailed post.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">f8005f94-5379-453b-ac5b-0dc3ef1b224c</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">669b1707-73b0-44f0-a159-1219f4d2be40</guid>
+            <pubDate>Sat, 13 Feb 2016 18:15:13 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[MyPaint developer meetup]]></title>
+            <description><![CDATA[<article><h1>MyPaint developer meetup</h1><p>Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise.</p></article>]]></description>
+            <link>http://www.jonnor.com/2010/05/grapikslabor-mypaint-meetup-attending-lgm2010/</link>
+            <guid isPermaLink="false">edf29f5f-5aff-4c8e-8da3-0978c4528c4b</guid>
+            <pubDate>Sat, 13 Feb 2016 18:29:59 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Current status</h2><p>MassifG is an application for visualizing the output of valgrinds massif tool. I am writing it as part of my trainee program here at Openismus. MassifG is free software, available under GPLv3. You will find the git repository at gitorious, and the tarball release for 0.1 here. Packages for Arch are available in AUR.</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Qt projects you said?</h2><p>I've actually been back close to a week now, but never mind that...</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">dbccf4e4-21dd-4330-8df0-20187778c400</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">faf9e50f-f1b1-43d7-805c-1d5e38021686</guid>
+            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>As the previous post explained I was in Oslo yesterday for the Ubuntu Karmic Release party. But as I was heading for the release party I stumbled upon a friend of mine from Tønsberg. Turned out three bands from my home town were playing in Oslo that very evening, one of the bands being buddies of mine. So I got to combine two of my passions; music (metal) and free software in one evening.</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Roadmap</h2><p>MassifG is an application for visualizing the output of valgrinds massif tool. See the first release announcement for more info. Here is the high level list of changes since version 0.1:</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">ff7af24e-d60c-43e6-b916-47fcf02ff1c6</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">ae24978b-ea1c-4050-a918-98c3c9f6d0f2</guid>
+            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*.</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Better late than never (links go to the announcements):</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">bfbd5d43-4507-4de5-bb63-d9d355f0b7a2</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">a8350bb0-8e6a-4225-8d71-55684345c89c</guid>
+            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>OpenRaster</h2><p>I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from here.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">beed308e-fa83-491c-828b-26697ba7be95</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">7c269275-18d4-4aa4-8eb1-f702416d0d09</guid>
+            <pubDate>Sat, 13 Feb 2016 18:14:45 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Where as all my physical machines run Arch Linux, I do have some virtualized servers running Ubuntu. And in general, it is the GNU/Linux distro I recommend to people new to Linux. Not only because it has most of the things you need in a decent package and a balance between free and proprietary that I like, but also because it has a large and welcoming community. It is one of the most popular distros, and this makes it easy for people to find help when they need it. So, being the curious geek that I am, I had to check out nearest release party for Ubuntu 9.10 (Karmic Koala).</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Enter MsgFlo</h2><p>At The Grid we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( GSS to CSS compilation) and image processing.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">988ce81a-5170-447f-9008-dd23d8a0d3c3</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:53 GMT</pubDate>
+            <guid isPermaLink="false">f817deae-7082-4f14-b9e4-223ae3a8452a</guid>
+            <pubDate>Sat, 13 Feb 2016 18:13:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>I will be implementing algorithms on nVidia graphic cards using CUDA for use at CERN. Its a collaboration project between my school, the university of Bergen and a university in Germany (presumably Heidelberg). While a lot of the specifics are still up in the air, it will most likely be for the High Level Trigger system for the ALICE sensor.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">f6dcbcc5-5787-4c72-9e4a-097cf805bf0d</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+            <guid isPermaLink="false">dd999680-806a-4f91-98ab-4d1776942d2d</guid>
+            <pubDate>Sat, 13 Feb 2016 18:13:26 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Implementation</h2><p>In learning Qt, I of course needed to get some experience with the newest and shiniest bits of Qt: Qt Quick.</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Talks/topics</h2><p>I've attended a small workshop/seminar in Bergen (at IFT) about nVidia CUDA and its use in the ALICE project at CERN. The goal for me and the other students from Vestfold University College was to get a concrete task for our senior project and to get up to speed on some of the things we need to get started.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">d5b2405c-4472-4a60-bd79-62fbbe81256a</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+            <guid isPermaLink="false">3e41c7df-9bdc-448f-917d-c9b067f9aeab</guid>
+            <pubDate>Sat, 13 Feb 2016 18:13:25 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>MyPaint popularity is continuing to grow, much thanks to publicity from the Durian Open Movie project. We're now working on the v0.8 release, which hopefully will be out this year.  I wrote a small post on the official site about that here.  I'm responsible for the translations, and so far we have 11 of them, with a couple more in the works that I know of.  Packaging is also picking up, soon most of the major GNU/Linux distros will have MyPaint in the official repos! Even some talk about a Mac OSX version (using X11.app tho).</p></article>]]></description>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><h2>Seminar</h2><p>Last week I was so lucky as to attend the 3rd Libre Graphics Research Unit ( LGRU) meeting in beautiful Bergen, Norway.</p></article>]]></description>
             <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">f439d51a-a3c9-44c5-a270-2736e447927d</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Jon Nordby]]></title>
-            <description><![CDATA[<article><h1>Jon Nordby</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
-            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
-            <guid isPermaLink="false">9efa4647-bbc3-4d6e-b6c2-0ce0949b7bf7</guid>
-            <pubDate>Sat, 13 Feb 2016 18:11:52 GMT</pubDate>
+            <guid isPermaLink="false">72e77c9d-cf4a-41a2-ba2d-d371187e31c8</guid>
+            <pubDate>Sat, 13 Feb 2016 18:13:25 GMT</pubDate>
         </item>
     </channel>
 </rss>
