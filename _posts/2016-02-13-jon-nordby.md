@@ -1,28 +1,35 @@
 ---
 author: []
-related: []
+related:
+  - score: 0.6592485905000001
+    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
+    title: Servers.com Brings Its Bare-Metal Servers To The US
+    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
+    thumbnail_height: 400
+    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
+    thumbnail_width: 764
 publisher:
   url: 'http://www.jonnor.com'
   name: Jonnor
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - mypaint
-  - tile
-  - brush
-  - dab
-  - speedups
-  - backend
-  - gegl
-  - multi-threading
-  - drawing
-  - performance
-description: 'A first set of performance improvements for the brush engine has just landed in MyPaint master. The goals for this work for me were, in priority: a) Making sure that moving to a GEGL backend in MyPaint does not reduce performance, b) Improve performance when integrating the MyPaint brush engine in other applications, and lastly c) Improving the performance in MyPaint itself.'
+  - maliit
+  - server
+  - applications
+  - plugin
+  - api
+  - input
+  - dbus
+  - application-hosted
+  - method
+  - configuration
+description: 'The standard way of deploying Maliit is to have a single maliit-server instance (per user session), hosting the actual input method (virtual keyboard, handwriting). Applications then communicate with the server (and by extension, the IM) through an IPC. This allows for a single instance of Maliit to serve all applications, which is memory efficient and robust.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:58.922Z'
-dateModified: '2016-02-13T18:04:52.218Z'
+datePublished: '2016-02-13T18:11:58.924Z'
+dateModified: '2016-02-13T18:04:50.187Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,50 +42,39 @@ _type: Article
 ---
 # Jon Nordby
 
-A first set of performance improvements for the brush engine has just landed in MyPaint master. The goals for this work for me were, in priority: a) Making sure that moving to [a GEGL backend in MyPaint][0] does not reduce performance, b) Improve performance when integrating the MyPaint brush engine in other applications, and lastly c) Improving the performance in MyPaint itself.
-_TL;DR: \* Users of the soon-to-be-released MyPaint 1.1 should experience about 15% faster drawing of strokes for medium to big brushes. \* _Switching to the GEGL based backed for MyPaint 1.2 is now both feasible and highly desirable from a performance perspective.__
+The standard way of deploying [Maliit][0] is to have a single maliit-server instance (per user session), hosting the actual input method (virtual keyboard, handwriting). Applications then communicate with the server (and by extension, the IM) through an IPC.
 
-### Optimizations
+This allows for a single instance of Maliit to serve all applications, which is memory efficient and robust. A crash in a Maliit IM plugin cannot take down the application and risk loss of significant user data. The disadvantage is the increased system complexity (a separate server process needs to be running at all times\*) and requiring compositing of the application and input method windows. The latter can be quite challenging to do in a well-performing way on low-powered mobile/embedded devices. See [Jans blogpost][1] for how we handled that on the Nokia N9\.
 
-The optimizations are implemented through three complimentary strategies:
+\* By default we make use of DBus autostarting, of course.
 
-All dab drawing operations that happen as a result of a motion update event are queued up. When the brush engine has calculated where all dabs should go, tiles are fetched, all dabs drawn and the tiles updated. This in contrast to before where each dab drawing operation would fetch and update tiles.
+### Application-hosted Maliit
 
-The tiles to be processed are divided evenly between processing threads (one per core). Each tile is processed completely independent of other tiles, so there is no locking or synchronization in the drawing code. The tile backing store must naturally be thread-safe and may ensure this using locks.
+To make Maliit more suitable for systems where only a single application runs (embedded) or compositing performance is not good enough, we now also allow Maliit to be "application-hosted": the Maliit server and input method plugins lives in the application process, not a separate server process. Enabling this feature has been a long running task of mine: All the code in input-context and server was made transport independent, a direct transport (no IPC) was introduced, and setting up the server for a given configuration (X11, QPA, app-hosted) was simplified. Other motivations for this work include being able to run the server and IM plugin easily for automated end-to-end system or acceptance testing, or just to easily start the server with a given IM plugin loaded for quick manual testing during development (see Michaels [merge request][2]).
 
-Within each tile we attempt to make use of auto-vectorization to create the brush dab mask and do the composition of the dab onto the tile. Currently this is only implemented for a part of the mask calculation.
+An example application exists as part of the Maliit SDK that demonstrates the feature: [maliit-exampleapp-embedded][3]
 
-### Results
+This works by having a special input-context "MaliitDirect" which instead of connecting to the server over DBus, creates the server and a direct connection. As when running standalone the server will instantiate and manage the necessary input method plug-ins.
 
-Details of the results and how they can be reproduced is found in the [original email thread][1].
+Because the IM does not have its own window in this configuration, the application is responsible for retrieving the IM widget from the server, and re-parenting it into the appropriate place in the widget hierarchy. For all other purposes the application uses the same interface as if the IM was hosted remotely, making sure the abstraction is not broken and that one can easily use the application with Maliit deployed in different configuration.
 
-Starting with the lowest priority goal, but the most relevant to users; performance impact on MyPaint right now.
+This feature currently works with Qt4 applications, and is in Maliit since the latest release (0.90.0). One issue is that with the current input method API, the plugin assumes a fullscreen window; overlays extending the base area of the IM will be clipped and size needs to be overridden. This is something we [are fixing][4] in the new [improved API][5].
 
-In terms of raw speed of drawing brushes to onto the underlying surface, speedups range from 20% to 50% for larger brushes (16 px+). This sets an upper boundary for the speedup perceived by the user.
+### Compositor-hosted Maliit
 
-Looking at the UI-enabled benchmarks of MyPaint, which is doing everything a normal application instance does, including layer compositing and rendering to screen, around 15% speedup was observed. As the UI benchmark only tests a single brush at size=8.0px, it is possible that larger brushes will a higher speedup.
-_Users of the soon-to-be-released MyPaint 1.1 should experience about 15% faster drawing of strokes for medium to big brushes._
+Another approach to make rendering perform better is to host the input method in the process responsible for the compositing. This also reduces the number or processes involved in rendering/compositing, and the associated overhead. This could be a X11 compositing window manager (like KWin or mcompositor), but a more realistic use-case is a Wayland compositor (for instance based on [QtCompositor][6]).
 
-Note that the backend in use does not make use of the multi-threading introduced by (2) due to the tile store not being thread-safe and that it already had a cache to mitigate the problem fixed by (1).  
-Note
+The API allows the consumer to inject an class instance for the configuration dependent logic, allowing to integrate the Maliit server with the logic in the rest of the compositor. Applications will use the normal "Maliit" inputcontext and communicate to the server through an IPC like DBus.
 
-So in terms of raw surface rendering speed, the GEGL based backend is now significantly faster than the Python-based one. With 1 and 2 threads it is respectively up to 25% and 100% faster for big brush sizes. With 6 threads, it can be up to 4 times faster.
+After the work with application-hosted Maliit, this feature was completed by making the server and connection libraries available as public API. The API is available in the latest Maliit release (0.90.0), but is considered unstable until Maliit hits the [1.0][7] mark.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
 
-_Switching to the GEGL based backed for MyPaint 1.2 is now both feasible and highly desirable from a performance perspective_.
-
-Note that to see UI performance increases approaching the raw surface drawing performance increase we may also need to do the layer compositing multi-threaded.
-
-I'm trying to convince the Krita guys to update to the new version and to provide some feedback on the impact. Other consumers of the MyPaint brush engine do not tend to communicate much with us (some are proprietary).  
-I have strong hopes that (1) should increase their performance radically as their tile get/set cost is significantly higher than in the MyPaint case: They need to convert between the internal Krita and the MyPaint brush engine working colorspace each time. They may also be able to enable multi-threading and see speedups similar to the GEGL-based backend as a result.
-
-### Future Work
-
-This is only lays the groundwork of better optimized MyPaint brush engine, many areas have room for improvement. For one only a small subset of the heavy code is vectorized. There may be inner loops that can be tweaked. It may be that, with a different tile access pattern compared to before, a different tile size would be more ideal. Perhaps doing the expensive calculation of the brush dab could be avoided some times by caching them... Thinking bigger, one could move all the drawing (and rendering) to the GPU.
-
-More details on these ideas can be found [here][2]. If you are interested in working on any of it, get in touch and start hacking!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][3]
-
-[0]: http://www.jonnor.com/2012/05/mypaint-and-goats-at-lgm2012/
-[1]: https://mail.gna.org/public/mypaint-discuss/2012-11/msg00003.html
-[2]: http://gitorious.org/mypaint/mypaint/blobs/HEAD/brushlib/PERFORMANCE
-[3]: http://www.jonnor.com/wp/?flattrss_redirect&id=625&md5=4c48876747aa6ba46ea6ebb563a2da1f
+[0]: http://www.maliit.org/
+[1]: http://blog.jpetersen.org/2012/01/25/compositing-in-maliit/
+[2]: https://gitorious.org/maliit/maliit-framework/merge_requests/163
+[3]: https://gitorious.org/maliit/maliit-framework/trees/master/examples/apps/embedded
+[4]: https://gitorious.org/maliit/maliit-framework/merge_requests/145
+[5]: https://wiki.maliit.org/Ideas/New_Plugin_Interface
+[6]: http://devqt.blogspot.com/2011/03/qt-compositor.html
+[7]: https://wiki.maliit.org/Roadmap
+[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=541&md5=e1d3e93f5cf5f9709a1699f490e75b2f
