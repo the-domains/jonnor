@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2010/05/grapikslabor-mypaint-meetup-attending-lgm2010/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/02/mypaint-openraster-et-c-update/'
 inLanguage: en
 starred: false
 keywords:
   - mypaint
-  - lgm
-  - graphics
-  - grapiklabor
-  - inkscape
-  - alessandro
-  - workshop
-  - rich
-  - meet
-  - software
-description: "Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise. While on my trip to CERN I spent a couple of days in the area of Zürich. On Sunday 2th of May I traveled from Geneva to Zürich (coming directly from a night-shift, ugh)."
-datePublished: '2016-02-13T18:29:59.363Z'
-dateModified: '2016-02-13T18:28:43.746Z'
+  - gimp
+  - openraster
+  - krita
+  - pledgie
+  - plug-in
+  - document
+  - installer
+  - 27th
+  - hoping
+description: I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from here. Luka Čehovin started work on a reference library (libora) for OpenRaster.
+datePublished: '2016-02-13T18:30:18.476Z'
+dateModified: '2016-02-13T18:29:44.246Z'
 author: []
 related: []
 app_links: []
-title: 'Grapikslabor, MyPaint meetup, attending LGM2010'
+title: 'Mypaint, OpenRaster, etc. update'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,33 +35,43 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-## Grapikslabor, MyPaint meetup, attending LGM2010
+### Mypaint, OpenRaster, etc. update
 
-Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise.
+## OpenRaster
 
-While on [my trip to CERN][0] I spent a couple of days in the area of Zürich. On Sunday 2th of May I traveled from Geneva to Zürich (coming directly from a night-shift, ugh). There I attended [Grapiklabor][1], which is a series of workshops on graphics using free software held by Alessandro Rimoldi, a [Scribus][2] community member. On the schedule that day was vector based graphics with [Inkscape][3]. It was a very useful workshop for me, I now have at least a pretty good idea of how to use Inkscape to solve real problems.
+I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from [here][0].
 
-### MyPaint developer meetup
+[Luka Čehovin][1] started work on a [reference library (libora)][2] for OpenRaster. Hopefully this will, along the way, make it easier to provide OpenRaster support in applications. Perhaps it can also help solve some performance issues we currently have in MyPaint when saving large images.
 
-In Zürich I also meet up with Martin Renold, the creator of [MyPaint][4]. In addition to attending Grapiklabor with me, he was kind enough to let me stay in his home in Winterthur for a couple of days. On Monday we went for a longer hike in a nearby forest, an I got a tour of the city. Of course, with the two most active developers together, the meeting also involved some MyPaint hacking:
+## MyPaint
 
-- We did some design for [our oldest bug][5]; adding some sort of fixed size image functionality. The challenge is doing that without compromising on MyPaints infinite canvas feature, but still being intuitive and efficient for users, and being able to inter-operate with other applications in a good way.  
-- We also approached the [usability issue with the current brush settings dialog][6], got a significant improvement committed, and a even better solution, in my opinion, sketched out.  
-- Also committed was support for layer visibility attributes in OpenRaster, both in MyPaint and in GIMP.
+In late January we [released MyPaint 0.8.0][3]. The release was delayed a couple of months from the initial planning, and we did not get to integrate as much as we'd like from external git branches, but it was about time to get the changes we do have out in a stable version. It was very nice to have a Windows installer ready from day 1, and that we were able to translate it into 12 languages! This weekend we also [released MyPaint 0.8.1][4], which fixed a nasty memory leak and some minor issues. No Windows installer or DEBs yet tho.
 
-### I'm going to LGM 2010!
+Just recently, MyPaint has also been [successfully built and run on Mac OSX][5], pressure sensitivity and all. Hopefully we can make it solid and easily available to end users with time.
 
-I've now also confirmed that I'm going to [Libre Graphics Meeting][7] in Brussels, plane tickets have been ordered and everything. It will be my first LGM, heck, my first conference of any sort! There I will meet up with Martin, Alessandro and many other great people in the free software graphics community. Drafts of the program has been published on the create mailing list, and I'm really looking forward to both the social and technical aspects of the conference. Great things have come out of LGM before, I bet this year will also have some in store.
+I'm also hoping that we're able to get 0.8.1 into official Ubuntu Lucid repositories. Sadly we missed the deadline for being imported from Debian, and I'm not sure who or how to approach this, but at least we got an issue for it [filed on Launchpad][6]. If we also got into the spring releases of Fedora, OpenSUSE, Mandriva et.c. that would be great, but thats of lesser importance.
 
-I might also have another, exciting trip abroad upcoming. If so, more on that later ![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_wink.gif)
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+More important is documentation, we are currently way behind on end-user documentation. I started a skeleton for a [manual][7], and I suspect that I'll be the one to do finish it also as no-one else has shown an interest in working on it. If I get motivated I might also do some screen-casts showing and explaining some features. Another area of documentation is making sure potential contributors have the information they need to easily be able to contribute, and I'm hoping to make all the relevant information available from the [Development page][8] on our wiki. And I'll probably document up some of the code also, eventually. Lots of things to be done in a software project besides writing code!
 
-[0]: http://www.jonnor.com/2010/05/back-from-cern/
-[1]: http://graphicslab.org/grafiklabor/
-[2]: http://www.scribus.net/
-[3]: http://www.inkscape.org/
-[4]: http://www.mypaint.info/
-[5]: https://gna.org/bugs/?9099
-[6]: https://gna.org/bugs/?15989
-[7]: http://libregraphicsmeeting.org/
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=176&md5=1140266deb235c8b4791e78b2d60e659
+As a side note, [Krita][9] 2.2 (due in early May) will include a MyPaint brush-engine, which is very cool. And apparently a commercial OS X application (that I cant remember the name of) already uses the it!
+
+## Going to Libre Graphics Meeting?
+
+I'm looking at going to LGM in Brussels this year, to meet with MyPaint, GIMP, Krita and developers of free and open source graphics software. Sadly its on 27th to 30th of May, which really is a bad time for me; May 27th being the dead-line for my senior project report and on June 2nd is my first exam. But we've planned completion of the report 2 weeks before that and I'm trying to prepare in advance for my exams, so I'm hoping that I can go.
+
+To make this event happen and enable developers to go a money-raising campaign has just been launched on Pledgie: http://pledgie.com/campaigns/8926 Please support this effort if you are able!
+[![](http://www.pledgie.com/campaigns/8926.png?skin_name=chrome)][10]
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][11]
+
+[0]: http://registry.gimp.org/node/18435
+[1]: http://luka.tnode.com/
+[2]: http://create.freedesktop.org/wiki/OpenRaster/Reference_Library
+[3]: http://mypaint.intilinux.com/?p=302
+[4]: http://mypaint.intilinux.com/?p=362
+[5]: http://forum.intilinux.com/mypaint-development-and-suggestions/mac-osx-port/msg5950/#msg5950
+[6]: https://bugs.launchpad.net/ubuntu/+source/mypaint/+bug/515016
+[7]: http://wiki.mypaint.info/Documentation/Manual
+[8]: http://wiki.mypaint.info/Development
+[9]: http://krita.org/
+[10]: http://www.pledgie.com/campaigns/8926
+[11]: http://www.jonnor.com/wp/?flattrss_redirect&id=132&md5=1cfe1250de277bcae43b0f7effb6ea60
