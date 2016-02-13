@@ -2,27 +2,34 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/04/introducing-maliit-on-screen-keyboard-in-gnome-3/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/11/glom-postgresql-setup/'
 inLanguage: en
 starred: false
 keywords:
-  - maliit
-  - keyboard
-  - gnome
-  - fedora
-  - theming
-  - layouts
-  - meego
-  - gnu
-  - enchanced
-  - input
-description: 'Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms". This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it.'
-datePublished: '2016-02-13T20:28:24.137Z'
-dateModified: '2016-02-13T20:25:09.101Z'
+  - glom
+  - server
+  - database
+  - postgresql
+  - dead-simple
+  - glom-postgresql-setup
+  - application
+  - set
+  - user
+  - privilege
+description: 'Glom is an application that lets you design database systems, including user interface. It can be run as an ordinary application, and will set up and run a the database server for you automatically. But if you want to set up a shared instance, where several users connect with Glom to the same database, you typically want your database server on a dedicated server.'
+datePublished: '2016-02-13T20:28:31.195Z'
+dateModified: '2016-02-13T19:54:32.676Z'
 author: []
-related: []
+related:
+  - score: 0.5581319332
+    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
+    title: Servers.com Brings Its Bare-Metal Servers To The US
+    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
+    thumbnail_height: 400
+    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
+    thumbnail_width: 764
 app_links: []
-title: Introducing; Maliit on-screen keyboard in Gnome 3
+title: glom-postgresql-setup
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,36 +42,14 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Introducing; Maliit on-screen keyboard in Gnome 3
+# glom-postgresql-setup
 
-Maliit (also known as Meego Input Methods) has the following [overall goal][0]: "to be _the_ input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".
+[Glom][0] is an application that lets you design database systems, including user interface. It can be run as an ordinary application, and will set up and run a the database server for you automatically. But if you want to set up a shared instance, where several users connect with Glom to the same database, you typically want your database server on a dedicated server. And this can be a bit tricky to set up. So, [glom-postgresql-setup][1] was born; A dead-simple utility application to set up a PostgreSQL server for use with Glom. Like Glom, it is written in C++ using Gtkmm.
 
-This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it. The demo is done on a WeTab tablet running a standard Fedora 15 Beta, with the latest Maliit software installed. Jan Arne Petersen is working a bit on Fedora packages, so hopefully it will soon be easy to install for those who are interested.
+glom-postgresql-setup lets you to create a database user, and set up the PostgreSQL configuration to accept connections from external IPs. The UI is just a dialog with two fields and two buttons, dead-simple indeed. For now the application requires to be launched with superuser privileges, but before we encourage use of this tool we will of course implement proper privilege escalation using PolicyKit.  
+It would also be nice to be able to install and start the PostgreSQL server as well, but currently that is not so easy to do in a cross-distro way. Hopefully packagekit and systemd will help solve that, eventually.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][2]
 
-Some more info about the features shown in above video:
-
-**0\. Theming.** Using the theming support in the standard Maliit keyboard, it is easy to go from a mockup to ready implemented theming. This theme was based on the [mockup from live.gnome.org][1] (by Jakub Steiner I believe?) and done by Michael Hasselmann in a couple of hours. He also has a blogpost on [how the theming system works][2].
-
-**1\. Typing text**.This is of course the number one feature of an on-screen keyboard. There are some essential best-practice and some tricks used in Maliit to be able to get really good reponse time and typing speeds. I hope we will have some blogposts about that soon.
-
-Typing speed can be further enchanced by enabling multitouch support (not working out-of-the-box in Fedora due to missing support further down the stack), or by installing a prediction/correction engine. User feedback can be enchanced with audatory and tactile feedback (requires hardware and driver support obviously).
-
-**2\. Different languages/layouts**, and switching between them. Maliit comes with layouts for over 20 languages, tested and tweaked by usability experts. Latin, Cyrillic, Arabic and Chinese based scripts are covered. The layouts are defined by XML files, so one can easily change them if wanted.
-[![](http://www.jonnor.com/wp/files/chinese_zhuyin-150x150.png)][3]
-[![](http://www.jonnor.com/wp/files/arabic_crop-150x150.png)][4]
-[![](http://www.jonnor.com/wp/files/russian_crop-150x150.png)][5]
-
-For more of the features offered by Maliit framework and standard keyboard, see the [wiki page][6]. If you are interested in improving Maliit, or its integration in Gnome 3 or other GNU/Linux environment, join the [irc channel or mailing list][7].
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
-
-Next up; the importance and difficulties of input method integration on touch enabled devices.
-
-[0]: http://wiki.meego.com/Maliit#Goals
-[1]: https://live.gnome.org/GnomeShell/Design/Whiteboards/ScreenKeyboard
-[2]: http://taschenorakel.de/michael/2011/04/10/customizing-meego-keyboard/
-[3]: http://www.jonnor.com/wp/files/chinese_zhuyin.png
-[4]: http://www.jonnor.com/wp/files/arabic_crop.png
-[5]: http://www.jonnor.com/wp/files/russian_crop.png
-[6]: http://wiki.meego.com/Maliit#Features
-[7]: http://wiki.meego.com/Maliit#Communication_channels
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=394&md5=3c8794eadd2099c06b751189e7973bcb
+[0]: http://www.glom.org/wiki/index.php?title=Glom
+[1]: http://gitorious.org/openismus-playground/glom-postgresql-setup
+[2]: http://www.jonnor.com/wp/?flattrss_redirect&id=315&md5=6cac9348c8363dcac602c92a76e3ac2a
