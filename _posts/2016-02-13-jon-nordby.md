@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - lgm
-  - graphical
-  - mypaint
-  - openraster
-  - freely
-  - licensed
-  - talk
-  - software
-  - submit
-  - donating
-description: "So, it is confirmed, I'm going to LGM 2011! I was at LGM last year, and I expect this year to be just as good. Hopefully I'll also be giving a talk this time, about MyPaint and/or OpenRaster. If you are interested in free and open source graphics software, or the production of freely licensed graphical works, you should go too!"
+  - session
+  - bof
+  - workshops
+  - hands-on
+  - desktop
+  - scheduled
+  - webpage
+  - cross-project
+  - well-defined
+  - pre-register
+description: "As a member of the local organizing team for the Desktop Summit 2011 in Berlin, I'm glad to say that you can now register your workshop or BoF session."
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:56.206Z'
-dateModified: '2016-02-13T18:05:05.736Z'
+datePublished: '2016-02-13T18:11:56.514Z'
+dateModified: '2016-02-13T18:05:03.385Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,16 +35,20 @@ _type: Article
 ---
 # Jon Nordby
 
-So, it is confirmed, I'm going to [LGM 2011][0]! I was at LGM [last year][1], and I expect this year to be just as good. Hopefully I'll also be giving a talk this time, about MyPaint and/or OpenRaster.
+As a member of the local organizing team for the [Desktop Summit 2011 in Berlin][0], I'm glad to say that you can now register your workshop or BoF session. These sessions take place during the last 3 days of the conference, and complement the presentations that take place during the 3 first days: The Workshops & BoFs sessions are hands-on sessions where people get together to _discuss and work_ on issues face to face.
 
-If you are interested in free and open source graphics software, or the production of freely licensed graphical works, you should go too! See the [press release][2] for more information, or go straight to [submit a talk proposal][3]. If you cannot be there but still want to show your support, please consider [donating][4].
+Short excerpt from the [news entry][1] on the webpage:
 
-I guess this means I should order the tickets soon...
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+> All forms of _hands-on_ activities that aim to further the Free Desktop are welcomed. Examples of such sessions include [BoF][2], project and cross-project meetings, workshops, hacking sessions and training/teaching sessions. Each session is self-organized and it is up to the hosts and participants to decide if the session is to be loosely oriented around a set of topics, or have a well-defined agenda.
+> 
+> The organisation committee would like to schedule as many of these sessions beforehand as possible. We expect over 1000 visitors and scheduling helps to ensure minimal overlap with other sessions and allows us to provide a clear timetable for the visitors.  
+> The remainder of the rooms will be scheduled via the wiki but we urge you to pre-register and get a proposal in before the deadline, July 3rd!
 
-[0]: http://www.libregraphicsmeeting.org/2011/
-[1]: http://www.jonnor.com/2010/06/lgm2010-writeup/
-[2]: http://create.freedesktop.org/wiki/Conference_2011_Press_Release_1
-[3]: http://create.freedesktop.org/wiki/Conference_2011/Submit_Talk
-[4]: http://pledgie.com/campaigns/14610
-[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=389&md5=53c70fd4a473d1eb7071beea01b10fd8
+I will be proposing a session or two of my own very soon, I suggest you do the same! [Use this link][3]
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
+
+[0]: http://www.desktopsummit.org/
+[1]: https://desktopsummit.org/news/registration-workshops-bofs-now-open
+[2]: http://en.wikipedia.org/wiki/Birds_of_a_Feather_%28computing%29
+[3]: https://desktopsummit.org/program/workshops-bofs
+[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=432&md5=a9c08d9023c19f7a754c6598df7a210e
