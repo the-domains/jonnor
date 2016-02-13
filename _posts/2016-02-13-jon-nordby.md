@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - msgflo
-  - participants
-  - noflo
-  - node
-  - dynos
-  - inport
-  - msg
-  - messages
-  - process
-  - graph
-description: 'At The Grid we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( GSS to CSS compilation) and image processing.'
+  - mypaint
+  - gimp
+  - openraster
+  - krita
+  - pledgie
+  - plug-in
+  - document
+  - installer
+  - 27th
+  - hoping
+description: I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from here. Luka Čehovin started work on a reference library (libora) for OpenRaster.
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:13:26.528Z'
-dateModified: '2016-02-13T18:04:25.996Z'
+datePublished: '2016-02-13T18:14:45.665Z'
+dateModified: '2016-02-13T18:05:12.653Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,83 +35,41 @@ _type: Article
 ---
 # Jon Nordby
 
-At [The Grid][0] we do a lot of CPU intensive work on the backend as part of producing web pages. This includes content extraction, normalization, image analytics, webpage auto-layout using constraint solvers, webpage optimization ( [GSS][1] to CSS compilation) and [image processing][2].
+## OpenRaster
 
-The system runs on Heroku, and spreads over some 10 different dyno roles, communicating between each other using AMQP message queues. Some of the dyno separation also deals with external APIs, allowing us to handle service failures and API rate limiting in a robust manner.
+I managed to the GIMP OpenRaster plug-in into mainline GIMP. This means that GIMP 2.7.1 and forward will have rudimentary saving and loading support out-of-the-box. Users of GIMP 2.6 or 2.7.0 can download and install the plug-in from [here][0].
 
-Majority of the workers are implemented using [NoFlo][3], a flow-based-programming for Node.js (and browser), using [Flowhub][4] as our IDE. This gives us a strictly encapsulated, visual, introspectable view of the worker; making for a testable and easy-to-understand architecture.
+[Luka Čehovin][1] started work on a [reference library (libora)][2] for OpenRaster. Hopefully this will, along the way, make it easier to provide OpenRaster support in applications. Perhaps it can also help solve some performance issues we currently have in MyPaint when saving large images.
 
-However NoFlo is only concerned about an individual worker process: it does not comprehend that it is a part of a bigger system.
+## MyPaint
 
-### Enter MsgFlo
+In late January we [released MyPaint 0.8.0][3]. The release was delayed a couple of months from the initial planning, and we did not get to integrate as much as we'd like from external git branches, but it was about time to get the changes we do have out in a stable version. It was very nice to have a Windows installer ready from day 1, and that we were able to translate it into 12 languages! This weekend we also [released MyPaint 0.8.1][4], which fixed a nasty memory leak and some minor issues. No Windows installer or DEBs yet tho.
 
-[MsgFlo][5] is a new FBP runtime designed for distributed systems. Each node represents a separate process, and the connections (edges) between nodes are message queues in a broker process.  
-To make this distinction clearer, we've adopted the term _participant_ for a node which participates in a MsgFlo network.  
-Because MsgFlo implements the same [FBP runtime protocol][6] and [JSON graph format][7] as NoFlo, imgflo, [MicroFlo][8] - we can use the same tools, including the [.FBP DSL][9] and Flowhub IDE.
+Just recently, MyPaint has also been [successfully built and run on Mac OSX][5], pressure sensitivity and all. Hopefully we can make it solid and easily available to end users with time.
 
-The graph above represents how different _roles_ are wired together. There may be 1-N participants in the same role, for instance 10 dynos of the same dyno type on Heroku.  
-There can also be multiple participants in a single process. This can be useful to make different independent facets show up as independent nodes in a graph, even if they happen to be executing in the same process. One could use the same mechanism to implement a shared-nothing message-passing multithreading model, with the limitation that every message will pass through a broker.
+I'm also hoping that we're able to get 0.8.1 into official Ubuntu Lucid repositories. Sadly we missed the deadline for being imported from Debian, and I'm not sure who or how to approach this, but at least we got an issue for it [filed on Launchpad][6]. If we also got into the spring releases of Fedora, OpenSUSE, Mandriva et.c. that would be great, but thats of lesser importance.
 
-Connections have pub-sub semantics, so generally each of the individual dynos will receive messages sent on the connection.  
-The special component _msgflo/RoundRobin_ specifies that messages should be delivered in a round-robin fashion: new message goes only to the next process in that role with available capacity. The RoundRobin component also supports dead-lettering, so failed jobs can be routed to another queue. For instance to be re-processed at a later point automatically, or manually after developers have located and fixed the issue. This way one never loose pending work.  
-On AMQP roundrobin delivery and deadlettering can be fulfilled by the broker (e.g. RabbitMQ), so there is no dedicated process for that node.
+More important is documentation, we are currently way behind on end-user documentation. I started a skeleton for a [manual][7], and I suspect that I'll be the one to do finish it also as no-one else has shown an interest in working on it. If I get motivated I might also do some screen-casts showing and explaining some features. Another area of documentation is making sure potential contributors have the information they need to easily be able to contribute, and I'm hoping to make all the relevant information available from the [Development page][8] on our wiki. And I'll probably document up some of the code also, eventually. Lots of things to be done in a software project besides writing code!
 
-### Messaging systems
+As a side note, [Krita][9] 2.2 (due in early May) will include a MyPaint brush-engine, which is very cool. And apparently a commercial OS X application (that I cant remember the name of) already uses the it!
 
-People use different messaging systems. We've tried to make sure that MsgFlo architecture and tools can be used with many different. The format and delivery of [discovery messages is specified][10], and the tools have a transport abstraction layer. Currently there is production-level support for AMQP 0-9-1 (tested with RabbitMQ). Basic support exists for [MQTT][11], a simple protocol popular in distributed "Internet-of-Things" type systems. Support for more transports can be added by [implementing two classes][12].
+## Going to Libre Graphics Meeting?
 
-### Polyglot participation
+I'm looking at going to LGM in Brussels this year, to meet with MyPaint, GIMP, Krita and developers of free and open source graphics software. Sadly its on 27th to 30th of May, which really is a bad time for me; May 27th being the dead-line for my senior project report and on June 2nd is my first exam. But we've planned completion of the report 2 weeks before that and I'm trying to prepare in advance for my exams, so I'm hoping that I can go.
 
-MsgFlo itself only handles the discovery of participants and setup of the connections between them, as well as providing debug capabilities like Flowhub endpoint support. Having participants in a particular language requires implementing . We do provide a set of libraries that makes this easy for popular languages:
+To make this event happen and enable developers to go a money-raising campaign has just been launched on Pledgie: http://pledgie.com/campaigns/8926 Please support this effort if you are able!
+[![](http://www.pledgie.com/campaigns/8926.png?skin_name=chrome)][10]
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][11]
 
-Using [noflo-runtime-msgflo][13] makes it super simple to use NoFlo as MsgFlo participants. The exported ports of the NoFlo graph or component (for instance 'in', 'out', and 'error') will be automatically made available as queues in MsgFlo, and one can connect this into a bigger system.
-
-    noflo-runtime-msgflo --name compute_foo --graph project/MyGraph
-
-If you have some plain Node.js you can use [msgflo-nodejs][14], like this real-life [example from imgflo-server][15].
-
-    msgflo = require 'msgflo' ProcessImageParticipant = (client, role) -> definition = component: 'imgflo-server/ProcessImage' icon: 'file-image-o' label: 'Executes image processing jobs' inports: [ id: 'job' type: 'object' ] outports: [ id: 'jobresult' type: 'object' ] func = (inport, job, send) -> throw new Error 'Unsupported port: ' + inport if inport != 'job' # XXX: use an error queue? @executor.doJob job, (result) -> send 'jobresult', null, result return new msgflo.participant.Participant client, definition, func, role 
-
-In addition to node.js and NoFlo, there is basic participant support provided for Python and for C++ (with AMQP). It took about about half a day and 2-300 lines of code, so adding support for more languages should be pretty simple. There are even [tests][16] you [can reuse][17].
-
-[Example][18] in Python using [msgflo-python][19]:
-
-    import msgflo class Repeat(msgflo.Participant): def __init__(self, role): d = { 'component': 'PythonRepeat', 'label': 'Repeat input data without change', } msgflo.Participant.__init__(self, d, role) def process(self, inport, msg): self.send('out', msg.data) self.ack(msg) 
-
-[Example][20] becomes a bit more verbose in C++11, using [msgflo-cpp][21].
-
-     class Repeat : public msgflo::Participant { struct Def : public msgflo::Definition { Def(void) : msgflo::Definition() { component = "C++Repeat"; label = "Repeats input on outport unchanged"; outports = { { "out", "any", "" } }; } }; public: Repeat(std::string role) : msgflo::Participant(role, Def()) { } private: virtual void process(std::string port, msgflo::Message msg) { std::cout << "Repeat.process()" << std::endl; msgflo::Message out; out.json = msg.json; send("out", out); ack(msg); } }; 
-
-### Next
-
-Since MsgFlo 0.3, we are using MsgFlo in production for _all_ workers across The Grid backends. After migrating we've also moved more things into dedicated participants, because we now have the tooling that makes managing that complexity easy. Our short term focus now is more tools around MsgFlo, like deadline-based autoscaling and integration of data-driven testing using [fbp-spec][22]. Features planned for MsgFlo itself includes live [introspection of messages][23] in Flowhub.
-
-Looking further ahead, we would like to make more use of the polyglot capabilities, for instance by move some of our image analytics out from NoFlo/node.js participants (with C/C++ libs) to pure C++ 11 participants.  
-I also hope to do some fun projects with MQTT and MicroFlo - and validate MsgFlo for Embedded/Internet-of-Things-type.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][24]
-
-[0]: http://thegrid.io/
-[1]: http://gridstylesheets.org/
-[2]: http://imgflo.org/
-[3]: http://noflojs.org/
-[4]: https://flowhub.io/
-[5]: https://github.com/the-grid/msgflo
-[6]: http://noflojs.org/documentation/protocol/
-[7]: http://noflojs.org/documentation/json
-[8]: http://microflo.org/
-[9]: http://noflojs.org/documentation/fbp/
-[10]: https://github.com/msgflo/msgflo#communications
-[11]: http://en.wikipedia.org/wiki/MQTT
-[12]: https://github.com/msgflo/msgflo-nodejs/blob/master/src/direct.coffee
-[13]: https://github.com/noflo/noflo-runtime-msgflo
-[14]: https://github.com/jonnor/imgflo-server
-[15]: https://github.com/jonnor/imgflo-server/blob/master/src/worker.coffee
-[16]: https://github.com/msgflo/msgflo/blob/master/spec/heterogenous.coffee
-[17]: https://github.com/msgflo/msgflo-cpp/blob/master/spec/participant.coffee
-[18]: https://github.com/msgflo/msgflo-python/blob/master/examples/repeat.py
-[19]: https://github.com/msgflo/msgflo-python
-[20]: https://github.com/msgflo/msgflo-cpp/blob/master/examples/repeat.cpp
-[21]: https://github.com/the-grid/msgflo-cpp
-[22]: https://github.com/flowbased/fbp-spec
-[23]: https://github.com/msgflo/msgflo/issues/3
-[24]: http://www.jonnor.com/wp/?flattrss_redirect&id=815&md5=a0c98e44d07e5a56286937e5ad4c76be
+[0]: http://registry.gimp.org/node/18435
+[1]: http://luka.tnode.com/
+[2]: http://create.freedesktop.org/wiki/OpenRaster/Reference_Library
+[3]: http://mypaint.intilinux.com/?p=302
+[4]: http://mypaint.intilinux.com/?p=362
+[5]: http://forum.intilinux.com/mypaint-development-and-suggestions/mac-osx-port/msg5950/#msg5950
+[6]: https://bugs.launchpad.net/ubuntu/+source/mypaint/+bug/515016
+[7]: http://wiki.mypaint.info/Documentation/Manual
+[8]: http://wiki.mypaint.info/Development
+[9]: http://krita.org/
+[10]: http://www.pledgie.com/campaigns/8926
+[11]: http://www.jonnor.com/wp/?flattrss_redirect&id=132&md5=1cfe1250de277bcae43b0f7effb6ea60
