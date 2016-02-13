@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/01/want-to-integrate-with-the-meego-netbook-ux-panel/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/11/image-preview-support-for-openraster-in-qt-working/'
 inLanguage: en
 starred: false
 keywords:
-  - meego
-  - api
-  - bugreport
-  - dbus
-  - gtk
-  - mutter-meego
-  - libmeego-panel
-  - netbook
+  - libora
+  - openraster
+  - plug-in
+  - kde
+  - qimage
   - readme
   - gitorious
-description: 'It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit*. As stated by the libmeego-panel/docs/README in the source tree of mutter-meego there are convenience APIs for GTK+ and Clutter based implementations.'
-datePublished: '2016-02-13T20:29:15.428Z'
-dateModified: '2016-02-13T19:56:05.679Z'
+  - applications
+  - document
+  - rendering
+description: "While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*."
+datePublished: '2016-02-13T20:29:23.439Z'
+dateModified: '2016-02-13T19:55:19.236Z'
 author: []
 related: []
 app_links: []
-title: Meego Netbook UX
+title: Image preview support for OpenRaster in Qt working
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,16 +35,23 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Meego Netbook UX
+# Image preview support for OpenRaster in Qt working
 
-It is not well communicated, but you can apparently write your own "tabs"/"panes" for the panel/toolbar found in the Meego Netbook UX. Hopefully this blogpost helps a tiny bit\*.
+While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the [OpenRaster][0] file format\*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:
 
-As stated by the [libmeego-panel/docs/README][0] in the [source tree of mutter-meego][1] there are convenience APIs for GTK+ and Clutter based implementations. But it seems you can also just use the DBUS API, in case you prefer Qt or something else. I found this out by searching though meego.gitorious.org after someone asked on \#meego
+The level of features supported is such that you will be able to preview OpenRaster documents created with applications like MyPaint, Drawpile, Nathive and GIMP, with the limitation that it will have a white background for transparent areas. The code can be found in [qopenraster repository][1] on gitorious (no tarballs), and the README file documents how to install as well as things that remain to be done.
 
-\*Since this should be documented in the platform API, I've of course filed a [bugreport][2].
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][3]
+The plug-in is basically a thin wrapper around [libora][2], the OpenRaster [reference library][3]. libora takes care of parsing the OpenRaster document, reading out the layer data and rendering it into a single buffer. The rendering ability was added by me as part of this work, in addition to some other minor stuff. The Qt plug-in does RGBA to ARGB conversion and provides the QImageIOPlugin interface expected by Qt.
 
-[0]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego/blobs/master/libmeego-panel/docs/README
-[1]: http://meego.gitorious.org/meego-netbook-ux/mutter-meego
-[2]: http://bugs.meego.com/show_bug.cgi?id=12748
-[3]: http://www.jonnor.com/wp/?flattrss_redirect&id=368&md5=28173de74aaacdd352c6f0953aaebac1
+Doing this has also exposed several limitations and not-so-nice things in libora that should/needs to be improved. I've updated libora's [README][4] file to reflect this.
+_\*Assuming the Qt application actually uses QImage in a straight-forward way. The KDE image viewer Gwenview does not seem to use QImage directly, so you will not automatically get support there by installing the plug-in :((. I fear that other KDE applications might be the same, though I was not able to test Digikam. If anyone has a suggestion for a Qt based image viewer that works sanely in this area, don't hesitate to leave a comment._
+
+PS: I have an almost-working gdk-pixbuf module as well, will push that to gitorious soon.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+
+[0]: http://create.freedesktop.org/wiki/OpenRaster
+[1]: http://gitorious.org/openraster/qopenraster
+[2]: http://gitorious.org/openraster/libora
+[3]: http://create.freedesktop.org/wiki/OpenRaster/Reference_Library
+[4]: http://gitorious.org/openraster/libora/blobs/master/README
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=306&md5=dcb6ecfb85b8906a64b9985ff7eca170
