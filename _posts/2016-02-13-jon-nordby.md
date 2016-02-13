@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - https
-  - meego
-  - thegrid
-  - ago
-  - massifg
-  - augmentl
-  - flowhub
-  - ilovefs
-  - maliit
-  - quadroped
-description: "It is official, the diploma for my Bachelors degree in Electronics Engineering arrived late last week. I guess that means I'm done with studying for a while!"
+  - software
+  - free
+  - platforms
+  - proprietary
+  - user-bases
+  - applications
+  - windows
+  - add
+  - value
+  - source
+description: 'While I do not believe that killer applications exist, I do like to think that free and open source software applications adds value to the platform it supports, and its users. For small applications it might not be much, but still non-zero.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:54.747Z'
-dateModified: '2016-02-13T18:05:17.662Z'
+datePublished: '2016-02-13T18:11:55.767Z'
+dateModified: '2016-02-13T18:05:15.710Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -34,4 +34,13 @@ _type: Article
 
 ---
 # Jon Nordby
-![](http://0.gravatar.com/avatar/6d472f6d246ba03e2a769d8cbf56b53e?s=48&d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D48&r=G)
+
+While I do not believe that killer applications exist, I do like to think that free and open source software applications adds value to the platform it supports, and its users. For small applications it might not be much, but still non-zero.  
+Personally, I do not particularly want to add value to proprietary platforms. I do not use them, nor want to "endorse" them. This is especially so if it means giving less to free platforms or software: I would rather spend my time on developing new features and fixing bugs in my favorite free software applications than to spend it on packaging and support for Windows, for example.
+
+But at the same time I want to add value to free software as a whole and I recognize that getting the software out to the user is fundamental. And that proprietary platforms like Microsoft Windows and Mac OS X have a ten to hundred times bigger user-base than free platforms like GNU/Linux. So time spent there would potentially be worth a lot, right? Yet I do not really want to do it, and I think that many existing free software contributors feel the same...
+
+It is paradoxical that Windows and OSX represents the largest user-bases, often also for free and open source software, yet one of the smallest contributor-bases. How can this be fixed? How can we get more of the people that seemingly care about free and open source software on proprietary platforms to actually contribute?
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][0]
+
+[0]: http://www.jonnor.com/wp/?flattrss_redirect&id=290&md5=a359b5fda5c11947d67f74b320f34e12
