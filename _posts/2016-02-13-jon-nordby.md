@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/06/example-plugins-for-maliit-available/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/09/massifg-0-2-2/'
 inLanguage: en
 starred: false
 keywords:
-  - input
-  - meego
-  - plugins
-  - methods
-  - maliit
-  - keyboard
-  - qml
-  - framework
-  - examples
-  - repository
-description: 'In Maliit input methods are implemented as plugins. This flexibility is important because it allows the same framework to provide very different text input methods, without us having to implement them all. Different virtual keyboards, hardware keyboard input, handwriting, speech-to-text, input methods for accessibility, et.c. are all possible with the Maliit framework.'
-datePublished: '2016-02-13T20:28:36.532Z'
-dateModified: '2016-02-13T19:53:27.594Z'
+  - gnome
+  - packages
+  - dialog
+  - axis
+  - x86_64
+  - gentoo
+  - massifg
+  - hig
+  - readme
+  - ellipsis
+description: 'Another day, another release. This release fixes: Missing axis labels - now it is explicit what each axis represents Inconsistencies with GNOME HIG: Button ordering in save/open dialog and missing ellipsis for menu actions which require further user input A error message on canceling in the save dialog which should not have been there Ubuntu 10.04 packages are now in the Openismus PPA.'
+datePublished: '2016-02-13T20:28:40.129Z'
+dateModified: '2016-02-13T19:52:56.224Z'
 author: []
 related: []
 app_links: []
-title: Example plugins for Maliit available
+title: MassifG 0.2.2
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,29 +35,31 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Example plugins for Maliit available
+# MassifG 0.2.2
 
-In [Maliit][0] input methods are implemented as plugins. This flexibility is important because it allows the same framework to provide very different text input methods, without us having to implement them all. Different virtual keyboards, hardware keyboard input, handwriting, speech-to-text, input methods for accessibility, et.c. are all possible with the Maliit framework. This makes the input method plugin API the most important extension point.
+Another day, another release. This release fixes:
 
-To make it simple to start developing an input method for Maliit, we have written a set of example plugins that can be used as a skeleton\* for a new input method. There is one "Hello World" example showing the C++ interface, and one showing the [newly added QML interface][1]. The latest documentation for the framework in HTML format is also included, along with a simple test application. How to get started is documented on our wiki page: [Go!][2]
+* Missing axis labels - now it is explicit what each axis represents
+* Inconsistencies with GNOME HIG: Button ordering in save/open dialog and missing ellipsis for menu actions which require further user input
+* A error message on canceling in the save dialog which should not have been there
 
-A nice thing is that these examples are in our framework repository: built as part of the standard build, with simple tests run as part of our test-suite. This ensures that the examples stay up-to-date and working, something I find that step-by-step, code-and-talk tutorials in some documentation repository/directory typically do not.
+Ubuntu 10.04 packages are now in the [Openismus PPA][0]. Due to [scheduled downtime for Launchpad][1] it might take an hour or two before they are built. The tarball is [here][2], Fedora 13 packages here ( [i686][3], [x86\_64][4]). Arch packages are still [in AUR][5], and Gentoo packages in [Dave's overlay][6].
 
-If you want to look at real-life examples of plugins, check out the [Meego Keyboard code][3] (C++), the [Meego Keyboard Quick code][4] (QML), or [foolegg][5] from maemo.org's [cute-input-method code][6] (QML with Pinjyin support!). Also make sure to check out [Michael Hasselmann][7]s talk at the Meego Spring 2011 Conference: [Developing custom input methods for Meego][8].
+I've updated the [README][7] to include information about the roadmap and tasks to be done. Check it out if you're interested in improving this small tool.  
+Hopefully there will be a massifg product in GNOME bugzilla soon (I've [made a request][8]), but in the meantime just report problems to me by email.
 
-If you hit any issues, contact us through one of [our communication channels][9].
-
-\* Note that currently the license of the examples is LGPLv2 like the rest of the framework.
+Here is yet another screenshot:
+[![](http://www.jonnor.com/wp/files/2010-09-09-122757_1680x1050_scrot-300x187.png)][9]
 [![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][10]
 
-[0]: http://wiki.meego.com/Maliit
-[1]: http://taschenorakel.de/michael/2011/05/12/writing-qml-based-input-methods-maliit/
-[2]: http://wiki.meego.com/Maliit/Documentation#Plugin_development_Quickstart
-[3]: https://meego.gitorious.org/meegotouch/meegotouch-inputmethodkeyboard/trees/master/m-keyboard
-[4]: https://meego.gitorious.org/meegotouch/meegotouch-inputmethodkeyboard/trees/master/meego-keyboard-quick
-[5]: http://talk.maemo.org/member.php?u=31949
-[6]: https://github.com/foolegg/cute-input-method/tree/maliit
-[7]: http://taschenorakel.de/michael/
-[8]: http://sf2011.meego.com/program/sessions/developing-custom-input-methods-meego
-[9]: http://wiki.meego.com/Maliit#Communication_channels
-[10]: http://www.jonnor.com/wp/?flattrss_redirect&id=413&md5=6902756be5ab084cbc18b2f2a11bedcb
+[0]: https://launchpad.net/~openismus-team/+archive/ppa
+[1]: http://blog.launchpad.net/notifications/launchpad-unavailable-9th-september-2010-08-00-utc
+[2]: http://www.jonnor.com/files/massifg-0.2.2.tar.gz
+[3]: http://www.jonnor.com/files/massifg-0.2.2-1.fc13.i686.rpm
+[4]: http://www.jonnor.com/files/massifg-0.2.2-1.fc13.x86_64.rpm
+[5]: http://aur.archlinux.org/packages.php?O=0&K=massifg&do_Search=Go
+[6]: http://github.com/amigadave/overlay
+[7]: http://gitorious.org/massifg/massifg/blobs/master/README
+[8]: https://bugzilla.gnome.org/show_bug.cgi?id=628965
+[9]: http://www.jonnor.com/wp/files/2010-09-09-122757_1680x1050_scrot.png
+[10]: http://www.jonnor.com/wp/?flattrss_redirect&id=274&md5=983d4fef88c114a4dfa048b31eb188e2
