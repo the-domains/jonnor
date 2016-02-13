@@ -17,7 +17,7 @@ keywords:
   - meet
   - software
 description: "Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise. While on my trip to CERN I spent a couple of days in the area of Zürich. On Sunday 2th of May I traveled from Geneva to Zürich (coming directly from a night-shift, ugh)."
-datePublished: '2016-02-13T18:29:48.945Z'
+datePublished: '2016-02-13T18:29:59.363Z'
 dateModified: '2016-02-13T18:28:43.746Z'
 author: []
 related: []
