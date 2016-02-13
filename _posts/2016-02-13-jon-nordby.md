@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2013/02/libre-graphics-meeting-2013-we-want-you/'
+isBasedOnUrl: 'http://www.jonnor.com/2012/10/hello-oslo-hello-squarehead-technology/'
 inLanguage: en
 starred: false
 keywords:
-  - libre
-  - graphics
-  - software
-  - mypaint
-  - krita
-  - scribus
-  - typography
-  - gimp
-  - inkscape
-  - blender
-description: 'Are you interested in the overlap between technology, art and design; and free, open, libre tools that join these domain? Do you use Libre Graphics software like GIMP, Blender, Krita, Inkscape, Scribus, MyPaint (and similar), and want to meet the people behind them?'
-datePublished: '2016-02-13T20:35:29.687Z'
-dateModified: '2016-02-13T19:45:58.886Z'
+  - microphones
+  - openismus
+  - audio
+  - acoustical
+  - array
+  - real-time
+  - digital
+  - linux
+  - parabolic
+  - squarehead
+description: 'Two years after moving to Berlin and joining Openismus, it is time for another big change. I learned a lot while at Openismus, and had a lot of fun both in and outside of working hours. Those of you who have been to the barbecue parties know what a great bunch of people they are.'
+datePublished: '2016-02-13T20:35:38.048Z'
+dateModified: '2016-02-13T19:45:22.434Z'
 author: []
 related: []
 app_links: []
-title: 'Libre Graphics Meeting 2013: We want you'
+title: 'Hello Oslo, Hello Squarehead Technology'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,19 +35,22 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Libre Graphics Meeting 2013: We want you
+# Hello Oslo, Hello Squarehead Technology
 
-Are you interested in the overlap between technology, art and design; and free, open, libre tools that join these domain? Do you use Libre Graphics software like GIMP, Blender, Krita, Inkscape, Scribus, MyPaint (and similar), and want to meet the people behind them?  
-Are you a developer of free and open source software in the areas of photography, graphics, page layout, design, publishing, typography, animation or video?
-[![](http://www.forkable.eu/generators/r+w/o/press/rgb/LGM-Logo+15_Textblock+URL_400px.png)][0]
+Two years after [moving to Berlin][0] and joining [Openismus][1], it is time for another big change. I learned a lot while at Openismus, and had a lot of fun both in and outside of working hours. Those of you who have been to the barbecue parties know what a great bunch of people they are. I'm very glad to see that they are now [going strong again][2].
 
-Come to the 8th annual [Libre Graphics Meeting][1], from Wednesday 10th to Saturday 13th April in Madrid, Spain!
+In December I will join [Squarehead Technology][3] in Oslo as a Software Developer. There I will work on their advanced microphone array systems for acoustic cameras and acoustical zoom. The role includes both real-time programming, digital signal processing of audio/video and embedded Linux, which is pretty much exactly what I was looking for.
 
-[Registration is open][2] (no attendance fee, sponsorship possible), and [presentation & workshop proposals are accepted until 15th of February][3] (2 weeks from today!).
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
+Here is a very quick demo of the technology, used for noise analysis: [Nor 848 video][4]
 
-[0]: http://libregraphicsmeeting.org/2013/
-[1]: http://libregraphicsmeeting.org/2013
-[2]: http://libregraphicsmeeting.org/2013/registration/
-[3]: http://libregraphicsmeeting.org/2013/call-for-presentations/
-[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=636&md5=eb7aa3f49d95dda5c7cf2c2ce1e5446e
+The array microphone system records 200+ channels of audio simultaneously. By exploiting the time difference between channels, digital signal processing can extract and/or visualize audio content at different positions in the recording. This can be done both in real time, and in retrospect (unlike parabolic microphones).
+
+Fun times ahead!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+
+[0]: http://www.jonnor.com/2010/05/hello-openismus-hello-berlin/
+[1]: http://www.openismus.com/
+[2]: http://www.murrayc.com/blog/permalink/2012/09/20/openismus-revived/
+[3]: http://www.sqhead.com/
+[4]: http://www.youtube.com/watch?v=G1HG6pvYJkE
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=598&md5=8f4ec77bf561a1b376036be6e556bc5d
