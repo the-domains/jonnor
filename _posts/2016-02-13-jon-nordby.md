@@ -1,28 +1,35 @@
 ---
 author: []
-related: []
+related:
+  - score: 0.5535652041
+    description: 'For most of us, and certainly for most of your team, meetings are the least productive part of our day. Yet too many brilliant people are stuck in too many meetings. Meeting cultures begat more meetings, and the downward cycle continues, crippling productivity and crushing psyches.'
+    title: "Meetings That Don't Suck"
+    url: 'http://techcrunch.com/2015/07/17/meetings-that-dont-suck/'
+    thumbnail_height: 400
+    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/shutterstock_232875841.jpg?w=764&h=400&crop=1'
+    thumbnail_width: 764
 publisher:
   url: 'http://www.jonnor.com'
   name: Jonnor
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - conference
-  - meego
   - gnome
-  - business-y
-  - guadec
-  - co-workers
-  - enterprise-y
-  - openismus
-  - 6th-12th
-  - humboldt
-description: "Next week I'm going to Qt Developer Days in Munich where I will be attending Qt training and technical talks. And almost just as importantly, meet and talk to people who do related things to what we do at Openismus."
+  - bof
+  - libre
+  - desktop
+  - projects
+  - meeting
+  - welcome
+  - graphics
+  - devrooms
+  - non-kde
+description: 'Last weekend I was in Brussels for my first FOSDEM. Friday I attended a planning meeting for this years Desktop Summit. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month.'
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:11:56.181Z'
-dateModified: '2016-02-13T18:05:08.882Z'
+datePublished: '2016-02-13T18:11:56.184Z'
+dateModified: '2016-02-13T18:05:06.821Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,20 +42,17 @@ _type: Article
 ---
 # Jon Nordby
 
-Next week I'm going to [Qt Developer Days][0] in Munich where I will be attending [Qt training][1] and [technical talks][2]. And almost just as importantly, meet and talk to people who do related things to what we do at [Openismus][3]. I suspect the overall style and feel of this conference will be quite different from past free and open source software events I've been to (like GUADEC and Libre Graphics Meeting). More business-y, perhaps even enterprise-y? None the less, looking forward to it.
+Last weekend I was in Brussels for my first [FOSDEM][0].
 
-In related news, I'm also involved as part of the local team for [Desktop Summit 2011][4], along with several of my co-workers. The initial announcements have just been made public; the conference will be held in Berlin August 6th-12th, at Humboldt University. Mark your calendars See for instance the [story by the GNOME Foundation][5], the [official website][4] or the [original announcement][6] for more information.
-![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_wink.gif)
+Friday I attended a planning meeting for this years [Desktop Summit][1]. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month. I was tasked with organizing the call for BoF/meetings/devrooms. In a broader scope, I see my role as making sure _relevant_ non-KDE and GNOME projects know they are welcome. People involved in such projects are welcomed to submit talk proposals, or apply for space for a BoF/meeting just like a KDE/GNOME project, but for anything to come out of it we need to communicate this properly.
 
-Hopefully I will also be going to the [Meego conference][7] in Dublin in November. Fingers crossed!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+Didn't go to a lot of talks, but I had plenty of good discussions in the "hallway track" and in the evening events. Especially good was meeting up with [Claudio Saavedra][2] to discuss Meego Input Methods and the Gtk+ integration he is working on. I hope I was able to help him a bit in getting started.
 
-[0]: http://qt.nokia.com/qtdevdays2010
-[1]: http://qt.nokia.com/qtdevdays2010/training
-[2]: http://qt.nokia.com/qtdevdays2010/techtrack
-[3]: http://openismus.com/
-[4]: http://www.desktopsummit.org/
-[5]: http://blogs.gnome.org/foundation/2010/10/06/kde-and-gnome-desktop-summit-2011-from-6-to-12-august/
-[6]: http://www.gnome.org/press/releases/2010-10-desktop-summit-2011-berlin.html
-[7]: http://conference2010.meego.com/
-[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=279&md5=1933bd280646b304a7c4a9705672a57d
+Attended the [Libre Graphics Meeting][3] planning dinner sunday evening. I don't know if I'm able to make it to the conference yet, so I did not have that much to contribute, but I let them that Libre Graphics projects are welcome to the Desktop Summit. And that I might try to organize a MyPaint workshop at LGM.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
+
+[0]: http://fosdem.org/2011/
+[1]: http://desktopsummit.org/
+[2]: http://people.gnome.org/~csaavedra/
+[3]: http://www.libregraphicsmeeting.org/2011/
+[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=375&md5=110d2cb968b7601db81d723d8f56ff61
