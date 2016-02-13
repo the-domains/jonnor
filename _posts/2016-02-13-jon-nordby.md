@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2012/11/participating-in-libre-graphics-research-unit-residency/'
+isBasedOnUrl: 'http://www.jonnor.com/2014/02/going-to-libre-graphics-meeting-2014/'
 inLanguage: en
 starred: false
 keywords:
-  - piksels
-  - orchestra
-  - artistic
   - graphics
-  - tools
   - libre
-  - software
+  - lgm
+  - gegl
+  - lgm2014
+  - gimp
   - open
-  - workshops
-  - hardware
-description: 'Following the Piksels & Lines research meeting in June and being accepted in the call for proposals I am now taking part in the Piksel & Lines Orchestra residency, hosted by Piksel and LGRU, together with media artist and engineer Brendan Howell.'
-datePublished: '2016-02-13T20:35:41.429Z'
-dateModified: '2016-02-13T20:19:46.371Z'
+  - visual
+  - hanika
+  - source
+description: 'LGM2014 will happen April 2-5th in Leipzig, Germany and this will be my fifth year attending. In fact LGM 2010 in Brussels was my first international conference ever, and convinced me that I wanted to make open source professionally.'
+datePublished: '2016-02-13T20:35:48.327Z'
+dateModified: '2016-02-13T19:43:39.957Z'
 author: []
 related: []
 app_links: []
-title: Participating in Libre Graphics Research Unit residency
+title: Going to Libre Graphics Meeting 2014
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,26 +35,35 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Participating in Libre Graphics Research Unit residency
+# Going to Libre Graphics Meeting 2014
 
-Following the Piksels & Lines research meeting [in June][0] and being accepted in the [call for proposals][1] I am now taking part in the Piksel & Lines Orchestra residency, hosted by [Piksel][2] and [LGRU][3], together with media artist and engineer [Brendan Howell][4]. Together we will further develop the Piksels & Lines Orchestra, a system that turns the traditional libre graphics tools (like MyPaint, GIMP, Inkscape, Scribus) into instruments for use in an performance setting.
+[LGM2014][0] will happen April 2-5th in Leipzig, Germany and this will be my fifth year attending. In fact [LGM 2010][1] in Brussels was my first international conference ever, and convinced me that I wanted to make open source professionally.
 
-A prototype of this system is to be demonstrated at [Piksel X][5] in Bergen, November 21-25th. Piksel is an annual festival where artists and developers working with free and open source software, hardware and art come together. Its diverse program will include presentations, workshops, performances, and installations.
+I'm very excited about [this years program][2], because once again we have managed to combine bleeding edge developments in open source software for graphics and visuals, with a wide range of connecting fields: open hardware, design, art activism, free cultural works, research and education.
 
-Within the Piksels & Lines Orchestra residency we will also realize an artwork that will be performed in Madrid, April at the Future Tools Conference. This event combines [Libre Graphics Meeting][6], an annual artist and developer meeting around free and open source graphics software with [Interactivos?'13][7], two weeks of project-centric workshops focused on collaborative creation using open hardware and open software. The [call for projects][8] is now open, focusing on "Tools for a Read-Write World".
+Personally, I especially look forward to:
 
-Don't miss any of these events if you are interested in the intersection and interaction between artistic works and open tools!
+* Richard Hughes: Building an OpenHardware Spectrograph for Color Profiling in Linux
+* Johannes Hanika: Wavelets for image processing
+* Manuel Quiñones: GEGL is not GIMP - creating graphic applications with GEGL (workshop)
+* Libre Graphics Magazine: Beating the drums, Why we made gender an issue
 
-from more than a dozen countries
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][9]
+I am also hosting a [BoF][3] session on visual programming of libre graphics tools. Curious to see what comes out of that.
 
-[0]: http://www.jonnor.com/2012/06/piksels-and-lines-libre-graphics-research-unit-seminar-in-bergen
-[1]: http://www.piksel.no/2012/07/call-piksels-lines-orchestra-residency-plo
-[2]: http://www.piksel.no/
-[3]: http://lgru.net/
-[4]: http://wintermute.org/brendan/
-[5]: http://www.piksel.no/p12
-[6]: http://www.libregraphicsmeeting.org/
-[7]: http://medialab-prado.es/interactivos
-[8]: http://medialab-prado.es/article/ilgru_call_projects
-[9]: http://www.jonnor.com/wp/?flattrss_redirect&id=604&md5=4640f5550b5e498e63b4ab8ac5df29cb
+If you are interested in open source and graphics, don't miss Libre Graphics Meeting.  
+[Register now][4] (it's free and open for all)!
+[![](http://libregraphicsmeeting.org/2014/wp/wp-content/uploads/2014/02/LGM-2014-logo.png)][4]
+
+Can't go to LGM, but would still like to contribute? Please consider [donating to our travel fund][5].
+
+I would like to thank the [GIMP project][6] for sponsoring my trip to LGM2014\.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][7]
+
+[0]: http://libregraphicsmeeting.org/2014
+[1]: http://www.libregraphicsmeeting.org/2010/index.php?p=en/review
+[2]: http://libregraphicsmeeting.org/2014/program/
+[3]: http://en.wikipedia.org/wiki/Birds_of_a_Feather_%28computing%29
+[4]: http://libregraphicsmeeting.org/2014/register/
+[5]: https://pledgie.com/campaigns/22927
+[6]: http://gimp.org/
+[7]: http://www.jonnor.com/wp/?flattrss_redirect&id=680&md5=c3f5f6a823af4709dc62777136a239e8
