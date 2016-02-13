@@ -4,11 +4,18 @@
         <description><![CDATA[jonnor]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Wed, 25 Nov 2015 23:59:40 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 13 Feb 2016 18:11:52 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
+            <title><![CDATA[Jon Nordby]]></title>
+            <description><![CDATA[<article><h1>Jon Nordby</h1><p>Gegl is an image processing framework used in projects like Gimp and DarkTable. It will eventually allow Gimp to allow non-destructive, high bit-depth image processing, among other things. And GStreamer is  the multimedia framework for GNU/Linux, handling video/audio/other playback/recording/manipulation on your favorite desktop/server/mobile/embedded system.</p></article>]]></description>
+            <link>https://thegrid.ai/jonnor/jon-nordby/index.html</link>
+            <guid isPermaLink="false">3b2a61db-f54d-487c-a1c6-662ac0198209</guid>
+            <pubDate>Sat, 13 Feb 2016 18:11:51 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[imgflo 0.3]]></title>
-            <description><![CDATA[<article><h1>imgflo 0.3</h1><p>Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.</p><img src="http://www.jonnor.com/wp/files/imgflo-instagram-filters-258x300.jpg"></article>]]></description>
+            <description><![CDATA[<article><h1>imgflo 0.3</h1><p>Time for a new release of imgflo, the image processing server and dataflow runtime based on GEGL. This iteration has been mostly focused on ironing out various workflow issues, including documentation. Primarily so that the creatives in our team can be productive in developing new image filters/processing.</p><img src="https://s3-us-west-2.amazonaws.com/the-grid-img/p/5492e9eb220fc1ef2c10f664b12aa1c91b9357ea.jpg"></article>]]></description>
             <link>https://thegrid.ai/jonnor/imgflo-03/index.html</link>
             <guid isPermaLink="false">e961a3d0-a605-4116-8d52-821b16fff569</guid>
             <pubDate>Wed, 25 Nov 2015 23:59:29 GMT</pubDate>
