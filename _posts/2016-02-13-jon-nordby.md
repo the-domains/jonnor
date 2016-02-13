@@ -7,22 +7,22 @@ publisher:
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - openraster
-  - gtk
-  - libora
-  - qml
-  - application
-  - especially
-  - interfaces
-  - project
-  - useful
-  - development
-description: "I've actually been back close to a week now, but never mind that... In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it."
+  - mypaint
+  - lgm
+  - graphics
+  - grapiklabor
+  - inkscape
+  - alessandro
+  - workshop
+  - rich
+  - meet
+  - software
+description: "Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise. While on my trip to CERN I spent a couple of days in the area of Zürich. On Sunday 2th of May I traveled from Geneva to Zürich (coming directly from a night-shift, ugh)."
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:14:45.791Z'
-dateModified: '2016-02-13T18:05:36.890Z'
+datePublished: '2016-02-13T18:14:46.743Z'
+dateModified: '2016-02-13T18:05:10.874Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -35,27 +35,31 @@ _type: Article
 ---
 # Jon Nordby
 
-I've actually been back close to a week now, but never mind that...
+Very sorry about the wall-of-text-with-no-images. I'll do better in the future, promise.
 
-In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it.  
-The keynotes I attended on the second day were not particularly exciting: no major announcements nor insights were given. The technical talks on the other hand were filled with goodies. The talks by Jens Bache-Wiig and Roberto Raggi on [Qt Quick][0] were especially good.\*
+While on [my trip to CERN][0] I spent a couple of days in the area of Zürich. On Sunday 2th of May I traveled from Geneva to Zürich (coming directly from a night-shift, ugh). There I attended [Grapiklabor][1], which is a series of workshops on graphics using free software held by Alessandro Rimoldi, a [Scribus][2] community member. On the schedule that day was vector based graphics with [Inkscape][3]. It was a very useful workshop for me, I now have at least a pretty good idea of how to use Inkscape to solve real problems.
 
-The talks definitely made me want to try Qt Quick for doing user interfaces for small-form factor devices, especially because it allows for very rapid prototyping and iterations when developing. The current lack of widgets and traditional layouts probably limits its usefulness for typical desktop application with more complex user interfaces though. There is nothing that helps you achieve a native look and feel either, but the [Qt Components][1] project is aiming to bridge those gaps.  
-I also suspect that the declarative and dynamic nature of QML poses several new challenges for developers, especially for those that are mostly used to traditional Qt programming with C++. I'm especially concerned that there was no way to visualize or do static checking on the property-bindings that are so central in QML. Very curious as to how that plays out in practice.
+### MyPaint developer meetup
 
-\*I'm told the talks will be online after the Qt Developer Days event in San Fransisco is over.
+In Zürich I also meet up with Martin Renold, the creator of [MyPaint][4]. In addition to attending Grapiklabor with me, he was kind enough to let me stay in his home in Winterthur for a couple of days. On Monday we went for a longer hike in a nearby forest, an I got a tour of the city. Of course, with the two most active developers together, the meeting also involved some MyPaint hacking:
 
-### Qt projects you said?
+- We did some design for [our oldest bug][5]; adding some sort of fixed size image functionality. The challenge is doing that without compromising on MyPaints infinite canvas feature, but still being intuitive and efficient for users, and being able to inter-operate with other applications in a good way.  
+- We also approached the [usability issue with the current brush settings dialog][6], got a significant improvement committed, and a even better solution, in my opinion, sketched out.  
+- Also committed was support for layer visibility attributes in OpenRaster, both in MyPaint and in GIMP.
 
-Going forward I'll be doing some projects with Qt, in the same way I [have done][2] with GTK. My first project has already started: implementing viewer-class OpenRaster support for Qt. This means that applications using Qt and QImage will soon be able to display fully-rendered OpenRaster images!  
-Development of the Qt integration happens in the [repository on gitorious][3], and the libora modifications currently lives in [my personal clone][4]. It will be pushed to mainline as soon as I have more-or-less settled on the API, and done a basic implementation. Using libora for all the OpenRaster specific stuff is being a bit more painful than expected, but it is the right thing to do as it means that other consumers benefits as well. Like a potential GdkPixbuf plugin or applications not using Qt or GTK. I'll write more once it reaches a useful state.
+### I'm going to LGM 2010!
 
-After that is done I will probably do something with more UI, like a proper application. Hopefully I will get to toss Qt Quick into the mix as well. I've got an idea that I think would be a nice fit, so we'll see.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+I've now also confirmed that I'm going to [Libre Graphics Meeting][7] in Brussels, plane tickets have been ordered and everything. It will be my first LGM, heck, my first conference of any sort! There I will meet up with Martin, Alessandro and many other great people in the free software graphics community. Drafts of the program has been published on the create mailing list, and I'm really looking forward to both the social and technical aspects of the conference. Great things have come out of LGM before, I bet this year will also have some in store.
 
-[0]: http://doc.qt.nokia.com/4.7/qtquick.html
-[1]: http://qt.gitorious.org/qt-components
-[2]: http://www.jonnor.com/tag/massifg/
-[3]: http://gitorious.org/openraster/qt-viewer-support
-[4]: http://gitorious.org/~jonnor/openraster/jonnors-libora
-[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=298&md5=861daec9a362120d9b8c63a3010dafd7
+I might also have another, exciting trip abroad upcoming. If so, more on that later ![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_wink.gif)
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+
+[0]: http://www.jonnor.com/2010/05/back-from-cern/
+[1]: http://graphicslab.org/grafiklabor/
+[2]: http://www.scribus.net/
+[3]: http://www.inkscape.org/
+[4]: http://www.mypaint.info/
+[5]: https://gna.org/bugs/?9099
+[6]: https://gna.org/bugs/?15989
+[7]: http://libregraphicsmeeting.org/
+[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=176&md5=1140266deb235c8b4791e78b2d60e659
