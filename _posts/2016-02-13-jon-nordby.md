@@ -1,35 +1,28 @@
 ---
 author: []
-related:
-  - score: 0.607191205
-    description: "Servers.com, a hosting company with a focus on dedicated bare-metal servers that launched in Europe in 2005, today announced the opening of its first U.S. data center location. The new Dallas data center currently only offers dedicated servers, but it will soon also play host to Servers.com's shared cloud hosting servers."
-    title: Servers.com Brings Its Bare-Metal Servers To The US
-    url: 'http://techcrunch.com/2015/07/28/servers-com-launches-in-us-takes-aim-at-digitalocean-with-focus-on-bare-metal-servers/'
-    thumbnail_height: 400
-    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/8681750288_354823d8d3_o.jpg?w=764&h=400&crop=1'
-    thumbnail_width: 764
+related: []
 publisher:
   url: 'http://www.jonnor.com'
   name: Jonnor
   favicon: null
   domain: www.jonnor.com
 keywords:
-  - x11
-  - server
-  - ssh
-  - xauth
-  - nolisten
-  - tcp
-  - xserverrc
-  - forwarding
-  - config
-  - localhost
-description: 'So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least: To get this nice image I had to do some X11 forwarding over SSH through an intermediate server.'
+  - mountain-biking
+  - bikeshop
+  - spring
+  - apt
+  - allergies
+  - close
+  - jacket
+  - schools
+  - exams
+  - greet
+description: "I know spring is here when: Exams are so close I go to school on Saturdays I can go mountain-biking without having to use long tights and jacket, and most of the snow is gone on the trails Work at the bikeshop is so busy that I don't have time to greet my colleagues until 5 minutes past closing time Allergies are starting to kick in Spring is great, mostly cause it means summer is close; soon schools out and the weather apt for swimming."
 inLanguage: en
 app_links: []
 title: Jon Nordby
-datePublished: '2016-02-13T18:13:25.227Z'
-dateModified: '2016-02-13T18:05:24.963Z'
+datePublished: '2016-02-13T18:13:25.230Z'
+dateModified: '2016-02-13T18:05:33.020Z'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 inFeed: true
@@ -42,14 +35,14 @@ _type: Article
 ---
 # Jon Nordby
 
-So, I have not really written that post describing my senior project yet (well, I have a draft...), but here is a visual teaser at least:
-![](http://www.jonnor.com/wp/files/2009-11-08-003736_1280x800_scrot-300x187.png)
+I know spring is here when:
 
-To get this nice image I had to do some X11 forwarding over SSH through an intermediate server. And since I'm probably not the only one with such needs and I'm bound to forget how I did it I will post it here.
+* Exams are so close I go to school on Saturdays
+* I can go mountain-biking without having to use long tights and jacket, and most of the snow is gone on the trails
+* Work at the bikeshop is so busy that I don't have time to greet my colleagues until 5 minutes _past_ closing time
+* Allergies are starting to kick in
 
-Basically I used [this excellent reference][0]. But if you need trusted X11 forwarding (like with ssh -Y instead of -X) you need to generate an xauth file as an extra step when you're on the remote server. That can be done with "xauth generate $DISPLAY ." And the "nolisten tcp" config option that you need to disable locally is usually found in /etc/X11/xinit/xserverrc  
-Additional heads up: if you try and connect with -X in addition to this manual forwarding you are setting up, you might get strange errors like "X connection to localhost:10.0 broken (explicit kill or server shutdown)." So don't do that.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][1]
+Spring is great, mostly cause it means summer is close; soon schools out and the weather apt for swimming.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][0]
 
-[0]: http://factorial.hu/articles/20080302/more-robust-remote-x-tunneling
-[1]: http://www.jonnor.com/wp/?flattrss_redirect&id=76&md5=4c0bf076f1bac376e2cf9ccf6dddfc4b
+[0]: http://www.jonnor.com/wp/?flattrss_redirect&id=155&md5=814798795747afd052f9b9f4a68050ef
