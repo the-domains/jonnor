@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2010/11/image-preview-support-for-openraster-in-qt-working/'
+isBasedOnUrl: 'http://www.jonnor.com/2010/10/back-from-qt-dev-days-first-qt-projects/'
 inLanguage: en
 starred: false
 keywords:
-  - libora
   - openraster
-  - plug-in
-  - kde
-  - qimage
-  - readme
-  - gitorious
-  - applications
-  - document
-  - rendering
-description: "While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the OpenRaster file format*."
-datePublished: '2016-02-13T20:29:23.439Z'
-dateModified: '2016-02-13T19:55:19.236Z'
+  - gtk
+  - libora
+  - qml
+  - application
+  - especially
+  - interfaces
+  - project
+  - useful
+  - development
+description: "I've actually been back close to a week now, but never mind that... In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it."
+datePublished: '2016-02-13T20:29:31.782Z'
+dateModified: '2016-02-13T19:57:36.359Z'
 author: []
 related: []
 app_links: []
-title: Image preview support for OpenRaster in Qt working
+title: 'Back from Qt Dev Days, first Qt projects'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,23 +35,29 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Image preview support for OpenRaster in Qt working
+# Back from Qt Dev Days, first Qt projects
 
-While learning Qt here at Openismus I've written a basic, working plug-in for Qt that adds support for the [OpenRaster][0] file format\*. Here is my Qt-based test application demoing this functionality by showing some awesome multi-layered abstract test art made by yours truly using Krita:
+I've actually been back close to a week now, but never mind that...
 
-The level of features supported is such that you will be able to preview OpenRaster documents created with applications like MyPaint, Drawpile, Nathive and GIMP, with the limitation that it will have a white background for transparent areas. The code can be found in [qopenraster repository][1] on gitorious (no tarballs), and the README file documents how to install as well as things that remain to be done.
+In the per-conference day with training sessions I attended the Qt Essentials track, which was more or less as expected. Glad I read a full Qt book beforehand, it would have been challenging to keep up with the shear amount of information without it.  
+The keynotes I attended on the second day were not particularly exciting: no major announcements nor insights were given. The technical talks on the other hand were filled with goodies. The talks by Jens Bache-Wiig and Roberto Raggi on [Qt Quick][0] were especially good.\*
 
-The plug-in is basically a thin wrapper around [libora][2], the OpenRaster [reference library][3]. libora takes care of parsing the OpenRaster document, reading out the layer data and rendering it into a single buffer. The rendering ability was added by me as part of this work, in addition to some other minor stuff. The Qt plug-in does RGBA to ARGB conversion and provides the QImageIOPlugin interface expected by Qt.
+The talks definitely made me want to try Qt Quick for doing user interfaces for small-form factor devices, especially because it allows for very rapid prototyping and iterations when developing. The current lack of widgets and traditional layouts probably limits its usefulness for typical desktop application with more complex user interfaces though. There is nothing that helps you achieve a native look and feel either, but the [Qt Components][1] project is aiming to bridge those gaps.  
+I also suspect that the declarative and dynamic nature of QML poses several new challenges for developers, especially for those that are mostly used to traditional Qt programming with C++. I'm especially concerned that there was no way to visualize or do static checking on the property-bindings that are so central in QML. Very curious as to how that plays out in practice.
 
-Doing this has also exposed several limitations and not-so-nice things in libora that should/needs to be improved. I've updated libora's [README][4] file to reflect this.
-_\*Assuming the Qt application actually uses QImage in a straight-forward way. The KDE image viewer Gwenview does not seem to use QImage directly, so you will not automatically get support there by installing the plug-in :((. I fear that other KDE applications might be the same, though I was not able to test Digikam. If anyone has a suggestion for a Qt based image viewer that works sanely in this area, don't hesitate to leave a comment._
+\*I'm told the talks will be online after the Qt Developer Days event in San Fransisco is over.
 
-PS: I have an almost-working gdk-pixbuf module as well, will push that to gitorious soon.
+### Qt projects you said?
+
+Going forward I'll be doing some projects with Qt, in the same way I [have done][2] with GTK. My first project has already started: implementing viewer-class OpenRaster support for Qt. This means that applications using Qt and QImage will soon be able to display fully-rendered OpenRaster images!  
+Development of the Qt integration happens in the [repository on gitorious][3], and the libora modifications currently lives in [my personal clone][4]. It will be pushed to mainline as soon as I have more-or-less settled on the API, and done a basic implementation. Using libora for all the OpenRaster specific stuff is being a bit more painful than expected, but it is the right thing to do as it means that other consumers benefits as well. Like a potential GdkPixbuf plugin or applications not using Qt or GTK. I'll write more once it reaches a useful state.
+
+After that is done I will probably do something with more UI, like a proper application. Hopefully I will get to toss Qt Quick into the mix as well. I've got an idea that I think would be a nice fit, so we'll see.
 [![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
 
-[0]: http://create.freedesktop.org/wiki/OpenRaster
-[1]: http://gitorious.org/openraster/qopenraster
-[2]: http://gitorious.org/openraster/libora
-[3]: http://create.freedesktop.org/wiki/OpenRaster/Reference_Library
-[4]: http://gitorious.org/openraster/libora/blobs/master/README
-[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=306&md5=dcb6ecfb85b8906a64b9985ff7eca170
+[0]: http://doc.qt.nokia.com/4.7/qtquick.html
+[1]: http://qt.gitorious.org/qt-components
+[2]: http://www.jonnor.com/tag/massifg/
+[3]: http://gitorious.org/openraster/qt-viewer-support
+[4]: http://gitorious.org/~jonnor/openraster/jonnors-libora
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=298&md5=861daec9a362120d9b8c63a3010dafd7
