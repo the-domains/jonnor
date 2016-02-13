@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/11/gtk-application-support-integrated-into-maliit-mainline/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/04/introducing-maliit-on-screen-keyboard-in-gnome-3/'
 inLanguage: en
 starred: false
 keywords:
-  - gtk
   - maliit
-  - implement
+  - keyboard
+  - gnome
+  - fedora
+  - theming
+  - layouts
   - meego
-  - support
+  - gnu
+  - enchanced
   - input
-  - mainline
-  - repository
-  - javis
-  - code
-description: 'GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support.'
-datePublished: '2016-02-13T20:28:19.609Z'
-dateModified: '2016-02-13T20:26:59.291Z'
+description: 'Maliit (also known as Meego Input Methods) has the following overall goal: "to be the input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms". This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it.'
+datePublished: '2016-02-13T20:28:24.137Z'
+dateModified: '2016-02-13T20:25:09.101Z'
 author: []
 related: []
 app_links: []
-title: GTK+ application support integrated into Maliit mainline
+title: Introducing; Maliit on-screen keyboard in Gnome 3
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,27 +35,36 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-## GTK+ application support integrated into Maliit mainline
+# Introducing; Maliit on-screen keyboard in Gnome 3
 
-GTK+ application support for [Maliit][0] input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was [released yesterday][1], contains these changes.
+Maliit (also known as Meego Input Methods) has the following [overall goal][0]: "to be _the_ input method project for MeeGo and other GNU/Linux-based embedded/mobile platforms".
 
-Two implementations existed for Maliit GTK+ support. [One][2] was written by [Javis Pedro][3] as part of a Google Summer of Code project for MeeGo in 2010\. His blog has [several posts][4] on the topic.[The other][5] implementation was maintained by Raymond Liu (Intel). This is the implementation shipped in Meego Netbook, and the one improved by [Claudio Saavedra][6] (Igalia) as part of the GTK+ on MeeGo project. It was also the only one that was updated to work with the DBus connection changes that was done quite some time ago, and supporting both GTK 2 and 3\. For these reasons this was the implementation integrated into mainline Maliit.
+This initial video shows Maliit running in Gnome 3, and demonstrates some of the very basic features provided by Maliit and the standard keyboard shipped with it. The demo is done on a WeTab tablet running a standard Fedora 15 Beta, with the latest Maliit software installed. Jan Arne Petersen is working a bit on Fedora packages, so hopefully it will soon be easy to install for those who are interested.
 
-Once the code [was integrated][7], improvements soon followed. The application now correctly[reconnects to server][8], and make install will automatically update the GTK+ input module cache [on Ubuntu][9], thanks to [Łukasz Zemczak][10] (Canonical), and [on Fedora][11]. This means GTK+ application support will work out of the box, no twiddling needed.
+Some more info about the features shown in above video:
 
-While this is a huge step in the right direction, the GTK+ support is not as good as for Qt yet. Javis Pedros implementation has features that does not exist in mainline, so code/principles can hopefully be reused from there to implement these. This includes custom toolbars and attribute extensions, and content type hints for text entries. Other features looks hard to implement due to limitations/differences in the input context plugin architecture found in GTK+, and will probably need work in GTK+ itself to solve.
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][12]
+**0\. Theming.** Using the theming support in the standard Maliit keyboard, it is easy to go from a mockup to ready implemented theming. This theme was based on the [mockup from live.gnome.org][1] (by Jakub Steiner I believe?) and done by Michael Hasselmann in a couple of hours. He also has a blogpost on [how the theming system works][2].
 
-[0]: http://www.maliit.org/
-[1]: http://lists.meego.com/pipermail/meego-inputmethods/2011-November/000251.html
-[2]: https://gitorious.org/meego-gtk-im
-[3]: http://javispedro.com/
-[4]: http://javispedro.com/cgi-bin/mt/mt-search.fcgi?search=meegotouch&IncludeBlogs=1&limit=20
-[5]: https://www.gitorious.org/meegotouch-inputmethodbridges
-[6]: http://people.gnome.org/~csaavedra/
-[7]: https://gitorious.org/maliit/maliit-framework/merge_requests/77
-[8]: https://gitorious.org/maliit/maliit-framework/commit/04b7b8ac3160b8a042e63b2ea2c72464ef74a37b
-[9]: https://gitorious.org/maliit/maliit-framework/commit/783602d3243d3df47633a8658b27d55175e717aa
-[10]: http://sil2100.vexillium.org/
-[11]: https://gitorious.org/maliit/maliit-framework/commit/24393bc8e0bd61ccc36629e94084c0066e6c181d
-[12]: http://www.jonnor.com/wp/?flattrss_redirect&id=502&md5=0fc2dba944a22dd3bf2e7dd963085acc
+**1\. Typing text**.This is of course the number one feature of an on-screen keyboard. There are some essential best-practice and some tricks used in Maliit to be able to get really good reponse time and typing speeds. I hope we will have some blogposts about that soon.
+
+Typing speed can be further enchanced by enabling multitouch support (not working out-of-the-box in Fedora due to missing support further down the stack), or by installing a prediction/correction engine. User feedback can be enchanced with audatory and tactile feedback (requires hardware and driver support obviously).
+
+**2\. Different languages/layouts**, and switching between them. Maliit comes with layouts for over 20 languages, tested and tweaked by usability experts. Latin, Cyrillic, Arabic and Chinese based scripts are covered. The layouts are defined by XML files, so one can easily change them if wanted.
+[![](http://www.jonnor.com/wp/files/chinese_zhuyin-150x150.png)][3]
+[![](http://www.jonnor.com/wp/files/arabic_crop-150x150.png)][4]
+[![](http://www.jonnor.com/wp/files/russian_crop-150x150.png)][5]
+
+For more of the features offered by Maliit framework and standard keyboard, see the [wiki page][6]. If you are interested in improving Maliit, or its integration in Gnome 3 or other GNU/Linux environment, join the [irc channel or mailing list][7].
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][8]
+
+Next up; the importance and difficulties of input method integration on touch enabled devices.
+
+[0]: http://wiki.meego.com/Maliit#Goals
+[1]: https://live.gnome.org/GnomeShell/Design/Whiteboards/ScreenKeyboard
+[2]: http://taschenorakel.de/michael/2011/04/10/customizing-meego-keyboard/
+[3]: http://www.jonnor.com/wp/files/chinese_zhuyin.png
+[4]: http://www.jonnor.com/wp/files/arabic_crop.png
+[5]: http://www.jonnor.com/wp/files/russian_crop.png
+[6]: http://wiki.meego.com/Maliit#Features
+[7]: http://wiki.meego.com/Maliit#Communication_channels
+[8]: http://www.jonnor.com/wp/?flattrss_redirect&id=394&md5=3c8794eadd2099c06b751189e7973bcb
