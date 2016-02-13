@@ -2,27 +2,34 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2010/11/meego-conference-2010/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/02/fosdem-2011/'
 inLanguage: en
 starred: false
 keywords:
-  - meego
-  - netbook
-  - conference
-  - openismus
-  - devices
-  - platform
-  - handset
-  - attractive
-  - dublin
-  - nokia
-description: "Like most of my colleagues at Openismus I was present at the first Meego conference in Dublin. As usual, I'm probably the last to blog about it. See for instance Friedrich's post, Andre's post or Chris' very detailed post. The conference was held at the Aviva stadium, a huge sports stadium just outside Dublin center."
-datePublished: '2016-02-13T20:34:50.567Z'
-dateModified: '2016-02-13T20:23:24.771Z'
+  - gnome
+  - bof
+  - libre
+  - desktop
+  - projects
+  - meeting
+  - welcome
+  - graphics
+  - devrooms
+  - non-kde
+description: 'Last weekend I was in Brussels for my first FOSDEM. Friday I attended a planning meeting for this years Desktop Summit. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month.'
+datePublished: '2016-02-13T20:35:01.540Z'
+dateModified: '2016-02-13T19:50:41.703Z'
 author: []
-related: []
+related:
+  - score: 0.5535652041
+    description: 'For most of us, and certainly for most of your team, meetings are the least productive part of our day. Yet too many brilliant people are stuck in too many meetings. Meeting cultures begat more meetings, and the downward cycle continues, crippling productivity and crushing psyches.'
+    title: "Meetings That Don't Suck"
+    url: 'http://techcrunch.com/2015/07/17/meetings-that-dont-suck/'
+    thumbnail_height: 400
+    thumbnail_url: 'https://tctechcrunch2011.files.wordpress.com/2015/07/shutterstock_232875841.jpg?w=764&h=400&crop=1'
+    thumbnail_width: 764
 app_links: []
-title: Meego Conference 2010
+title: FOSDEM 2011
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,42 +42,19 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-# Meego Conference 2010
+# FOSDEM 2011
 
-Like most of my colleagues at [Openismus][0] I was present at the first [Meego conference][1] in Dublin. As usual, I'm probably the last to blog about it. See for instance [Friedrich's post][2], [Andre's post][3] or [Chris' very detailed post][4].
+Last weekend I was in Brussels for my first [FOSDEM][0].
 
-The conference was held at the [Aviva stadium][5], a huge sports stadium just outside Dublin center. Untraditional venue choice, but it was quite nice and the organization was very good.
+Friday I attended a planning meeting for this years [Desktop Summit][1]. Several things were on the agenda, the most pressing being the website and the call for papers which both should be finished in the coming month. I was tasked with organizing the call for BoF/meetings/devrooms. In a broader scope, I see my role as making sure _relevant_ non-KDE and GNOME projects know they are welcome. People involved in such projects are welcomed to submit talk proposals, or apply for space for a BoF/meeting just like a KDE/GNOME project, but for anything to come out of it we need to communicate this properly.
 
-The [conference schedule][6] was packed; 2 days with 5 parallel tracks and the third day done unconference style with some 7 parallel sessions (btw, all the talks are [available online][7]). Many of the technical talks I went to were a bit on the light side in my opinion, which is forgivable considering how new the whole Meego thing is (or maybe I just chose badly). However, the keynotes and some less-technical talks (and some discussions in the "hallway track") gave me much better understanding of what Meego actually is and aims to be. Which is arguably just as important.
+Didn't go to a lot of talks, but I had plenty of good discussions in the "hallway track" and in the evening events. Especially good was meeting up with [Claudio Saavedra][2] to discuss Meego Input Methods and the Gtk+ integration he is working on. I hope I was able to help him a bit in getting started.
 
-The schedule was fairly packed in the evenings as well, with opening reception and "Openismus conference dinner" at the closest pub the first day, party at the [Guinness Storehouse][8] the second and a Ireland-Norway friendly in football (which Norway won!) the third. In addition, the official conference hotel had a "hacking area" available 24-7, which was pretty popular.
+Attended the [Libre Graphics Meeting][3] planning dinner sunday evening. I don't know if I'm able to make it to the conference yet, so I did not have that much to contribute, but I let them that Libre Graphics projects are welcome to the Desktop Summit. And that I might try to organize a MyPaint workshop at LGM.
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][4]
 
-To give Meego a little boost, all the participants were given a [Lenovo Ideapad S10-t3][9] tablet netbook/laptop. In exchange we had to install Meego Netbook Edition 1.1 on and promise to develop cool applications for. Lucky me also got a Nokia N900 so I can do development for that form-factor as well. ![](http://www.jonnor.com/wp/wp-includes/images/smilies/icon_biggrin.gif)
-
-### What is Meego? (my interpretation and some musing)
-
-At least Intel seems to have a very clear vision of Meego as an open operating system and software platform that will make it easy for people to deliver new and innovative products in the embedded/mobile/space.
-
-Meego explicitly targets a [broad range of device classes][10], from set-top boxes to in-vehicle-infotainment to handsets to netbooks, a very bold move. Personally, I think the key to succeeding in that aspect is to attract the vendors with expertise in each device class and have them drive development. The project has done a decent job at that so far with Intel, Linpus, et.c. for netbook, Nokia for handset, the GENIVI consortium for IVI and so on.
-
-Another thing the Meego project explicitly supports is for vendors shipping devices to do customization. This is basically a prerequisite to be able to attract them at all (as they naturally want to differentiate their products), but brings additional challenges in delivering a consistent platform and brand. The compliance specification work [presented at the conference][11] leads me to believe that the project is on the right path here though.
-
-As an application platform Meego is based around [Qt][12] (with Qt Quick). This is a decent platform, but what is most lacking in order to attract application developers is probably shiny, attractive devices, and people using them. Hopefully they will be here soon...
-
-All in all, I like what I see. Time will show how well the project succeeds, there are certainly exciting times ahead!
-[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][13]
-
-[0]: http://www.openismus.com/
-[1]: http://conference2010.meego.com/
-[2]: http://frinring.wordpress.com/2010/11/25/okteta-and-kasten-on-meego/
-[3]: http://blogs.gnome.org/aklapper/2010/11/21/meego-conference-2010/
-[4]: http://blixtra.org/blog/2010/11/22/meego-conference-2010-dublin/
-[5]: http://www.avivastadium.ie/
-[6]: http://conference2010.meego.com/program/schedule
-[7]: http://conference2010.meego.com/program/session-videos
-[8]: http://www.guinness-storehouse.com/
-[9]: http://shop.lenovo.com/us/notebooks/ideapad/s-series/s10-3t
-[10]: http://meego.com/devices
-[11]: http://conference2010.meego.com/session/app-compatibility-and-meego-compliance-program
-[12]: http://qt.nokia.com/
-[13]: http://www.jonnor.com/wp/?flattrss_redirect&id=318&md5=e6f6401599f8492dc96835f934fb7c8b
+[0]: http://fosdem.org/2011/
+[1]: http://desktopsummit.org/
+[2]: http://people.gnome.org/~csaavedra/
+[3]: http://www.libregraphicsmeeting.org/2011/
+[4]: http://www.jonnor.com/wp/?flattrss_redirect&id=375&md5=110d2cb968b7601db81d723d8f56ff61
