@@ -17,8 +17,8 @@ keywords:
   - bugreports
   - vala
 description: 'I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!'
-datePublished: '2016-02-17T20:39:51.719Z'
-dateModified: '2016-02-17T20:39:40.807Z'
+datePublished: '2016-02-17T20:44:03.260Z'
+dateModified: '2016-02-17T20:43:54.398Z'
 author: []
 related: []
 app_links: []
