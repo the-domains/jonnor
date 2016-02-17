@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[jonnor]]></title>
-        <description><![CDATA[jonnor]]></description>
+        <title><![CDATA[Jon Nordby]]></title>
+        <description><![CDATA[Jon Nordby]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Sat, 13 Feb 2016 22:20:55 GMT</lastBuildDate>
+        <lastBuildDate>Wed, 17 Feb 2016 20:45:08 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[cairooverlay: Generic Cairo overlay element for GStreamer]]></title>
+            <description><![CDATA[<article><h1>cairooverlay: Generic Cairo overlay element for GStreamer</h1><h2>What does it do?</h2><p>I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!</p></article>]]></description>
+            <link>http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/</link>
+            <guid isPermaLink="false">a8e11bd4-b876-4233-9d3a-602ee9f5fad7</guid>
+            <pubDate>Wed, 17 Feb 2016 20:44:03 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[GTK+ application support integrated into Maliit mainline]]></title>
             <description><![CDATA[<article><h1>GTK+ application support integrated into Maliit mainline</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
@@ -68,13 +75,6 @@
             <link>http://www.jonnor.com/2011/08/combining-pyside-and-pygobject-introspection-bindings/</link>
             <guid isPermaLink="false">02117141-4a4f-46cc-ba25-fd7716b94323</guid>
             <pubDate>Sat, 13 Feb 2016 20:35:24 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Workshop & BoF schedule at Desktop Summit 2011 published]]></title>
-            <description><![CDATA[<article><h1>Workshop & BoF schedule at Desktop Summit 2011 published</h1><p>We in the the organizing team have now published the schedule for pre-registered Workshop & BoF sessions at the Desktop Summit 2011 in Berlin.</p></article>]]></description>
-            <link>http://www.jonnor.com/2011/07/workshop-bof-schedule-at-desktop-summit-2011-published/</link>
-            <guid isPermaLink="false">f57a5da3-1ed0-48ef-b2dd-4bd194ed7ebc</guid>
-            <pubDate>Sat, 13 Feb 2016 20:35:17 GMT</pubDate>
         </item>
     </channel>
 </rss>
