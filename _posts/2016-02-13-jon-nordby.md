@@ -2,27 +2,27 @@
 inFeed: true
 hasPage: false
 inNav: false
-isBasedOnUrl: 'http://www.jonnor.com/2011/11/gtk-application-support-integrated-into-maliit-mainline/'
+isBasedOnUrl: 'http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/'
 inLanguage: en
 starred: false
 keywords:
-  - gtk
-  - maliit
-  - implement
-  - meego
-  - support
-  - input
-  - mainline
-  - repository
-  - javis
-  - code
-description: 'GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support.'
-datePublished: '2016-02-13T22:20:32.572Z'
-dateModified: '2016-02-13T22:20:29.823Z'
+  - gstreamer
+  - drawing
+  - gst-plugins-good
+  - cairo
+  - signal
+  - stream
+  - caps-updated
+  - video
+  - bugreports
+  - vala
+description: 'I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!'
+datePublished: '2016-02-17T20:39:51.719Z'
+dateModified: '2016-02-17T20:39:40.807Z'
 author: []
 related: []
 app_links: []
-title: GTK+ application support integrated into Maliit mainline
+title: 'cairooverlay: Generic Cairo overlay element for GStreamer'
 sourcePath: _posts/2016-02-13-jon-nordby.md
 published: true
 authors: []
@@ -35,25 +35,25 @@ _context: 'http://schema.org'
 _type: Article
 
 ---
-## GTK+ application support integrated into Maliit mainline
+# cairooverlay: Generic Cairo overlay element for GStreamer
 
-GTK+ application support for [Maliit][0] input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was [released yesterday][1], contains these changes.
+I wrote the initial version of this in late January, and after some interations it was [merged yesterday][0] to gst-plugins-good, and will be in gst-plugins-good 0.10.33\. This solves the [feature request][1] I filed in 2009, one of my oldest bugreports in bugs.gnome.org!
 
-Two implementations existed for Maliit GTK+ support. [One][2] was written by [Javis Pedro][3] as part of a Google Summer of Code project for MeeGo in 2010\. His blog has [several posts][4] on the topic.[The other][5] implementation was maintained by Raymond Liu (Intel). This is the implementation shipped in Meego Netbook, and the one improved by [Claudio Saavedra][6] (Igalia) as part of the GTK+ on MeeGo project. It was also the only one that was updated to work with the DBus connection changes that was done quite some time ago, and supporting both GTK 2 and 3\. For these reasons this was the implementation integrated into mainline Maliit.
+### What does it do?
 
-Once the code [was integrated][7], improvements soon followed. The application now correctly[reconnects to server][8], and make install will automatically update the GTK+ input module cache [on Ubuntu][9], thanks to [Łukasz Zemczak][10] (Canonical), and [on Fedora][11]. This means GTK+ application support will work out of the box, no twiddling needed.
+cairooverlay allows you to draw arbitrary things on top of a video stream in GStreamer using Cairo. Previously you had to create a custom GStreamer element for that (in C/Vala), but now you can just hook up to some signals, using any programming language with GStreamer/Cairo bindings.
 
-While this is a huge step in the right direction, the GTK+ support is not as good as for Qt yet. Javis Pedros implementation has features that does not exist in mainline, so code/principles can hopefully be reused from there to implement these. This includes custom toolbars and attribute extensions, and content type hints for text entries. Other features looks hard to implement due to limitations/differences in the input context plugin architecture found in GTK+, and will probably need work in GTK+ itself to solve.
+To draw an overlay using this element, you use the "caps-updated" signal to get information about the video stream (like width and height) and the "draw" signal to do the actual drawing. In addition to the Cairo context, the draw signal passes you the timestamp and duration of the buffer, so you can also do animations.
 
-[0]: http://www.maliit.org/
-[1]: http://lists.meego.com/pipermail/meego-inputmethods/2011-November/000251.html
-[2]: https://gitorious.org/meego-gtk-im
-[3]: http://javispedro.com/
-[4]: http://javispedro.com/cgi-bin/mt/mt-search.fcgi?search=meegotouch&IncludeBlogs=1&limit=20
-[5]: https://www.gitorious.org/meegotouch-inputmethodbridges
-[6]: http://people.gnome.org/~csaavedra/
-[7]: https://gitorious.org/maliit/maliit-framework/merge_requests/77
-[8]: https://gitorious.org/maliit/maliit-framework/commit/04b7b8ac3160b8a042e63b2ea2c72464ef74a37b
-[9]: https://gitorious.org/maliit/maliit-framework/commit/783602d3243d3df47633a8658b27d55175e717aa
-[10]: http://sil2100.vexillium.org/
-[11]: https://gitorious.org/maliit/maliit-framework/commit/24393bc8e0bd61ccc36629e94084c0066e6c181d
+For more info see the included [example application][2] or the [documentation][3] (should be updated soon). Here is the obligatory screenshot showing the example application drawing a heart onto a test videostream:
+[![](http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped-300x295.png)][4]
+
+The heart is actually animated, so I guess I should have had a video. But you'll just have to trust me that it is very cute, or grab the code yourself!
+[![](http://www.jonnor.com/wp/wp-content/plugins/flattr/img/flattr-badge-large.png)][5]
+
+[0]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/commit/?id=32dff9df75942c51b3ecbd7ffa394ef755881d50
+[1]: https://bugzilla.gnome.org/show_bug.cgi?id=595520
+[2]: http://cgit.freedesktop.org/gstreamer/gst-plugins-good/tree/tests/examples/cairo/cairo_overlay.c
+[3]: http://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-good-plugins/html/
+[4]: http://www.jonnor.com/wp/files/2011-03-03-192343_1280x800_scrot_cropped.png
+[5]: http://www.jonnor.com/wp/?flattrss_redirect&id=371&md5=0a98aab4c045419184024eab3c5d18c3
