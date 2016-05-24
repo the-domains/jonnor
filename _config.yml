@@ -1,7 +1,7 @@
 name: jonnor
 favicon: null
-layout_spectrum: 1
-typography_spectrum: 1
+layout_spectrum: 0.13815403846092522
+typography_spectrum: 0.0984892500564456
 title: Jon Nordby
 cta:
   domain: null
@@ -17,13 +17,13 @@ opengraph:
   appId: null
 color:
   brandColors:
-    - '#131313'
-    - '#d7dfe0'
-    - '#d34d04'
-    - '#8c8c8c'
-    - '#940404'
-  brandStrength: 0.75
-  lightness: 0
-  saturation: 0.875
-  rhythmicContrast: 0.25
+    - '#5A1F00'
+    - '#D1570D'
+    - '#FDE792'
+    - '#477725'
+    - '#A9CC66'
+  brandStrength: 0.6364729644265026
+  lightness: 0.3891899383161217
+  saturation: 0.007835457101464272
+  rhythmicContrast: 0.241562059847638
 purpose: []
