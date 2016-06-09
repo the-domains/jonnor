@@ -4,15 +4,8 @@
         <description><![CDATA[Jon Nordby]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Thu, 09 Jun 2016 16:15:31 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Jun 2016 16:16:20 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
-        <item>
-            <title><![CDATA[cairooverlay: Generic Cairo overlay element for GStreamer]]></title>
-            <description><![CDATA[<article><h1>cairooverlay: Generic Cairo overlay element for GStreamer</h1><h2>What does it do?</h2><p>I wrote the initial version of this in late January, and after some interations it was merged yesterday to gst-plugins-good, and will be in gst-plugins-good 0.10.33. This solves the feature request I filed in 2009, one of my oldest bugreports in bugs.gnome.org!</p></article>]]></description>
-            <link>http://www.jonnor.com/2011/03/cairooverlay-generic-cairo-overlay-element-for-gstreamer/</link>
-            <guid isPermaLink="false">a8e11bd4-b876-4233-9d3a-602ee9f5fad7</guid>
-            <pubDate>Wed, 17 Feb 2016 20:44:03 GMT</pubDate>
-        </item>
         <item>
             <title><![CDATA[GTK+ application support integrated into Maliit mainline]]></title>
             <description><![CDATA[<article><h1>GTK+ application support integrated into Maliit mainline</h1><p>GTK+ application support for Maliit input methods has existed for a long time, but up until now it has lived in separate repositories. This has been inconvenient for users and for developers, and was the major cause for it to not be on the same level as the Qt support. This has changed as the GTK+ support has now been merged into the maliit-framework repository, and along side the Qt support. Maliit 0.80.8, which was released yesterday, contains these changes.</p></article>]]></description>
