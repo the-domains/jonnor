@@ -4,7 +4,7 @@
         <description><![CDATA[Jon Nordby]]></description>
         <link>https://thegrid.ai/jonnor/</link>
         <generator>The Grid</generator>
-        <lastBuildDate>Wed, 17 Feb 2016 20:45:08 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 09 Jun 2016 16:15:31 GMT</lastBuildDate>
         <atom:link href="https://thegrid.ai/jonnor/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[cairooverlay: Generic Cairo overlay element for GStreamer]]></title>
@@ -19,13 +19,6 @@
             <link>http://www.jonnor.com/2011/11/gtk-application-support-integrated-into-maliit-mainline/</link>
             <guid isPermaLink="false">9efa4647-bbc3-4d6e-b6c2-0ce0949b7bf7</guid>
             <pubDate>Sat, 13 Feb 2016 22:20:32 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[First stable releases of misc. OpenRaster stuff]]></title>
-            <description><![CDATA[<article><h1>First stable releases of misc. OpenRaster stuff</h1><p>Better late than never (links go to the announcements):</p></article>]]></description>
-            <link>http://www.jonnor.com/2010/10/first-stable-releases-of-misc-openraster-stuff/</link>
-            <guid isPermaLink="false">a8350bb0-8e6a-4225-8d71-55684345c89c</guid>
-            <pubDate>Sat, 13 Feb 2016 20:29:41 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[imgflo 0.3: GEGL metaoperations++]]></title>
